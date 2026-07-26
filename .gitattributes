@@ -1,0 +1,7 @@
+# Byte-stable checkouts everywhere: the corpus snapshot feeds deterministic
+# archive hashes, so line endings must not vary by platform.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.zip binary
+*.parquet binary
