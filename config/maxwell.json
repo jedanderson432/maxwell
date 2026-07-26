@@ -7,7 +7,7 @@
     "monthly_ceiling_usd": 30.0
   },
   "hf": {
-    "repo_id": "jedanderson432/jedanderson-corpus"
+    "repo_id": "jedanderson/corpus"
   },
   "zenodo": {
     "sandbox_base": "https://sandbox.zenodo.org",

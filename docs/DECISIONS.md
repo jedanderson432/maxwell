@@ -13,10 +13,11 @@ One line (or a short block) per decision, skip, or API note. Newest last.
 - **2026-07-26** Language: Python 3.11+ (huggingface_hub, datasets,
   internetarchive are Python-native; the MCP server stays Node in the site
   repo and is not rebuilt here).
-- **2026-07-26** HF namespace: `jedanderson` on Hugging Face is taken by an
-  unrelated account; dataset defaults to `jedanderson432/jedanderson-corpus`
-  (matches GitHub). Configurable in `config/maxwell.json` if Jed registers a
-  different namespace.
+- **2026-07-26** HF namespace: initially assumed `jedanderson` was taken by
+  an unrelated account and defaulted to `jedanderson432/jedanderson-corpus`.
+  CORRECTED same day during credential activation: the supplied HF_TOKEN
+  authenticates as user `jedanderson` (it was Jed's own account), so the
+  dataset is `jedanderson/corpus` per the autopilot's first-choice name.
 - **2026-07-26** HF API verified against huggingface_hub 1.x docs:
   `Repository` class and `huggingface-cli` are gone; `upload_folder` is
   idempotent (xet hashing) and takes `delete_patterns`; README `configs:`
