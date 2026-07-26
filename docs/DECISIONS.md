@@ -55,3 +55,16 @@ One line (or a short block) per decision, skip, or API note. Newest last.
 - **2026-07-26** Zenodo/IA archive zip is built with fixed entry timestamps
   so an unchanged corpus produces a byte-identical archive (idempotent
   deposits, hash-compared in state/).
+- **2026-07-26** Activation completed with Jed in-session: all five secrets
+  set by Jed via `gh secret set` (values never in chat/files), each verified
+  by identity calls in CI. First deposits published: HF `jedanderson/corpus`
+  (913 rows, hub round-trip OK), Zenodo sandbox 10.5072/zenodo.573102 then
+  production concept DOI 10.5281/zenodo.21609424, Archive.org
+  `jedanderson-corpus`. npm `jedanderson-corpus-mcp@1.0.0` published by Jed
+  (OTP). `mcpName` line added to site repo `mcp/package.json` with Jed's
+  explicit authorization (tooling carve-out; no corpus content touched).
+- **2026-07-26** Repo flipped **private → public** on Jed's explicit
+  instruction after a clean full-history secret scan (case-sensitive token
+  patterns + code-path scan: 0 hits). Supersedes the earlier
+  private-by-default decision; staging/ remains empty until Phase 3, revisit
+  separation before observer calibration data lands.
