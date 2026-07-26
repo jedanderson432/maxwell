@@ -1,0 +1,7 @@
+requests>=2.32
+PyYAML>=6.0
+pyarrow>=17.0
+huggingface_hub>=1.0
+datasets>=3.0
+internetarchive>=5.0
+pytest>=8.0

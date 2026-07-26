@@ -1,0 +1,80 @@
+name: ingest
+
+on:
+  schedule:
+    - cron: "17 9 * * *" # daily, off the top of the hour
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: maxwell-state
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    # Kill switch: repository variable MAXWELL_ENABLED (constitution: Safety rails).
+    if: ${{ vars.MAXWELL_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      MAXWELL_ENABLED: ${{ vars.MAXWELL_ENABLED }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_SANDBOX_TOKEN: ${{ secrets.ZENODO_SANDBOX_TOKEN }}
+      IA_ACCESS_KEY_ID: ${{ secrets.IA_ACCESS_KEY_ID }}
+      IA_SECRET_ACCESS_KEY: ${{ secrets.IA_SECRET_ACCESS_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Ingest corpus snapshot
+        run: python -m src.ingest.run
+
+      - name: Build + upload HF dataset (skips without HF_TOKEN)
+        run: python -m src.distribute.hf_dataset
+
+      - name: Zenodo sandbox round-trip (skips without token)
+        if: ${{ env.ZENODO_SANDBOX_TOKEN != '' }}
+        run: python -m src.distribute.zenodo_deposit --env sandbox
+
+      - name: Zenodo production (requires verified sandbox round-trip)
+        if: ${{ env.ZENODO_TOKEN != '' }}
+        run: python -m src.distribute.zenodo_deposit --env production
+
+      - name: Archive.org item update (skips without keys)
+        run: python -m src.distribute.archive_org
+
+      - name: Commit state + snapshot (idempotent; no diff -> no commit)
+        run: |
+          git config user.name "maxwell[bot]"
+          git config user.email "maxwell-bot@users.noreply.github.com"
+          git add state corpus
+          if ! git diff --cached --quiet; then
+            git commit -m "ingest: corpus sync $(date -u +%F)"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No changes."
+          fi
+
+      - name: Failure notification (failure-only Issues)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="MAXWELL failure: ingest $(date -u +%F)"
+          body="Run failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --state open --search "MAXWELL failure: ingest" --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body" --label maxwell-failure || gh issue create --title "$title" --body "$body"
+          fi

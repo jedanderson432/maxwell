@@ -1,0 +1,38 @@
+{
+  "site_base": "https://jedanderson.org",
+  "fallback_raw_base": "https://raw.githubusercontent.com/jedanderson432/jedanderson-site/main/src/content",
+  "user_agent": "MAXWELL/0.1 (corpus infrastructure; +https://github.com/jedanderson432/maxwell)",
+  "rate_limit_rps": 4.0,
+  "budget": {
+    "monthly_ceiling_usd": 30.0
+  },
+  "hf": {
+    "repo_id": "jedanderson432/jedanderson-corpus"
+  },
+  "zenodo": {
+    "sandbox_base": "https://sandbox.zenodo.org",
+    "production_base": "https://zenodo.org",
+    "title": "Jed Anderson — Corpus (complete archive of jedanderson.org)",
+    "creators": [
+      {
+        "name": "Anderson, Jed",
+        "orcid": "0009-0003-1807-2459"
+      }
+    ],
+    "keywords": [
+      "environmental-superintelligence",
+      "information-physics",
+      "corpus",
+      "bond-bit-asymmetry",
+      "landauer",
+      "enviroai"
+    ]
+  },
+  "ia": {
+    "identifier": "jedanderson-corpus"
+  },
+  "mcp": {
+    "registry_base": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jedanderson432/jedanderson-corpus-mcp"
+  }
+}

@@ -1,0 +1,47 @@
+name: health
+
+on:
+  schedule:
+    - cron: "43 7 * * 1" # weekly, Monday
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  health:
+    # Kill switch: repository variable MAXWELL_ENABLED (constitution: Safety rails).
+    if: ${{ vars.MAXWELL_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      MAXWELL_ENABLED: ${{ vars.MAXWELL_ENABLED }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run health checks
+        run: python -m src.lib.health
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      - name: Failure notification (failure-only Issues)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="MAXWELL failure: health $(date -u +%F)"
+          body="Run failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --state open --search "MAXWELL failure: health" --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body" --label maxwell-failure || gh issue create --title "$title" --body "$body"
+          fi
