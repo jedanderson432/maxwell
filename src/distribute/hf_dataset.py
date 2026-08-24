@@ -43,6 +43,16 @@ def corpus_hash(rows: list[dict]) -> str:
     return corpus.sha256_text(json.dumps(rows, sort_keys=True, ensure_ascii=False))
 
 
+def newest_piece_date(rows: list[dict]) -> str:
+    """Most recent publication date among rows, as YYYY-MM-DD ('' if none).
+
+    Recorded in state/hf.json so health.py can compare what is actually
+    distributed against what the live site publishes (the staleness rule).
+    """
+    dates = [str(r.get("date") or "")[:10] for r in rows]
+    return max((d for d in dates if len(d) == 10), default="")
+
+
 def dataset_card(rows: list[dict]) -> str:
     n = len(rows)
     types: dict[str, int] = {}
@@ -126,8 +136,8 @@ it.
 """
 
 
-def build() -> tuple[str, int]:
-    """Build the dataset folder. Returns (corpus_hash, row_count)."""
+def build() -> tuple[str, int, str]:
+    """Build the dataset folder. Returns (corpus_hash, row_count, newest_date)."""
     import pyarrow as pa
     import pyarrow.parquet as pq
 
@@ -148,7 +158,7 @@ def build() -> tuple[str, int]:
         shutil.copyfile(src, dst)
 
     (build_dir / "README.md").write_text(dataset_card(rows), encoding="utf-8", newline="\n")
-    return corpus_hash(rows), len(rows)
+    return corpus_hash(rows), len(rows), newest_piece_date(rows)
 
 
 def verify_local() -> int:
@@ -165,7 +175,7 @@ def verify_local() -> int:
     return len(ds)
 
 
-def upload(chash: str, n_rows: int) -> bool:
+def upload(chash: str, n_rows: int, newest_date: str = "") -> bool:
     """Diff-upload the built folder to the Hub. Returns True if pushed."""
     token = os.environ.get("HF_TOKEN")
     if not token:
@@ -187,7 +197,13 @@ def upload(chash: str, n_rows: int) -> bool:
         commit_message=f"corpus sync: {n_rows} pieces ({chash[:12]})",
         delete_patterns=["data/*", "raw/*"],
     )
-    state.save(STATE_FILE, {"corpus_hash": chash, "rows": n_rows, "repo_id": repo_id})
+    state.save(STATE_FILE, {
+        "corpus_hash": chash,
+        "rows": n_rows,
+        "repo_id": repo_id,
+        "newest_piece_date": newest_date,
+        "uploaded_on": _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d"),
+    })
     print(f"Uploaded {n_rows} pieces to {repo_id}.")
     return True
 
@@ -209,14 +225,14 @@ def main() -> None:
     ap.add_argument("--verify-remote", action="store_true")
     args = ap.parse_args()
 
-    chash, n = build()
+    chash, n, newest_date = build()
     local_n = verify_local()
     print(f"Built HF dataset: {n} rows (local load_dataset round-trip: {local_n} rows, hash {chash[:12]})")
     if n != local_n:
         sys.exit("row count mismatch between build and local load")
     if args.build_only:
         return
-    pushed = upload(chash, n)
+    pushed = upload(chash, n, newest_date)
     if args.verify_remote or pushed:
         if os.environ.get("HF_TOKEN"):
             remote_n = verify_remote()

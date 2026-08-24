@@ -6,8 +6,13 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write   # heartbeat commit to state/
   issues: write
+
+# Share the state/ lock with ingest so the two never race on a push.
+concurrency:
+  group: maxwell-state
+  cancel-in-progress: false
 
 jobs:
   health:
@@ -31,6 +36,27 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -q
+
+      # Heartbeat: proof of life. Before this, a silent repo meant either
+      # "healthy" or "dead" and there was no way to tell them apart. The dated
+      # commit makes a stopped scheduler visible on the commit graph alone.
+      - name: Commit heartbeat
+        if: always()
+        run: |
+          git config user.name "maxwell[bot]"
+          git config user.email "maxwell-bot@users.noreply.github.com"
+          if [ ! -f state/health.json ]; then
+            echo "No heartbeat written (health aborted before writing); nothing to commit."
+            exit 0
+          fi
+          git add state/health.json
+          if ! git diff --cached --quiet; then
+            git commit -m "health: heartbeat $(date -u +%F)"
+            git pull --rebase origin main
+            git push
+          else
+            echo "Heartbeat unchanged."
+          fi
 
       - name: Failure notification (failure-only Issues)
         if: failure()

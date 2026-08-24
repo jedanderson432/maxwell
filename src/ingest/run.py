@@ -21,6 +21,26 @@ from ..lib import config, corpus, killswitch, state
 MANIFEST = "corpus_manifest.json"
 
 
+def placeholder_hits(rows: list[dict]) -> list[tuple[str, str]]:
+    """Pieces whose body still carries an unfilled author placeholder.
+
+    Zenodo DOIs are immutable and the HF dataset is trained on, so an
+    unfinished piece that escapes into distribution cannot be recalled.
+    Ingest therefore fails closed rather than publishing one. Discovered
+    2026-08-24: the CASE PENDING block in essays/missing-chapter-of-ai-safety
+    had already reached the HF dataset (docs/DECISIONS.md).
+    """
+    markers = config.load().get("placeholder_markers") or []
+    hits: list[tuple[str, str]] = []
+    for r in rows:
+        body = r.get("body_markdown") or ""
+        for m in markers:
+            if m in body:
+                hits.append((r["id"], m))
+                break
+    return hits
+
+
 def utc_today() -> str:
     return _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d")
 
@@ -137,6 +157,19 @@ def run(limit: int | None = None, force: bool = False) -> dict:
             if spath.exists():
                 spath.unlink()
             stats["removed"] += 1
+
+    # Gate: never write a snapshot that carries unfilled author placeholders
+    # into corpus.jsonl, which is what HF/Zenodo/archive.org all build from.
+    hits = placeholder_hits(rows)
+    if hits:
+        listed = ", ".join(f"{pid} ({marker!r})" for pid, marker in hits)
+        raise RuntimeError(
+            f"PLACEHOLDER GATE: {len(hits)} piece(s) still contain author "
+            f"placeholders and will not be distributed: {listed}. "
+            "corpus.jsonl was left unchanged. Fill in the placeholder on the "
+            "live site (or remove the marker from config placeholder_markers) "
+            "and re-run."
+        )
 
     rows.sort(key=lambda r: (r["date"], r["id"]), reverse=True)
     corpus_dir = config.repo_path("corpus")

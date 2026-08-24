@@ -34,5 +34,9 @@
   "mcp": {
     "registry_base": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.jedanderson432/jedanderson-corpus-mcp"
-  }
+  },
+  "placeholder_markers": [
+    "CASE PENDING",
+    "AUTHOR TO SUPPLY"
+  ]
 }

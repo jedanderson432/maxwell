@@ -1,4 +1,4 @@
-from src.ingest.run import build_row, write_if_changed
+from src.ingest.run import build_row, placeholder_hits, write_if_changed
 from src.lib import corpus
 
 MD = """<!--
@@ -50,3 +50,26 @@ def test_write_if_changed_idempotent(tmp_path):
     assert write_if_changed(p, "hello") is True
     assert write_if_changed(p, "hello") is False
     assert write_if_changed(p, "hello2") is True
+
+
+def test_placeholder_gate_catches_unfilled_block():
+    """Unfinished prose must never reach an immutable DOI or a training set."""
+    rows = [{
+        "id": "essays/x",
+        "body_markdown": "Intro.\n\n> **[CASE PENDING—AUTHOR TO SUPPLY.]** ...\n\nOutro.",
+    }]
+    assert placeholder_hits(rows) == [("essays/x", "CASE PENDING")]
+
+
+def test_placeholder_gate_passes_finished_prose():
+    rows = [{"id": "essays/y", "body_markdown": "A finished essay about a river."}]
+    assert placeholder_hits(rows) == []
+
+
+def test_placeholder_gate_reports_every_offending_piece():
+    rows = [
+        {"id": "essays/a", "body_markdown": "CASE PENDING here"},
+        {"id": "essays/b", "body_markdown": "clean"},
+        {"id": "essays/c", "body_markdown": "AUTHOR TO SUPPLY here"},
+    ]
+    assert [pid for pid, _ in placeholder_hits(rows)] == ["essays/a", "essays/c"]

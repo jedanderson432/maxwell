@@ -68,3 +68,81 @@ One line (or a short block) per decision, skip, or API note. Newest last.
   patterns + code-path scan: 0 hits). Supersedes the earlier
   private-by-default decision; staging/ remains empty until Phase 3, revisit
   separation before observer calibration data lands.
+- **2026-08-24** **Outage post-mortem: 18 days of failed ingest runs
+  (2026-08-06 → 2026-08-24), root cause a transient Zenodo 504.**
+  On **2026-08-06** (run 31097853312) `POST
+  /deposit/depositions/21625791/actions/newversion` *succeeded*, creating
+  draft **21823181**; the immediately following `GET` on that draft returned
+  **504 Gateway Time-out** and the script died, leaving the draft open and
+  unpublished. From **2026-08-07** onward every run re-called `newversion` on
+  21625791 and Zenodo refused with `400 files.enabled: "Please remove all
+  files first."` — Zenodo will not open a second draft while one is already
+  open on the concept. A one-off network blip became a permanent, daily,
+  self-perpetuating failure. `ZenodoClient.request` used a bare
+  `requests.Session` with no retry, even though `src/lib/http.py` had
+  implemented retry-with-backoff on exactly `(429,500,502,503,504)` since
+  day one; the Zenodo client simply never used it.
+- **2026-08-24** Diagnosis notes — **three of the four suspected causes were
+  false**, and the reported symptom was not the real one. (a) Schedules were
+  firing: ingest ran daily 07-27→08-24 with no gap, all three workflows
+  `active`, `MAXWELL_ENABLED=true`. (b) The corpus fetch was **not** being
+  challenged: `curl` with the exact workflow user agent returned `HTTP 200`,
+  `Server: Netlify`, `Content-Type: text/markdown`, real markdown body — the
+  site is Netlify-fronted, there is no Cloudflare in the path. **The
+  autopilot's raw.githubusercontent.com mirror was therefore NOT switched
+  on**: it is a fallback for a challenge that is not happening, and moving to
+  it would have swapped a working source for an untested one while leaving
+  the actual bug in place. (c) `HF_TOKEN` was valid throughout — HF uploads
+  and hub round-trips succeeded on every one of the 18 "failed" runs.
+- **2026-08-24** The real reason the pipeline *looked* dark: the
+  `Commit state + snapshot` step is the **last** step in ingest.yml and had
+  no `if: always()`, so the Zenodo failure aborted the job before it ran.
+  Distribution to HF had already happened (the step runs earlier), but the
+  *record* of it was discarded every day. `state/*.json` and `corpus/` froze
+  at the 2026-08-05 content — newest piece **2026-07-24**, 913 rows — which
+  is exactly the evidence that suggested the pipeline was dead. The live HF
+  dataset `jedanderson/corpus` was in fact current: 918 pieces, last modified
+  2026-08-23, containing `essays/missing-chapter-of-ai-safety` (2026-08-05)
+  byte-identical to the live site. Fix: `if: always()` on the commit step, so
+  a late-stage failure can never again erase the record of earlier successes.
+- **2026-08-24** Monitoring was **not** silent, but it was ambiguous.
+  Issue **#1** ("MAXWELL failure: ingest 2026-08-06") was filed on the first
+  failure and accumulated 18 comments, one per run — the failure-only
+  notification design worked as specified. What it could not do is
+  distinguish *healthy* from *dead*, since both produce no new signal. Two
+  changes: (1) **heartbeat** — `src/lib/health.py` writes `state/health.json`
+  (dated, with `ok`, site/distributed newest dates) and health.yml commits it
+  on every run, so a stopped scheduler is visible on the commit graph alone;
+  (2) **staleness rule** — health fails, and therefore files an Issue, when
+  the newest piece on the live site is more than **7 days** newer than the
+  newest distributed piece (`state/hf.json.newest_piece_date`, falling back
+  to `corpus/corpus.jsonl` for state written before this rule). Verified
+  against the live outage: it reports the site at 2026-08-22 vs distributed
+  at 2026-07-24, 29 days behind. It would have fired on 2026-08-13.
+  health.yml gains `contents: write` and joins ingest's `maxwell-state`
+  concurrency group so the two never race on a push.
+- **2026-08-24** Zenodo fix: `new_version_draft` now checks
+  `links.latest_draft` and **reuses an open unpublished draft** instead of
+  blindly POSTing `newversion` (a draft with `submitted: true` is a published
+  version and is ignored). `ZenodoClient.request` gained retry-with-backoff
+  on `(429,500,502,503,504)`, 4 attempts, rewinding file handles between
+  tries. Together these make the step self-healing: the orphaned draft
+  21823181 will be adopted, filled, and published on the next production run,
+  with no human intervention and no loss of the concept DOI
+  10.5281/zenodo.21609424.
+- **2026-08-24** **Placeholder gate — the essay that was already published
+  unfinished.** `https://jedanderson.org/essays/missing-chapter-of-ai-safety.md`
+  still contains, at the load-bearing centre of the piece, the block
+  `> **[CASE PENDING—AUTHOR TO SUPPLY.]**` — roughly five hundred words
+  deliberately left uncomposed, awaiting Jed's material. **The gate on this
+  run therefore failed and ingest was NOT run.** More seriously: that
+  placeholder is *already live in the HF dataset*, byte-identical to the
+  site — it went out with the 2026-08-06 upload and has been distributed ever
+  since. The gate existed only as a manual instruction, so nothing enforced
+  it. Now enforced in code: `src/ingest/run.py` refuses to write
+  `corpus.jsonl` if any piece body matches `config.placeholder_markers`
+  (`CASE PENDING`, `AUTHOR TO SUPPLY`), naming every offending piece.
+  Fail-closed is the right default here because Zenodo DOIs are immutable and
+  the HF dataset is trained on — an unfinished piece that escapes cannot be
+  recalled — and because a paused pipeline is now loudly visible via the
+  heartbeat and staleness rule rather than silent.

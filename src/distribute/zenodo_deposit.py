@@ -22,6 +22,7 @@ import datetime as _dt
 import json
 import os
 import sys
+import time
 import zipfile
 
 import requests
@@ -120,11 +121,31 @@ class ZenodoClient:
     def _url(self, path: str) -> str:
         return f"{self.base}/api{path}"
 
-    def request(self, method: str, url: str, **kw) -> requests.Response:
-        resp = self.s.request(method, url, timeout=300, **kw)
-        if resp.status_code >= 400:
-            raise RuntimeError(f"Zenodo {method} {url} -> {resp.status_code}: {resp.text[:500]}")
-        return resp
+    # Transient Zenodo 5xx/429 must not become permanent state damage: a 504
+    # between "newversion" and the follow-up GET on 2026-08-06 orphaned a draft
+    # and wedged production for 18 days (see docs/DECISIONS.md).
+    RETRY_STATUS = (429, 500, 502, 503, 504)
+
+    def request(self, method: str, url: str, *, retries: int = 4, **kw) -> requests.Response:
+        last = ""
+        for attempt in range(retries + 1):
+            try:
+                resp = self.s.request(method, url, timeout=300, **kw)
+            except requests.RequestException as exc:
+                last = f"{type(exc).__name__}: {exc}"
+            else:
+                if resp.status_code < 400:
+                    return resp
+                last = f"{resp.status_code}: {resp.text[:500]}"
+                if resp.status_code not in self.RETRY_STATUS:
+                    break
+            if attempt < retries:
+                # A retried write may have landed server-side; callers that
+                # create drafts reconcile via _existing_draft() before retrying.
+                time.sleep(2**attempt)
+                if hasattr(kw.get("data"), "seek"):
+                    kw["data"].seek(0)
+        raise RuntimeError(f"Zenodo {method} {url} -> {last}")
 
     def create_deposition(self) -> dict:
         return self.request("POST", self._url("/deposit/depositions"), json={}).json()
@@ -132,7 +153,32 @@ class ZenodoClient:
     def get_deposition(self, dep_id) -> dict:
         return self.request("GET", self._url(f"/deposit/depositions/{dep_id}")).json()
 
+    def _existing_draft(self, dep_id) -> dict | None:
+        """Return the unpublished new-version draft of dep_id, if one exists.
+
+        Zenodo refuses a second POST .../actions/newversion while an
+        unpublished draft is already open on the concept, answering 400
+        files.enabled "Please remove all files first." Reusing the open draft
+        makes the step idempotent and self-healing after a crash mid-version.
+        """
+        links = self.get_deposition(dep_id).get("links", {})
+        draft_url = links.get("latest_draft")
+        if not draft_url:
+            return None
+        try:
+            draft = self.request("GET", draft_url).json()
+        except RuntimeError:
+            return None
+        return None if draft.get("submitted") else draft
+
     def new_version_draft(self, dep_id) -> dict:
+        existing = self._existing_draft(dep_id)
+        if existing is not None:
+            print(
+                f"[{self.env}] reusing open new-version draft {existing['id']} "
+                f"(left by an earlier interrupted run)"
+            )
+            return existing
         resp = self.request(
             "POST", self._url(f"/deposit/depositions/{dep_id}/actions/newversion")
         ).json()
