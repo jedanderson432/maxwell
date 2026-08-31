@@ -1,13 +1,13 @@
 {
  "production": {
-  "archive_sha256": "3953b9d2137ebce8d8a7c231b1d4048ce739be41ffd191d67254699c92d9af6c",
+  "archive_sha256": "48a68342ba1f96f7ba39e5c800db6893d7c8ed63f720f29847fb2d6cc583ac30",
   "concept_doi": "10.5281/zenodo.21609424",
   "concept_recid": "21609424",
-  "doi": "10.5281/zenodo.21625791",
-  "latest_id": 21625791,
-  "latest_recid": 21625791,
+  "doi": "10.5281/zenodo.21823181",
+  "latest_id": 21823181,
+  "latest_recid": 21823181,
   "verified_roundtrip": true,
-  "version": "2026.07.27"
+  "version": "2026.08.31"
  },
  "sandbox": {
   "archive_sha256": "48a68342ba1f96f7ba39e5c800db6893d7c8ed63f720f29847fb2d6cc583ac30",
