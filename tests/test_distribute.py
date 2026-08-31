@@ -172,6 +172,13 @@ def test_new_version_draft_finds_orphan_without_latest_draft_link(monkeypatch):
         raise AssertionError(f"unexpected call: {method} {url}")
 
     monkeypatch.setattr(_FakeZenodo, "request", fake_request)
+    monkeypatch.setattr(
+        _FakeZenodo, "get_deposition",
+        lambda self, dep_id: ({"id": 21823181, "submitted": False,
+                               "conceptrecid": "21609424",
+                               "links": {"bucket": "b"}}
+                              if dep_id == 21823181 else self._deposition),
+    )
     got = client.new_version_draft(21625791, "21609424")
     assert got["id"] == 21823181
     assert not any(u.endswith("/actions/newversion") for _, u in calls),         "must not re-POST newversion while a draft is open"
@@ -187,3 +194,30 @@ def test_list_open_drafts_excludes_published(monkeypatch):
         ),
     )
     assert [d["id"] for d in client.list_open_drafts()] == [2]
+
+
+def test_reused_draft_is_refetched_for_the_bucket_link(monkeypatch):
+    """The listing summary has no links.bucket; uploading from it KeyErrors.
+
+    Run 33393809632 adopted draft 21823181 correctly and then died on
+    `dep["links"]["bucket"]` because the object came from the listing rather
+    than a full GET.
+    """
+    client = _FakeZenodo({"links": {}, "conceptrecid": "21609424"})
+    full = {"id": 21823181, "submitted": False, "conceptrecid": "21609424",
+            "links": {"bucket": "https://zenodo.org/api/files/abc"}}
+
+    def fake_request(self, method, url, **kw):
+        if url.endswith("/deposit/depositions"):
+            return _Resp([{"id": 21823181, "submitted": False,
+                           "conceptrecid": "21609424"}]
+                         if kw.get("params", {}).get("page") == 1 else [])
+        if url.endswith("/depositions/21823181"):
+            return _Resp(full)
+        raise AssertionError(f"unexpected call: {method} {url}")
+
+    monkeypatch.setattr(_FakeZenodo, "get_deposition",
+                        lambda self, dep_id: full if dep_id == 21823181 else self._deposition)
+    monkeypatch.setattr(_FakeZenodo, "request", fake_request)
+    got = client.new_version_draft(21625791, "21609424")
+    assert got["links"]["bucket"] == "https://zenodo.org/api/files/abc"

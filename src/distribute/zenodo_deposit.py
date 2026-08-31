@@ -204,7 +204,9 @@ class ZenodoClient:
         )
         for d in drafts:
             if concept and str(d.get("conceptrecid") or "") == concept:
-                return d
+                # The listing returns a summary object with no links.bucket;
+                # re-GET by id for the full representation.
+                return self.get_deposition(d["id"])
         return None
 
     def new_version_draft(self, dep_id, concept_recid=None) -> dict:
@@ -222,7 +224,11 @@ class ZenodoClient:
         return self.request("GET", draft_url).json()
 
     def upload_file(self, dep: dict, path: str) -> None:
-        bucket = dep["links"]["bucket"]
+        bucket = dep.get("links", {}).get("bucket")
+        if not bucket:
+            # Some deposition representations (notably listing summaries) omit
+            # the bucket link; the full object always carries it.
+            bucket = self.get_deposition(dep["id"])["links"]["bucket"]
         name = os.path.basename(path)
         # Replace the carried-over copy of the same file, if any.
         for f in self.get_deposition(dep["id"]).get("files", []):
@@ -269,7 +275,7 @@ def run(env: str) -> dict | None:
         dep = client.new_version_draft(
             env_state["latest_id"], env_state.get("concept_recid")
         )
-        print(f"[{env}] created new-version draft {dep['id']}")
+        print(f"[{env}] new-version draft {dep['id']} ready")
     else:
         dep = client.create_deposition()
         print(f"[{env}] created deposition {dep['id']}")
