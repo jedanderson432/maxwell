@@ -203,3 +203,28 @@ One line (or a short block) per decision, skip, or API note. Newest last.
   ingest in the same run that restores the pipeline — no separate backfill
   path — taking the distributed corpus from 913 to **919** rows (920 live
   minus the 1 quarantined piece).
+- **2026-08-31** **Zenodo API corrections found while verifying the fix.** Two
+  documented behaviours are wrong in production, and each cost one red run:
+  (1) `links.latest_draft` **is** present on published deposition 21625791 and
+  **does** point at a draft, but the object it returns reports
+  `submitted: true` — so the documented "is there an open draft?" check
+  answers *no* while draft 21823181 is demonstrably open. The reliable lookup
+  is `GET /deposit/depositions?all_versions=true` filtered to
+  `submitted == false` and matched on `conceptrecid` (run 33393568266).
+  (2) That listing returns **summary** objects whose `links` omit `bucket`, so
+  uploading straight from a listing hit raises `KeyError: 'bucket'`; the
+  adopted draft must be re-`GET` by id for the full representation
+  (run 33393809632). Both are now covered by tests in
+  `tests/test_distribute.py` so the next refactor cannot silently undo them.
+- **2026-08-31** **Restored.** Run 33393950925 green end to end. The orphaned
+  draft 21823181 was adopted, filled and published as
+  **10.5281/zenodo.21823181** under the unchanged concept DOI
+  **10.5281/zenodo.21609424** (version 2026.08.31, public record round-trip
+  OK, 7,309,381-byte archive). Verified from outside the build: HF
+  `jedanderson/corpus` at revision `b5cd9f40`, `lastModified`
+  2026-08-31T12:48:36Z, **919 rows** via datasets-server, 919 `raw/*.md` and
+  no `missing-chapter-of-ai-safety` file — i.e. the placeholder that had been
+  live in the dataset since 2026-08-06 is now **removed**. Archive.org item
+  `jedanderson-corpus` updated (sha 48a68342ba1f). `state/{zenodo,hf,ia}.json`
+  and `state/corpus_manifest.json` all rewritten by the run and committed as
+  `ingest: corpus sync 2026-08-31`.
