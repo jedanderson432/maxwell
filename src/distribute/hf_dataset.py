@@ -19,7 +19,7 @@ import os
 import shutil
 import sys
 
-from ..lib import config, corpus, killswitch, state
+from ..lib import config, corpus, http, killswitch, state
 
 STATE_FILE = "hf.json"
 BUILD_DIR = ("build", "hf")
@@ -190,12 +190,17 @@ def upload(chash: str, n_rows: int, newest_date: str = "") -> bool:
         print(f"HF dataset {repo_id} already at {chash[:12]}; nothing to upload.")
         return False
     api.create_repo(repo_id, repo_type="dataset", exist_ok=True)
-    api.upload_folder(
-        folder_path=str(config.repo_path(*BUILD_DIR)),
-        repo_id=repo_id,
-        repo_type="dataset",
-        commit_message=f"corpus sync: {n_rows} pieces ({chash[:12]})",
-        delete_patterns=["data/*", "raw/*"],
+    # A Hub 5xx must not cost a day of distribution: retry the blip, but let a
+    # bad token or a missing repo fail on the first attempt.
+    http.retry_transient(
+        lambda: api.upload_folder(
+            folder_path=str(config.repo_path(*BUILD_DIR)),
+            repo_id=repo_id,
+            repo_type="dataset",
+            commit_message=f"corpus sync: {n_rows} pieces ({chash[:12]})",
+            delete_patterns=["data/*", "raw/*"],
+        ),
+        what=f"HF upload_folder -> {repo_id}",
     )
     state.save(STATE_FILE, {
         "corpus_hash": chash,
@@ -213,7 +218,10 @@ def verify_remote() -> int:
     from datasets import load_dataset
 
     repo_id = config.load()["hf"]["repo_id"]
-    ds = load_dataset(repo_id, split="train", token=os.environ.get("HF_TOKEN"))
+    ds = http.retry_transient(
+        lambda: load_dataset(repo_id, split="train", token=os.environ.get("HF_TOKEN")),
+        what=f"HF load_dataset <- {repo_id}",
+    )
     print(f"Remote round-trip OK: {repo_id} -> {len(ds)} rows")
     return len(ds)
 

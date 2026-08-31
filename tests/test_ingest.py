@@ -73,3 +73,48 @@ def test_placeholder_gate_reports_every_offending_piece():
         {"id": "essays/c", "body_markdown": "AUTHOR TO SUPPLY here"},
     ]
     assert [pid for pid, _ in placeholder_hits(rows)] == ["essays/a", "essays/c"]
+
+
+def test_quarantine_withholds_only_the_offending_piece(monkeypatch, tmp_path):
+    """One unfinished essay must not stop the other 919 from distributing.
+
+    Regression guard for the 2026-08-06 outage class: the failure mode being
+    prevented is "one stuck item wedges the whole pipeline", so the gate drops
+    the piece and lets the run finish rather than aborting it.
+    """
+    from src.ingest import run as ingest
+
+    piece_ok = corpus.Piece(
+        title="OK", url="https://jedanderson.org/essays/ok", type="essay",
+        date="2026-08-20", license="CC-BY-4.0", abstract="A", body="Finished.",
+    )
+    piece_bad = corpus.Piece(
+        title="Bad", url="https://jedanderson.org/essays/bad", type="essay",
+        date="2026-08-21", license="CC-BY-4.0", abstract="B", body="x",
+    )
+    monkeypatch.setattr(ingest.corpus, "fetch_llms_txt", lambda: "llms")
+    monkeypatch.setattr(ingest.corpus, "fetch_llms_full", lambda: "full")
+    monkeypatch.setattr(ingest.corpus, "parse_llms_full", lambda _t: [piece_ok, piece_bad])
+    monkeypatch.setattr(
+        ingest.corpus, "fetch_piece_md",
+        lambda p: (("Finished prose.", "site") if p.slug == "ok"
+                   else ("> **[CASE PENDING—AUTHOR TO SUPPLY.]**", "site")),
+    )
+    monkeypatch.setattr(ingest.config, "repo_path", lambda *parts: tmp_path.joinpath(*parts))
+    saved: dict = {}
+    monkeypatch.setattr(ingest.state, "load", lambda name, default=None: default or {})
+    monkeypatch.setattr(ingest.state, "save", lambda name, data: saved.update({name: data}))
+    monkeypatch.setattr(ingest.killswitch, "require_enabled", lambda: None)
+
+    stats = ingest.run()
+
+    assert stats["quarantined"] == 1
+    lines = (tmp_path / "corpus" / "corpus.jsonl").read_text(encoding="utf-8").splitlines()
+    assert len(lines) == 1
+    assert "CASE PENDING" not in "\n".join(lines)
+    manifest = saved[ingest.MANIFEST]
+    assert list(manifest["quarantined"]) == ["essays/bad"]
+    # Consistency invariant health.py checks: rows == manifest pieces.
+    assert manifest["counts"]["pieces"] == len(manifest["pieces"]) == 1
+    # The unfinished prose is not committed to the public repo either.
+    assert not (tmp_path / "corpus" / "pieces" / "essays" / "bad.md").exists()

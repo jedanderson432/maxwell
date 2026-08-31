@@ -146,3 +146,60 @@ One line (or a short block) per decision, skip, or API note. Newest last.
   the HF dataset is trained on — an unfinished piece that escapes cannot be
   recalled — and because a paused pipeline is now loudly visible via the
   heartbeat and staleness rule rather than silent.
+- **2026-08-31** **Outage closed. Full window: 2026-08-06 → 2026-08-31, 26
+  consecutive failed ingest runs** (last green run 31001831116, 2026-08-05;
+  first red 31097853312, 2026-08-06; last red 33316866888, 2026-08-30). The
+  2026-08-24 analysis above was correct and is confirmed unchanged against
+  the 2026-08-30 log, which still fails with the same single error:
+  `RuntimeError: Zenodo POST /deposit/depositions/21625791/actions/newversion
+  -> 400: files.enabled "Please remove all files first."` — step 8 of 11,
+  every earlier step green. The only annotations on the run are that error
+  and an unrelated Node 20 deprecation warning. Of the causes re-checked
+  this session: secrets were **not** the problem (HF/sandbox-Zenodo/IA steps
+  all authenticated and passed on the failing runs), `MAXWELL_ENABLED` was
+  `true` throughout (the job ran; a false kill switch would have skipped it),
+  llms-full.txt parses cleanly at **920 pieces** so there is **no parse
+  drift**, dependency resolution succeeded, and the budget module is not on
+  the ingest path at all.
+- **2026-08-31** **Why the outage ran 7 days longer than the post-mortem.**
+  The 2026-08-24 fix was correct but was committed to
+  `fix/zenodo-draft-wedge-and-staleness-monitoring` and never merged. The
+  daily schedule runs on `main`, so runs 2026-08-25 → 2026-08-30 kept failing
+  against unfixed code. Recorded because the failure mode is invisible in the
+  usual places: the branch was green in review, the repo looked "fixed", and
+  nothing compares what is scheduled against what is merged. Merged to `main`
+  as part of this change.
+- **2026-08-31** **The placeholder gate is now a quarantine, not an abort.**
+  As written on 2026-08-24 the gate raised and aborted the whole ingest, and
+  `essays/missing-chapter-of-ai-safety` still carries `CASE PENDING` /
+  `AUTHOR TO SUPPLY` live. Merging it unchanged would have replaced a Zenodo
+  wedge with a placeholder wedge — one unfinished essay blocking 919 finished
+  ones — which is the exact failure class this whole post-mortem is about.
+  `src/ingest/run.py` now **drops the offending piece from `corpus.jsonl`,
+  deletes its snapshot so the unfinished prose is not committed to the public
+  repo either, and finishes the run**. The safety property is unchanged and
+  in fact strengthened: the placeholder that has been live in the HF dataset
+  since 2026-08-06 is *removed* by this run. It stays loud rather than
+  silent: the piece is listed in `state/corpus_manifest.json.quarantined`
+  with a `first_held` date, and `src/lib/health.py` **fails** — and therefore
+  files an Issue — for as long as anything is held. It ships automatically
+  on the next ingest once Jed fills the block; no code change needed.
+- **2026-08-31** Transient-vs-real failure handling unified. `src/lib/http.py`
+  now owns `TRANSIENT_STATUS = (429,500,502,503,504)` and a `retry_transient()`
+  helper; `ZenodoClient.RETRY_STATUS` references it and the HF `upload_folder`
+  / `load_dataset` calls are wrapped in it. Rule: a blip is retried four times
+  with exponential backoff and only alarms after the retries are exhausted; a
+  400/401/403/404 re-raises on the **first** attempt so a bad token or a
+  validation error is never masked by three minutes of sleeping. Archive.org
+  already had `retries=5`, and the corpus fetch path already used
+  `http.get`'s retry — Zenodo and HF were the two gaps.
+- **2026-08-31** Backfill: 7 pieces published or first seen during the outage
+  had never been ingested (`nature-aligned-ai` 08-04,
+  `missing-chapter-of-ai-safety` 08-05, `why-build-environmental-superintelligence`
+  08-18, `environmental-loop-through-time` and
+  `who-closes-the-environmental-protection-loop` 08-22, `invention-of-elsewhere`
+  08-26, `law-of-larger-selves` 08-27) plus 1 changed piece
+  (`why-von-neumann-was-right`). All are picked up by the ordinary incremental
+  ingest in the same run that restores the pipeline — no separate backfill
+  path — taking the distributed corpus from 913 to **919** rows (920 live
+  minus the 1 quarantined piece).

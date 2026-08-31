@@ -101,13 +101,15 @@ def run() -> int:
         failures.append(f"staleness check failed: {exc}")
 
     # 2. Committed state is valid JSON and internally consistent.
+    quarantined: dict = {}
     try:
         manifest = state.load("corpus_manifest.json", default={})
         n_manifest = len(manifest.get("pieces", {}))
+        quarantined = manifest.get("quarantined", {}) or {}
         jsonl = config.repo_path("corpus", "corpus.jsonl")
         if jsonl.exists():
             n_rows = sum(1 for line in jsonl.read_text(encoding="utf-8").splitlines() if line.strip())
-            if n_manifest and abs(n_rows - n_manifest) > 0:
+            if n_manifest and n_rows != n_manifest:
                 failures.append(f"corpus.jsonl rows ({n_rows}) != manifest pieces ({n_manifest})")
             else:
                 notes.append(f"state OK: {n_rows} rows")
@@ -115,6 +117,24 @@ def run() -> int:
             failures.append("manifest has pieces but corpus/corpus.jsonl is missing")
     except Exception as exc:
         failures.append(f"state check failed: {exc}")
+
+    # 2b. Placeholder quarantine. Ingest withholds a piece whose body still
+    # carries an author placeholder rather than aborting the whole pipeline
+    # (docs/DECISIONS.md, 2026-08-31), so this check is the alarm: it is the
+    # only thing that makes a withheld piece visible to a human.
+    if quarantined:
+        listed = ", ".join(
+            f"{pid} ({v.get('marker')}, held since {v.get('first_held')})"
+            for pid, v in sorted(quarantined.items())
+        )
+        failures.append(
+            f"PLACEHOLDER QUARANTINE: {len(quarantined)} piece(s) withheld from "
+            f"distribution pending author content: {listed}. The rest of the "
+            "corpus is distributing normally; fill the placeholder on the live "
+            "site and the piece ships on the next ingest."
+        )
+    else:
+        notes.append("quarantine OK: no pieces withheld")
 
     # 3. Budget sane.
     try:
@@ -145,6 +165,7 @@ def run() -> int:
         "site_newest_piece": site_newest,
         "distributed_newest_piece": dist_newest,
         "distributed_source": dist_source,
+        "quarantined": sorted(quarantined),
         "notes": notes,
         "failures": failures,
     })

@@ -44,3 +44,29 @@ def test_staleness_threshold_is_seven_days():
     assert health.STALENESS_DAYS == 7
     # The real outage: site at 2026-08-22, distributed at 2026-07-24.
     assert health._days_between("2026-08-22", "2026-07-24") > health.STALENESS_DAYS
+
+
+def test_quarantine_is_alarmed_not_silent(monkeypatch, tmp_path):
+    """Withholding a piece must file an Issue; it is the only human-visible signal."""
+    manifest = {
+        "pieces": {"a": {}},
+        "quarantined": {"essays/bad": {"marker": "CASE PENDING", "first_held": "2026-08-31"}},
+    }
+    monkeypatch.setattr(health.killswitch, "require_enabled", lambda: None)
+    monkeypatch.setattr(health.corpus, "fetch_llms_full", lambda: "x")
+    monkeypatch.setattr(health.corpus, "parse_llms_full", lambda _t: [])
+    jsonl = tmp_path / "corpus.jsonl"
+    jsonl.write_text(json.dumps({"date": "2026-08-31"}) + "\n", encoding="utf-8")
+    monkeypatch.setattr(health.config, "repo_path", lambda *parts: jsonl)
+    monkeypatch.setattr(
+        health.state, "load",
+        lambda name, default=None: manifest if name == "corpus_manifest.json" else {},
+    )
+    written: dict = {}
+    monkeypatch.setattr(health.state, "save", lambda name, data: written.update(data))
+
+    rc = health.run()
+
+    assert rc == 1
+    assert any("PLACEHOLDER QUARANTINE" in f for f in written["failures"])
+    assert written["quarantined"] == ["essays/bad"]

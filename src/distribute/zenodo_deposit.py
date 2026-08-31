@@ -27,7 +27,7 @@ import zipfile
 
 import requests
 
-from ..lib import config, corpus, killswitch, state
+from ..lib import config, corpus, http, killswitch, state
 
 STATE_FILE = "zenodo.json"
 ARCHIVE_NAME = "jedanderson-corpus.zip"
@@ -124,7 +124,7 @@ class ZenodoClient:
     # Transient Zenodo 5xx/429 must not become permanent state damage: a 504
     # between "newversion" and the follow-up GET on 2026-08-06 orphaned a draft
     # and wedged production for 18 days (see docs/DECISIONS.md).
-    RETRY_STATUS = (429, 500, 502, 503, 504)
+    RETRY_STATUS = http.TRANSIENT_STATUS
 
     def request(self, method: str, url: str, *, retries: int = 4, **kw) -> requests.Response:
         last = ""

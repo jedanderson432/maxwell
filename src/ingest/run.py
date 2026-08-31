@@ -97,7 +97,7 @@ def run(limit: int | None = None, force: bool = False) -> dict:
     entries: dict = manifest.get("pieces", {})
     removed: dict = manifest.get("removed", {})
     stats = {"total": len(pieces), "new": 0, "changed": 0, "unchanged": 0,
-             "removed": 0, "failed": 0}
+             "removed": 0, "failed": 0, "quarantined": 0}
     rows: list[dict] = []
     seen: set[str] = set()
     fetched_since_save = 0
@@ -158,18 +158,48 @@ def run(limit: int | None = None, force: bool = False) -> dict:
                 spath.unlink()
             stats["removed"] += 1
 
-    # Gate: never write a snapshot that carries unfilled author placeholders
-    # into corpus.jsonl, which is what HF/Zenodo/archive.org all build from.
+    # Gate: never let a piece carrying an unfilled author placeholder reach
+    # corpus.jsonl, which is what HF/Zenodo/archive.org all build from.
+    #
+    # This quarantines the offending piece rather than aborting the run.
+    # Aborting was the original design (2026-08-24) and it is wrong: it turns
+    # one unfinished essay into a total distribution outage for the other 919
+    # finished ones -- the same "one stuck thing wedges everything" failure as
+    # the Zenodo draft. The safety property that matters is that the
+    # placeholder never ships, and dropping the piece delivers that exactly.
+    # It stays loud: the exclusion is printed, recorded in the manifest, and
+    # health.py fails (and therefore files an Issue) while any piece is held.
+    quarantined: dict = manifest.get("quarantined", {})
     hits = placeholder_hits(rows)
-    if hits:
+    held = {pid: marker for pid, marker in hits}
+    if held:
         listed = ", ".join(f"{pid} ({marker!r})" for pid, marker in hits)
-        raise RuntimeError(
-            f"PLACEHOLDER GATE: {len(hits)} piece(s) still contain author "
-            f"placeholders and will not be distributed: {listed}. "
-            "corpus.jsonl was left unchanged. Fill in the placeholder on the "
-            "live site (or remove the marker from config placeholder_markers) "
-            "and re-run."
+        print(
+            f"PLACEHOLDER QUARANTINE: {len(hits)} piece(s) still contain author "
+            f"placeholders and are being withheld from distribution: {listed}. "
+            "Fill in the placeholder on the live site and the piece ships on "
+            "the next run automatically.",
+            file=sys.stderr,
         )
+        rows = [r for r in rows if r["id"] not in held]
+    for pid, marker in held.items():
+        prev = quarantined.get(pid) or {}
+        quarantined[pid] = {
+            "marker": marker,
+            "first_held": prev.get("first_held") or utc_today(),
+            "last_held": utc_today(),
+        }
+        # Do not commit the unfinished prose to the public repo either. The
+        # snapshot is re-fetched next run (one request) and ships the moment
+        # the placeholder is gone.
+        spath = snapshot_path(pid)
+        if spath.exists():
+            spath.unlink()
+        entries.pop(pid, None)
+    for pid in [p for p in quarantined if p not in held]:
+        print(f"PLACEHOLDER CLEARED: {pid} no longer holds a placeholder; releasing.")
+        quarantined.pop(pid)
+    stats["quarantined"] = len(held)
 
     rows.sort(key=lambda r: (r["date"], r["id"]), reverse=True)
     corpus_dir = config.repo_path("corpus")
@@ -181,7 +211,8 @@ def run(limit: int | None = None, force: bool = False) -> dict:
 
     manifest["pieces"] = entries
     manifest["removed"] = removed
-    manifest["counts"] = {"pieces": len(rows)}
+    manifest["quarantined"] = quarantined
+    manifest["counts"] = {"pieces": len(rows), "quarantined": len(quarantined)}
     manifest["last_run"] = utc_today()
     state.save(MANIFEST, manifest)
 
