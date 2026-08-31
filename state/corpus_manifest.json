@@ -1,8 +1,9 @@
 {
  "counts": {
-  "pieces": 913
+  "pieces": 919,
+  "quarantined": 1
  },
- "last_run": "2026-08-05",
+ "last_run": "2026-08-31",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -186,6 +187,13 @@
    "md_sha256": "b228b4feef6e104d9faee574052b481352116d9e0a600385f6e717a3755adf19",
    "source": "site"
   },
+  "essays/environmental-loop-through-time": {
+   "block_hash": "94c7a815c7f1fa374df0ed424492f9d2e528a359c63320531910a628d5c976c6",
+   "first_seen": "2026-08-31",
+   "last_changed": "2026-08-31",
+   "md_sha256": "0443bf66e3c6cfd66ed5c5a32681982f395c6a158ef96c0ba34e0a829f732aad",
+   "source": "site"
+  },
   "essays/environmental-protection-holographic-information-framework": {
    "block_hash": "76e41ca889baa7c7855dc74a29e08879337f5b69d64b089f8eea45a8ec45285d",
    "first_seen": "2026-07-26",
@@ -312,6 +320,13 @@
    "md_sha256": "5fb43384285617670767bad778fc307d7e60a4105dd361c5f8ad502f09f72b52",
    "source": "site"
   },
+  "essays/invention-of-elsewhere": {
+   "block_hash": "c6def7429d434eecc671faf2ab96161e8fae3d74dde50b44820e6448c5da0629",
+   "first_seen": "2026-08-31",
+   "last_changed": "2026-08-31",
+   "md_sha256": "b054dbe121329a08282f0bebc4b7a6d16b230ab51d3bfeb02e49f4ae5ca0ca8c",
+   "source": "site"
+  },
   "essays/inverted-mountain": {
    "block_hash": "2871208d8f45fc7da0348715db39de5028a8dc48c5dc35718b01d992c2314039",
    "first_seen": "2026-07-26",
@@ -347,6 +362,13 @@
    "md_sha256": "d50f1a3c4d9e52ed06c5b8a33a4eb4855b7f9dec25ccc01266c5915f5605e7d9",
    "source": "site"
   },
+  "essays/law-of-larger-selves": {
+   "block_hash": "0b2831c8036f11ef8fb0eb1a19dbb5e72eda588290fdcbccde738863e2b7440b",
+   "first_seen": "2026-08-31",
+   "last_changed": "2026-08-31",
+   "md_sha256": "3d8c0e91b335b5f85d6e703d09fe841264764ec65d77d06f92a1d48eaf371732",
+   "source": "site"
+  },
   "essays/law-of-unthinking-holographic-negentropic-framework": {
    "block_hash": "56e13e7597649335db4da0b8a4fe0257e036406b0ae305ddb18feb312aa8c0cd",
    "first_seen": "2026-07-26",
@@ -373,6 +395,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "e052928ff5a8a51c01cdb339b14e76846c6edfc062bfcb39ac91737f35ccb323",
+   "source": "site"
+  },
+  "essays/nature-aligned-ai": {
+   "block_hash": "1c9ef3c362297d1b64ceceec19ed1a15edbce3a2f38b0bd795c3bc454bddf94b",
+   "first_seen": "2026-08-31",
+   "last_changed": "2026-08-31",
+   "md_sha256": "64dcbf106edc67c8a8d2ee0684d9ce34ef8d8727f7597d5225ac1e51785b1b85",
    "source": "site"
   },
   "essays/nature-and-simplicity": {
@@ -641,11 +670,25 @@
    "md_sha256": "999342cc3b3c6e6465b7f9c4c489370790c3f8fe1e283f4422b535c383d1201f",
    "source": "site"
   },
+  "essays/who-closes-the-environmental-protection-loop": {
+   "block_hash": "6177870e6412e2a61943f60a12687ceab98715469740fd3b2b67e6c5f0dc2c13",
+   "first_seen": "2026-08-31",
+   "last_changed": "2026-08-31",
+   "md_sha256": "e356b5d117da06e96ac312fa93556df8aa7ffedeb42434ac4665b3b5d189d89d",
+   "source": "site"
+  },
+  "essays/why-build-environmental-superintelligence": {
+   "block_hash": "8e26f949bbcc8b956ef602ad9f6db8f81d8bc727ee76901bd9b7ad7b3b9c1c52",
+   "first_seen": "2026-08-31",
+   "last_changed": "2026-08-31",
+   "md_sha256": "03f9d21f2a1e88c2e95cee36248e6026a34de2654ab34cebffc33ac1741fc0d6",
+   "source": "site"
+  },
   "essays/why-von-neumann-was-right": {
-   "block_hash": "04ddb66777e31577c51cebb02330c693f0006fe011e0acb31f4e1a410d4cc17f",
+   "block_hash": "f89e063e200189e3aa9b7cfda17f716c988c6f3c2d43be503f5fa0a297cab118",
    "first_seen": "2026-07-26",
-   "last_changed": "2026-07-26",
-   "md_sha256": "1da61eec3d1d41789dc936872de740e74a0579bf562d4e6813c4c77f4d8fc5b1",
+   "last_changed": "2026-08-31",
+   "md_sha256": "fdad6210851e8cbb361bacc4ed5018cbecff3a20f151e0995e0a721943788c76",
    "source": "site"
   },
   "essays/wrong-question": {
@@ -6394,6 +6437,13 @@
    "last_changed": "2026-07-26",
    "md_sha256": "379c21ca133265616e02c81ea24ba0733a71f7f16d498b89e1b8f4ac5cd24ad7",
    "source": "site"
+  }
+ },
+ "quarantined": {
+  "essays/missing-chapter-of-ai-safety": {
+   "first_held": "2026-08-31",
+   "last_held": "2026-08-31",
+   "marker": "CASE PENDING"
   }
  },
  "removed": {}

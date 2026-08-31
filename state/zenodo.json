@@ -10,13 +10,13 @@
   "version": "2026.07.27"
  },
  "sandbox": {
-  "archive_sha256": "3953b9d2137ebce8d8a7c231b1d4048ce739be41ffd191d67254699c92d9af6c",
+  "archive_sha256": "48a68342ba1f96f7ba39e5c800db6893d7c8ed63f720f29847fb2d6cc583ac30",
   "concept_doi": "10.5072/zenodo.573101",
   "concept_recid": "573101",
-  "doi": "10.5072/zenodo.573661",
-  "latest_id": 573661,
-  "latest_recid": 573661,
+  "doi": "10.5072/zenodo.595037",
+  "latest_id": 595037,
+  "latest_recid": 595037,
   "verified_roundtrip": true,
-  "version": "2026.07.27"
+  "version": "2026.08.31"
  }
 }
