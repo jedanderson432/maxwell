@@ -1,21 +1,30 @@
 {
+ "content_held": {
+  "count": 1,
+  "escalated": [],
+  "pieces": {
+   "essays/missing-chapter-of-ai-safety": {
+    "days_held": 0,
+    "first_held": "2026-08-31",
+    "marker": "CASE PENDING"
+   }
+  }
+ },
+ "content_held_summary_line": "Action required: 1 piece(s) awaiting your prose: essays/missing-chapter-of-ai-safety (held 0d).",
  "distributed_newest_piece": "2026-08-27",
  "distributed_source": "state/hf.json",
- "failures": [
-  "PLACEHOLDER QUARANTINE: 1 piece(s) withheld from distribution pending author content: essays/missing-chapter-of-ai-safety (CASE PENDING, held since 2026-08-31). The rest of the corpus is distributing normally; fill the placeholder on the live site and the piece ships on the next ingest."
- ],
  "last_health_run": "2026-08-31",
- "last_health_run_utc": "2026-08-31T12:57:13Z",
+ "last_health_run_utc": "2026-08-31T13:27:07Z",
  "notes": [
   "site OK: 920 pieces",
   "staleness OK: site 2026-08-27 vs distributed 2026-08-27 (0d, limit 7d)",
   "state OK: 919 rows",
+  "CONTENT_HELD 1: essays/missing-chapter-of-ai-safety (CASE PENDING, held 0d since 2026-08-31)",
   "budget OK: $0.00/$30.00",
   "mcp listed: True"
  ],
- "ok": false,
- "quarantined": [
-  "essays/missing-chapter-of-ai-safety"
- ],
+ "ok": true,
+ "pipeline": "green",
+ "pipeline_failures": [],
  "site_newest_piece": "2026-08-27"
 }
