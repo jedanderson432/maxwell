@@ -14,7 +14,7 @@
  "distributed_newest_piece": "2026-08-27",
  "distributed_source": "state/hf.json",
  "last_health_run": "2026-08-31",
- "last_health_run_utc": "2026-08-31T13:27:07Z",
+ "last_health_run_utc": "2026-08-31T15:23:58Z",
  "notes": [
   "site OK: 920 pieces",
   "staleness OK: site 2026-08-27 vs distributed 2026-08-27 (0d, limit 7d)",
