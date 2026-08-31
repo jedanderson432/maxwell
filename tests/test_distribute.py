@@ -113,6 +113,8 @@ def test_new_version_draft_creates_when_no_draft_open(monkeypatch):
         calls.append((method, url))
         if url.endswith("/actions/newversion"):
             return _Resp({"links": {"latest_draft": "https://zenodo.org/api/deposit/depositions/999"}})
+        if url.endswith("/deposit/depositions"):
+            return _Resp([])  # no open drafts on the account
         return _Resp({"id": 999, "submitted": False})
 
     monkeypatch.setattr(_FakeZenodo, "request", fake_request)
@@ -132,6 +134,8 @@ def test_new_version_draft_ignores_published_draft(monkeypatch):
             return _Resp({"links": {"latest_draft": "https://zenodo.org/api/deposit/depositions/6"}})
         if url.endswith("/depositions/5"):
             return _Resp({"id": 5, "submitted": True})
+        if url.endswith("/deposit/depositions"):
+            return _Resp([])
         return _Resp({"id": 6, "submitted": False})
 
     monkeypatch.setattr(_FakeZenodo, "request", fake_request)
@@ -145,3 +149,41 @@ class _Resp:
 
     def json(self):
         return self._payload
+
+
+def test_new_version_draft_finds_orphan_without_latest_draft_link(monkeypatch):
+    """Production reality, 2026-08-31: no latest_draft link on the deposition.
+
+    Deposition 21625791 has an orphaned draft open on its concept but exposes
+    no `links.latest_draft`, so the documented lookup finds nothing and the
+    step re-POSTed newversion into the same 400 forever. Recovery has to go
+    through the account-wide deposition listing and match on conceptrecid.
+    """
+    client = _FakeZenodo({"links": {}, "conceptrecid": "21609424"})
+    calls = []
+
+    def fake_request(self, method, url, **kw):
+        calls.append((method, url))
+        if url.endswith("/deposit/depositions"):
+            return _Resp([
+                {"id": 999, "submitted": False, "conceptrecid": "77777"},
+                {"id": 21823181, "submitted": False, "conceptrecid": "21609424"},
+            ] if kw.get("params", {}).get("page") == 1 else [])
+        raise AssertionError(f"unexpected call: {method} {url}")
+
+    monkeypatch.setattr(_FakeZenodo, "request", fake_request)
+    got = client.new_version_draft(21625791, "21609424")
+    assert got["id"] == 21823181
+    assert not any(u.endswith("/actions/newversion") for _, u in calls),         "must not re-POST newversion while a draft is open"
+
+
+def test_list_open_drafts_excludes_published(monkeypatch):
+    client = _FakeZenodo({})
+    monkeypatch.setattr(
+        _FakeZenodo, "request",
+        lambda self, m, u, **k: _Resp(
+            [{"id": 1, "submitted": True}, {"id": 2, "submitted": False}]
+            if k.get("params", {}).get("page") == 1 else []
+        ),
+    )
+    assert [d["id"] for d in client.list_open_drafts()] == [2]

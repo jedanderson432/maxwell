@@ -153,26 +153,62 @@ class ZenodoClient:
     def get_deposition(self, dep_id) -> dict:
         return self.request("GET", self._url(f"/deposit/depositions/{dep_id}")).json()
 
-    def _existing_draft(self, dep_id) -> dict | None:
-        """Return the unpublished new-version draft of dep_id, if one exists.
+    def list_open_drafts(self) -> list[dict]:
+        """Every unpublished deposition on this account, newest first.
+
+        `links.latest_draft` is documented but is NOT returned on a published
+        deposition that has an orphaned draft (verified against production
+        2026-08-31: deposition 21625791 exposes no latest_draft while draft
+        21823181 is demonstrably open on its concept). Listing depositions
+        with all_versions=true is the only reliable way to find it.
+        """
+        found: list[dict] = []
+        for page in range(1, 6):
+            batch = self.request(
+                "GET",
+                self._url("/deposit/depositions"),
+                params={"all_versions": "true", "size": 100,
+                        "page": page, "sort": "mostrecent"},
+            ).json()
+            if not batch:
+                break
+            found.extend(batch)
+            if len(batch) < 100:
+                break
+        return [d for d in found if not d.get("submitted")]
+
+    def _existing_draft(self, dep_id, concept_recid=None) -> dict | None:
+        """Return the unpublished new-version draft on dep_id's concept, if any.
 
         Zenodo refuses a second POST .../actions/newversion while an
         unpublished draft is already open on the concept, answering 400
         files.enabled "Please remove all files first." Reusing the open draft
         makes the step idempotent and self-healing after a crash mid-version.
         """
-        links = self.get_deposition(dep_id).get("links", {})
+        dep = self.get_deposition(dep_id)
+        concept = str(concept_recid or dep.get("conceptrecid") or "")
+        links = dep.get("links", {})
         draft_url = links.get("latest_draft")
-        if not draft_url:
-            return None
-        try:
-            draft = self.request("GET", draft_url).json()
-        except RuntimeError:
-            return None
-        return None if draft.get("submitted") else draft
+        if draft_url:
+            try:
+                draft = self.request("GET", draft_url).json()
+                if not draft.get("submitted"):
+                    return draft
+            except RuntimeError as exc:
+                print(f"[{self.env}] latest_draft present but unreadable: {exc}")
+        # Fall back to the account-wide listing.
+        drafts = self.list_open_drafts()
+        print(
+            f"[{self.env}] deposition {dep_id} concept={concept or '?'} "
+            f"links={sorted(links)}; {len(drafts)} open draft(s) on the account"
+        )
+        for d in drafts:
+            if concept and str(d.get("conceptrecid") or "") == concept:
+                return d
+        return None
 
-    def new_version_draft(self, dep_id) -> dict:
-        existing = self._existing_draft(dep_id)
+    def new_version_draft(self, dep_id, concept_recid=None) -> dict:
+        existing = self._existing_draft(dep_id, concept_recid)
         if existing is not None:
             print(
                 f"[{self.env}] reusing open new-version draft {existing['id']} "
@@ -230,7 +266,9 @@ def run(env: str) -> dict | None:
     version = _dt.datetime.now(_dt.timezone.utc).strftime("%Y.%m.%d")
 
     if env_state.get("latest_id"):
-        dep = client.new_version_draft(env_state["latest_id"])
+        dep = client.new_version_draft(
+            env_state["latest_id"], env_state.get("concept_recid")
+        )
         print(f"[{env}] created new-version draft {dep['id']}")
     else:
         dep = client.create_deposition()
