@@ -31,8 +31,24 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # Two states, two outcomes. Exit 1 (PIPELINE red) is a fault and alarms.
+      # Exit 2 (a piece held past the escalation window) is not a broken
+      # pipeline and is reported as itself. Exit 0 covers the ordinary held
+      # state, which is silent by design.
       - name: Run health checks
-        run: python -m src.lib.health
+        id: health
+        run: |
+          set +e
+          python -m src.lib.health
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          case "$code" in
+            0) echo "healthy" ;;
+            1) echo "signature=PIPELINE red" >> "$GITHUB_OUTPUT"; exit 1 ;;
+            2) echo "signature=CONTENT_HELD past escalation window" >> "$GITHUB_OUTPUT"; exit 1 ;;
+            *) echo "signature=health check crashed (exit $code)" >> "$GITHUB_OUTPUT"; exit 1 ;;
+          esac
 
       - name: Run tests
         run: python -m pytest -q
@@ -62,12 +78,6 @@ jobs:
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          title="MAXWELL failure: health $(date -u +%F)"
-          body="Run failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          existing=$(gh issue list --state open --search "MAXWELL failure: health" --json number --jq '.[0].number')
-          if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body "$body"
-          else
-            gh issue create --title "$title" --body "$body" --label maxwell-failure || gh issue create --title "$title" --body "$body"
-          fi
+        run: >-
+          .github/scripts/notify-failure.sh --workflow health
+          --signature "${{ steps.health.outputs.signature }}"

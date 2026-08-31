@@ -1,0 +1,97 @@
+name: merge-lag
+
+# The 2026-08-24 Zenodo fix was correct, reviewed, and then sat on its branch
+# for seven days while the scheduled job kept failing against unfixed `main`.
+# The repo looked fixed; the thing that actually runs was not. Nothing compared
+# what was scheduled against what was merged, so nothing noticed.
+#
+# This guard closes that gap: an unmerged commit touching src/ or the workflows
+# is a latent fix, and after MAX_LAG_HOURS it is treated as a fault.
+
+on:
+  schedule:
+    - cron: "31 6 * * *" # daily, off the top of the hour
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  MAX_LAG_HOURS: "72"
+  WATCHED_PATHS: "src .github/workflows"
+
+jobs:
+  merge-lag:
+    # Kill switch: repository variable MAXWELL_ENABLED (constitution: Safety rails).
+    if: ${{ vars.MAXWELL_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history: ancestry is the whole check
+
+      - name: Check for unmerged commits older than the lag limit
+        id: lag
+        run: |
+          set -euo pipefail
+          git fetch --quiet --prune origin '+refs/heads/*:refs/remotes/origin/*'
+          limit=$(( MAX_LAG_HOURS * 3600 ))
+          now=$(date -u +%s)
+          offenders=""
+          clean=""
+
+          # refs/remotes/origin also yields a bare "origin" for the HEAD
+          # symref; excluded here or every run reports a phantom branch.
+          branches=$(git for-each-ref --format='%(refname:short)' refs/remotes/origin \
+                     | grep -vE '^origin(/(main|HEAD))?$' || true)
+
+          for ref in $branches; do
+            branch="${ref#origin/}"
+            # Oldest commit on this branch that is absent from main and touches
+            # a watched path. Oldest, not newest: lag is measured from when the
+            # first unmerged change appeared, not the most recent push.
+            oldest=$(git log --format='%H %ct' --reverse "origin/main..$ref" \
+                     -- $WATCHED_PATHS | head -1 || true)
+            if [ -z "$oldest" ]; then
+              clean="${clean}  ${branch}: nothing unmerged in watched paths"$'\n'
+              continue
+            fi
+            sha=${oldest%% *}
+            ts=${oldest##* }
+            age_h=$(( (now - ts) / 3600 ))
+            subject=$(git log -1 --format='%s' "$sha")
+            count=$(git rev-list --count "origin/main..$ref" -- $WATCHED_PATHS)
+            if [ "$(( now - ts ))" -gt "$limit" ]; then
+              offenders="${offenders}- \`${branch}\`: ${count} unmerged commit(s) touching watched paths; oldest is ${age_h}h old, limit ${MAX_LAG_HOURS}h (\`${sha:0:7}\` ${subject})"$'\n'
+            else
+              clean="${clean}  ${branch}: ${count} unmerged commit(s), oldest ${age_h}h, within limit"$'\n'
+            fi
+          done
+
+          if [ -n "$clean" ]; then
+            printf 'Within limit:\n%s' "$clean"
+          fi
+
+          if [ -n "$offenders" ]; then
+            offenders="${offenders}"$'\n'"A fix that is not on \`main\` is not running. Merge it, or delete the branch."
+            {
+              echo "offenders<<MERGELAG_EOF"
+              printf '%s\n' "$offenders"
+              echo "MERGELAG_EOF"
+            } >> "$GITHUB_OUTPUT"
+            echo "MERGE LAG:"
+            printf '%s\n' "$offenders"
+            exit 1
+          fi
+          echo "No branch carries an unmerged src/ or workflow commit older than ${MAX_LAG_HOURS}h."
+
+      - name: Failure notification (failure-only Issues)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OFFENDERS: ${{ steps.lag.outputs.offenders }}
+        run: |
+          .github/scripts/notify-failure.sh --workflow merge-lag \
+            --signature "unmerged src/ or workflow commit older than ${MAX_LAG_HOURS}h" \
+            --detail "${OFFENDERS:-(detail unavailable)}"

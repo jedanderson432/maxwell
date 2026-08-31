@@ -228,3 +228,63 @@ One line (or a short block) per decision, skip, or API note. Newest last.
   `jedanderson-corpus` updated (sha 48a68342ba1f). `state/{zenodo,hf,ia}.json`
   and `state/corpus_manifest.json` all rewritten by the run and committed as
   `ingest: corpus sync 2026-08-31`.
+- **2026-08-31** **Issue #1 closed.** The 2026-08-06 → 2026-08-31 ingest outage
+  thread (26 comments, one root cause) was closed with a link to the
+  post-mortem entries above. Future ingest failures open a thread keyed to the
+  actual failure signature instead of appending here.
+- **2026-08-31** **Failure-Issue dedup rewritten** (`.github/scripts/notify-failure.sh`,
+  now shared by ingest, health and merge-lag). The old inline snippet searched
+  for the *oldest* open Issue whose title merely began with
+  `MAXWELL failure: <workflow>` and appended forever, which is why #1 swallowed
+  26 comments and would have swallowed every unrelated future failure too — one
+  thread, no signal. Replacement: the Issue is keyed on the **failure
+  signature** (the set of steps that actually failed, or an explicit signature
+  the caller passes — health passes `PIPELINE red` vs `CONTENT_HELD past
+  escalation window`), matched on the **exact** title, newest first. A thread is
+  retired rather than grown without bound: **older than 7 days** or **more than
+  5 comments** closes it and opens a fresh one, with a cross-link both ways. Two
+  different breakages now get two different threads, and every thread is about a
+  failure that is happening now.
+- **2026-08-31** Notifier implementation notes: parsing uses `sed`, not `jq` —
+  `gh`'s `--jq` is built into `gh` but a bare `jq` is not guaranteed on every
+  runner, and the old code would have died on the notification path itself. A
+  `--dry-run` flag plus a `NOTIFY_FIXTURE` env var make all four decision paths
+  (create / comment / rotate-on-age / rotate-on-cap) testable without touching a
+  repo; `tests/test_notify.py` exercises them, including the 7-day boundary.
+- **2026-08-31** **PIPELINE and CONTENT_HELD are now separate states.**
+  `src/lib/health.py` previously appended a held piece to `failures`, which
+  turned health red and filed an Issue — indistinguishable from a dead deposit.
+  That is precisely the confusion this whole post-mortem is about, reintroduced
+  one layer up. Now:
+  **PIPELINE** (green/red) covers infrastructure only — site reachable, corpus
+  parseable, committed state self-consistent, distribution staleness, budget.
+  Red here is the *only* thing that files a failure Issue.
+  **CONTENT_HELD** is a count plus `first_held` dates per piece. It is not a
+  fault: the pipeline is healthy and deliberately waiting on prose while
+  distributing everything else. It is silent by design, surfaces in
+  `state/health.json` and in the monthly summary's "Action required" line, and
+  escalates to an Issue only once a piece has been held **more than 30 days** —
+  one full monthly-summary cycle, after which the wait has become an omission.
+  Exit codes: 0 healthy, 1 PIPELINE red, 2 CONTENT_HELD escalation. Pipeline red
+  takes precedence. `ok` remains a single boolean for older consumers: green
+  pipeline **and** nothing escalated.
+- **2026-08-31** Scope note: the monthly five-line summary (SELECT phase,
+  `select.yml`) does not exist yet, so `health.content_held_line()` is the
+  renderer it will call, kept next to the state it formats so the two cannot
+  drift. Building `select.yml` itself stays out of this change.
+- **2026-08-31** **merge-lag.yml added** (daily, failure-only Issue). Fails when
+  any branch carries a commit touching `src/` or `.github/workflows/` that is
+  absent from `main` and more than **72 hours** old, measured from the *oldest*
+  such commit rather than the newest — lag starts when the first unmerged change
+  appears, not at the last push. This is the guard that would have caught the
+  2026-08-24 fix sitting unmerged for 7 days while the scheduled job kept
+  failing against `main`. Verified both directions locally before merge: a
+  fabricated 267h-old unmerged commit touching `src/` was reported with branch,
+  count, age and subject; the real merged branch and a clean tree report
+  nothing. `refs/remotes/origin` also yields a bare `origin` entry for the HEAD
+  symref, which is filtered out or every run reports a phantom branch.
+- **2026-08-31** Verified after the change: `python -m src.lib.health` reports
+  `PIPELINE green` / `CONTENT_HELD 1: essays/missing-chapter-of-ai-safety since
+  2026-08-31 (0d)` and exits **0**, so no Issue is filed for a content hold.
+  Issue #2 ("MAXWELL failure: health 2026-08-31") was closed as a false alarm:
+  it was filed by the conflating behaviour this change removes.

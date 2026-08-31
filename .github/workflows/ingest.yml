@@ -70,16 +70,10 @@ jobs:
             echo "No changes."
           fi
 
+      # Keyed on the failing step, not on a title prefix, so two different
+      # breakages never share one thread (docs/DECISIONS.md, 2026-08-31).
       - name: Failure notification (failure-only Issues)
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          title="MAXWELL failure: ingest $(date -u +%F)"
-          body="Run failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          existing=$(gh issue list --state open --search "MAXWELL failure: ingest" --json number --jq '.[0].number')
-          if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body "$body"
-          else
-            gh issue create --title "$title" --body "$body" --label maxwell-failure || gh issue create --title "$title" --body "$body"
-          fi
+        run: .github/scripts/notify-failure.sh --workflow ingest
