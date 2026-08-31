@@ -1,17 +1,21 @@
 {
- "distributed_newest_piece": "2026-07-24",
- "distributed_source": "corpus/corpus.jsonl",
+ "distributed_newest_piece": "2026-08-27",
+ "distributed_source": "state/hf.json",
  "failures": [
-  "STALE PIPELINE: newest piece on jedanderson.org is 2026-08-22, newest distributed piece is 2026-07-24 (corpus/corpus.jsonl) — 29 days behind, over the 7-day limit. Ingest or distribution has stopped; check the ingest workflow."
+  "PLACEHOLDER QUARANTINE: 1 piece(s) withheld from distribution pending author content: essays/missing-chapter-of-ai-safety (CASE PENDING, held since 2026-08-31). The rest of the corpus is distributing normally; fill the placeholder on the live site and the piece ships on the next ingest."
  ],
- "last_health_run": "2026-08-24",
- "last_health_run_utc": "2026-08-24T13:29:08Z",
+ "last_health_run": "2026-08-31",
+ "last_health_run_utc": "2026-08-31T12:57:13Z",
  "notes": [
-  "site OK: 918 pieces",
-  "state OK: 913 rows",
+  "site OK: 920 pieces",
+  "staleness OK: site 2026-08-27 vs distributed 2026-08-27 (0d, limit 7d)",
+  "state OK: 919 rows",
   "budget OK: $0.00/$30.00",
   "mcp listed: True"
  ],
  "ok": false,
- "site_newest_piece": "2026-08-22"
+ "quarantined": [
+  "essays/missing-chapter-of-ai-safety"
+ ],
+ "site_newest_piece": "2026-08-27"
 }
