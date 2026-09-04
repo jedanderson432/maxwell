@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 919,
+  "pieces": 920,
   "quarantined": 1
  },
- "last_run": "2026-09-03",
+ "last_run": "2026-09-04",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -458,6 +458,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "62192ddeb70c7e58f7d717105471c60c30d63e153e68f09fd10c3bb5a0159501",
+   "source": "site"
+  },
+  "essays/ouch": {
+   "block_hash": "639a6f95afc189d2a8bb7dd73e20aae79a274e812a212f3ba66a01f5b333e223",
+   "first_seen": "2026-09-04",
+   "last_changed": "2026-09-04",
+   "md_sha256": "a4a1a66d6efc5b3cae5f38b3276e993e9b2fa767a0f295d657099bdedef67815",
    "source": "site"
   },
   "essays/physics-of-environmental-law": {
@@ -6442,7 +6449,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-09-03",
+   "last_held": "2026-09-04",
    "marker": "CASE PENDING"
   }
  },
