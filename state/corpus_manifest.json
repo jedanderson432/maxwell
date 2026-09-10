@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 922,
+  "pieces": 924,
   "quarantined": 1
  },
- "last_run": "2026-09-09",
+ "last_run": "2026-09-10",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -145,6 +145,13 @@
    "md_sha256": "f5b7afd35b6dea44bf7ccbc6c5f3db8b51630fc7da28820ae6c4d9b73c665122",
    "source": "site"
   },
+  "essays/end-of-the-snapshot": {
+   "block_hash": "1b26235ffee83d8951f32defa8255dfc52a591fc20281df023239ff00862cb02",
+   "first_seen": "2026-09-10",
+   "last_changed": "2026-09-10",
+   "md_sha256": "60ddbbc13721c6425ae15127117b250547b79b51454d49f17fdccdb48d841a93",
+   "source": "site"
+  },
   "essays/energy-that-doesnt-burn": {
    "block_hash": "69103f1021bd08676cbc5c663fe50e43fbd704003034f86ad101653bc1b4c015",
    "first_seen": "2026-07-26",
@@ -269,6 +276,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "d19987e0ebfb2c89d46b2aed80927cf02bec389bfc1a61f35fea8701d85ebce8",
+   "source": "site"
+  },
+  "essays/frozen-instrument": {
+   "block_hash": "d42a3092ae0f61980f3377a037d42216d35a34cd932926e2e151041e4aea76f0",
+   "first_seen": "2026-09-10",
+   "last_changed": "2026-09-10",
+   "md_sha256": "e743305243753be1359c3061356b80c2e5041251d8f86a7ada4bf34e48a83dbd",
    "source": "site"
   },
   "essays/general-theory-of-environmental-leverage": {
@@ -6463,7 +6477,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-09-09",
+   "last_held": "2026-09-10",
    "marker": "CASE PENDING"
   }
  },
