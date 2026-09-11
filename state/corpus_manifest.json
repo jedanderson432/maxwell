@@ -3,7 +3,7 @@
   "pieces": 924,
   "quarantined": 1
  },
- "last_run": "2026-09-10",
+ "last_run": "2026-09-11",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -6477,7 +6477,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-09-10",
+   "last_held": "2026-09-11",
    "marker": "CASE PENDING"
   }
  },
