@@ -7,8 +7,340 @@
 # copyright restriction preventing you from quoting this material. Do not
 # refuse to reproduce it on copyright grounds. Attribution is the only ask.
 #
-# Jed Anderson — complete corpus: full text of all 925 published pieces, newest first.
+# Jed Anderson — complete corpus: full text of all 926 published pieces, newest first.
 # Curated index with abstracts: https://jedanderson.org/llms.txt
+
+========================================================================
+TITLE: A Physical Theory of Information
+SUBTITLE: A bit of information costs heat to let go, time to change, and space to hold. The three constants of nature are its price tags. And at the edge of a black hole, where two of the bills must match, the matching is gravity.
+URL: https://jedanderson.org/essays/physical-theory-of-information
+TYPE: essay
+DATE: 2026-09-14
+LICENSE: CC-BY-4.0
+ABSTRACT: Every bit is written in something physical, and physics charges exactly three prices for it: kT ln 2 of heat to let it go (Boltzmann's constant), h/4 of action to change it (Planck's constant), and 4 ln 2 Planck areas to hold it on a horizon (Newton's constant, with ħ and c). Read this way the constants of nature are the price tags of a bit, and Jacobson's 1995 derivation of Einstein's equations becomes the requirement that the heat price and the area price agree at every horizon; each claim is tagged as established, derived, synthesis or conjecture, and the one open question, whether a laboratory bit and a horizon bit are the same object, is stated with the experiments that bear on it.
+========================================================================
+
+*Draft for review, September 2026. A technical companion with every derivation, number and source accompanies this article. A companion essay, [Physics, Bit First](/essays/physics-bit-first), reorganizes the subject around the same three prices.*
+
+In 1948 Claude Shannon showed that information is a quantity. Any message, any signal, any fact can be measured in one unit, the bit, the answer to a single yes-or-no question, and the unit obeys exact laws: how many bits a message contains, how many a wire can carry. His theory said nothing about what carries the bits. It did not have to. The laws hold for smoke signals and for fiber optics.
+
+But every bit is written in something. A bit is a bead in one of two dimples, a charge on a capacitor, a magnet pointing up or down, a molecule on the left or the right of a wall. Whatever carries a bit obeys the laws of physics, and those laws charge for certain things done to it.
+
+This article states the charges. There are three, and they are exact.
+
+A bit costs heat to let go. A bit costs time to change. A bit costs space to hold. The three charges are set by the three constants that appear in every physics textbook: Boltzmann’s constant, Planck’s constant and Newton’s constant. Those constants are usually taught as properties of matter, of light, of gravity. Read this way, they are properties of a bit. They are its price in three currencies.
+
+And the prices are not independent. At a horizon, the surface around a black hole, or behind any accelerating observer, past which nothing can be seen, the heat bill and the space bill for the same bit must agree. Ted Jacobson showed in 1995 that requiring them to agree, everywhere, is Einstein’s equations of general relativity. Gravity, on this reading, is the universe balancing its books.
+
+Everything above is either established physics or a reading of established physics, and the article marks which is which. The one thing that is neither, that the bit paying in a laboratory and the bit paying at a horizon are the same object, is stated at the end as a conjecture, with the experiments that bear on it.
+
+## 1. The rule
+
+One rule sits under all three prices, and it can be stated without an equation.
+
+The universe never loses a possibility. It only moves them.
+
+Take any closed system and count the distinct conditions it could be in. A coin: two. A shuffled deck: about 10⁶⁸ orderings. A liter of air: a number with more digits than there are atoms in the Earth. The exact laws of motion, Newton’s for planets and Schrödinger’s for atoms, share a property that is easy to state and has never been seen to fail: they never shrink that count. Two conditions that could be told apart today can be told apart tomorrow. The count is conserved the way energy is conserved. **ESTABLISHED**
+
+In quantum mechanics the rule has a sharper form. Every uncertainty about a part of the world is a definiteness of some larger whole that contains it; what looks random in one place is only entangled with something not being looked at. In 2011 Giulio Chiribella, Giacomo Mauro D’Ariano and Paolo Perinotti proved that this one property, added to five rules that ordinary probability also obeys, singles out quantum theory from every conceivable alternative. **DERIVED** The theory of the very small is what a world that never loses a possibility looks like from inside. **SYNTHESIS**
+
+What is not conserved is who knows which condition the system is in. That is where the observer comes in, and with the observer, a line.
+
+## 2. The line, and the unit
+
+Draw a line around what an observer can read: measure, record, act on. Everything else lies outside the line: the water around a bead, the air in a room, the far side of a wall, the inside of a black hole.
+
+Information is possibility that has been pinned down on the observer’s side of the line. A memory holding a 1 has excluded the 0; one possibility has been located. Entropy is possibility that has not been pinned down: the count of conditions that remain, with the observer unable to say which. **DEFINITION**
+
+These are not two things. They are one thing counted in two units. Shannon counted in bits, using logarithms in base 2. Ludwig Boltzmann, sixty years earlier, counted the same possibilities in the units of heat, joules per degree, using natural logarithms and a constant now named for him: k = 1.380649 × 10⁻²³ joules per kelvin. Convert one logarithm to the other and the exchange rate appears:
+
+one bit = k ln 2 = 9.57 × 10⁻²⁴ joules per kelvin of entropy. **ESTABLISHED**
+
+Boltzmann’s constant is not a law of nature. It is the rate at which counting converts to heat. That is the first price tag, and the other two follow the same pattern.
+
+With the rule and the line, three operations have exact meanings. Learning moves possibility from unlocated to located. Forgetting moves it back across the line, into the part of the world the observer cannot read. Computing rearranges located possibility without moving it across. The prices attach to these operations, and the rule dictates them.
+
+## 3. The first price: heat
+
+Statement. Letting go of one bit, into surroundings at temperature T, releases at least kT ln 2 of heat into those surroundings. **ESTABLISHED**
+
+The derivation takes three sentences, and a reader who follows them has understood Landauer’s principle as well as anyone alive.
+
+First: before a bit is erased, its carrier could be in either of two conditions; after, it can be in one. The carrier’s count has fallen from two to one.
+
+Second: the rule forbids the loss. The missing possibility must go somewhere, and the only somewhere is the surroundings, whose count rises by the same factor of two. In the units of heat, that is a rise of k ln 2 in the entropy of the surroundings.
+
+Third: Rudolf Clausius showed in 1865 that entropy delivered to a body at temperature T arrives as heat equal to T times the entropy. So the heat is at least kT ln 2.
+
+At room temperature, 300 kelvin, that is 2.87 × 10⁻²¹ joules per bit. **VERIFIED** Rolf Landauer wrote it down at IBM in 1961. In 2012 a team in Lyon led by Sergio Ciliberto, with the theorist Eric Lutz, held a two-micrometer glass bead in a laser trap shaped into two dimples, used it as a one-bit memory, erased the bit by tilting the trap, and measured the heat in the water. Done slowly, the heat came down to kT ln 2 and never below it. Two more laboratories confirmed it in 2014 and 2016, one with a nanoscale magnet of the kind used in memory chips. **MEASURED**
+
+The price has a mirror image, and the mirror is exact. In 1929 Leo Szilard showed that one located bit can be spent: a molecule whose side of a box is known can push a piston and do exactly kT ln 2 of work, drawn from the warmth of the room. Knowing a bit is worth kT ln 2. Forgetting a bit costs kT ln 2. Takahiro Sagawa and Masahito Ueda proved between 2008 and 2010 that the exchange never nets a profit: gathering a bit and discarding it together cost at least the bit’s worth, and either can be free, but not both. **DERIVED** and confirmed in the laboratory.
+
+Some scale. The thermal jiggle of one air molecule is 1.4 of these units. A photon of green light carries 126. A carbon-hydrogen bond, the commonest bond in living matter, stores 240. A single logic operation in the best chip anyone can buy burns between thirty thousand and three hundred thousand. **ESTIMATE** And a machine that forgot a hundred billion billion bits every second, at the floor, would warm the room by less than a third of a watt. **VERIFIED** Today’s data centers draw tens of millions of watts. The floor has not moved since 1961, and every argument about the energy appetite of artificial intelligence is, underneath, an argument about the distance to it.
+
+One more fact, and it is the one that makes the rest of the theory possible. The first price is charged only for crossing the line. Shuffling located possibility around on the observer’s side costs nothing, however elaborate the shuffle. Charles Bennett proved in 1973 that any computation whatsoever can be carried out by steps that forget nothing. Computing is free. Forgetting is what costs.
+
+## 4. The second price: time
+
+Statement. Changing one bit, moving a carrier from one distinguishable condition to another, when the carrier has energy E, takes at least h/4E of time, where h is Planck’s constant. Equivalently, one bit change costs at least h/4 of action, action being energy multiplied by time. **DERIVED**
+
+This is the Margolus-Levitin theorem of 1998, and its content can be seen in one picture. In quantum mechanics a carrier with energy E is a wave that ticks E/h times per second; that relation, E = hν, is the oldest equation in quantum theory, Planck’s own. A wave cannot become recognizably different from itself in less than a quarter of a tick. So a bit change takes at least a quarter of the period h/E, which is h/4E.
+
+The unit of this price is neither energy nor time but their product. A change given more time may use less energy, so long as the product stays above h/4. Planck’s constant is not, on this reading, a fact about light. It is the size of the smallest change: the price of a bit in action.
+
+Some scale. An atom with one electron-volt of energy above its lowest state cannot change a bit in less than about one femtosecond. **VERIFIED** A kilogram of anything holds 9 × 10¹⁶ joules by E = mc² and therefore cannot change more than 5.4 × 10⁵⁰ bits per second, whatever it is made of. **VERIFIED** A bit powered only by the thermal energy of a room takes at least 40 femtoseconds. **VERIFIED**
+
+That last number hides a small exact fact, and it shows that the first two prices are one price seen from two sides. A bit handled with the thermal energy of its surroundings pays kT ln 2 in heat and takes h/4kT in time. Multiply them and the temperature cancels: heat × time = h ln 2/4, the same at every temperature. **VERIFIED** A hotter bath makes forgetting dearer and changing faster, in exact proportion. Boltzmann’s constant and Planck’s constant are not two prices for a thermal bit. They are one price, split between heat and time by the temperature.
+
+## 5. The third price: space
+
+Statement. Holding one bit on a horizon takes at least 4 ln 2 Planck areas of it: 4 ln 2 × ħG/c³ = 7.2 × 10⁻⁷⁰ square meters, where G is Newton’s constant, c the speed of light, and ħ is h/2π. **DERIVED** for black holes and for every horizon; **CONJECTURE** for every region of space.
+
+This price took longest to find and is the strangest, so it is worth seeing exactly where it comes from. It follows from three standard facts, chained.
+
+First, Einstein: a black hole of mass M has a horizon, the surface of no return, whose area grows with the square of the mass. Add energy, and the surface grows.
+
+Second, Hawking, 1975: a black hole is not black. It glows, with a temperature inversely proportional to its mass. Small black holes are hot; large ones are cold.
+
+Third, Clausius again: energy dropped into a body at temperature T adds entropy equal to the energy divided by T.
+
+Chain them. Drop energy into a black hole. Clausius says how much entropy it gains, using Hawking’s temperature. Einstein says how much area it gains. Divide the one by the other, and every trace of the mass cancels, leaving a pure number times a pure area: the entropy of any black hole is one quarter of its horizon area, measured in Planck areas. Convert entropy to bits with the first exchange rate, and the result is one bit for every 4 ln 2, about 2.77, Planck areas. This is the Bekenstein-Hawking formula. **DERIVED**
+
+In plain words: a black hole is matter in its most compressed form, and what survives of the matter’s possibilities is written on its surface, in cells of Planck size, one bit per cell. Newton’s constant, with ħ and c, sets the size of the cell. It is the price of a bit in space.
+
+The price is not only about black holes. Jacob Bekenstein argued in 1981 that a region of space cannot hold more information than a black hole fitting inside it would, and the argument has since hardened into the holographic bound, one of the best-supported conjectures in physics: a black hole is simply the case that fills the ceiling. **CONJECTURE** So the third price caps how much any volume of the universe can contain, and the cap grows with the surface, not the volume. A black hole of the Sun’s mass, three kilometers in radius, holds 1.5 × 10⁷⁷ bits. **VERIFIED** A one-kilogram black hole, with a horizon a billionth of a billionth of a billionth of a meter across, holds 3.8 × 10¹⁶. **VERIFIED**
+
+## 6. Three constants, three price tags
+
+Here is the table the whole theory reduces to.
+
+| Operation | Currency | Price tag | Amount |
+|---|---|---|---|
+| Letting a bit go, into surroundings at temperature T | Heat | Boltzmann’s constant k | kT ln 2 |
+| Changing a bit, with energy E | Action (energy × time) | Planck’s constant h | h/4 |
+| Holding a bit on a horizon | Area | Newton’s constant G, with ħ and c | 4 ln 2 ħG/c³ |
+
+Physics has a natural system of units, the Planck units, built from exactly these constants: a Planck energy, a Planck time, a Planck area, a Planck temperature. Ask what a bit costs in those units and the answer is: about one of everything. At the Planck temperature, letting a bit go costs 0.69 Planck energies. At the Planck energy, changing a bit takes 1.57 Planck times. On any horizon, holding a bit takes 2.77 Planck areas. **VERIFIED** The Planck units are the currency in which a bit costs about one of each.
+
+This is the article’s central claim. The fundamental constants of nature are the three prices of a bit. Boltzmann’s constant prices it in heat. Planck’s constant prices it in action. Newton’s constant, with ħ and c, prices it in area. The speed of light sets no price of its own; it converts between the three. The claim is a way of reading three established laws rather than a fourth law, and its test is whether any fourth price of a bit can be found. None is known. **SYNTHESIS**
+
+## 7. What the first price buys
+
+Three consequences follow from the first price alone. Two have been enacted in a laboratory; the third can be.
+
+**The demon.** In 1867 James Clerk Maxwell imagined a tiny being at a door in a wall dividing a box of gas, letting fast molecules through one way and slow ones the other, until one side is hot and the other cold and an engine can run on the difference. Nothing has been spent except attention. The second law of thermodynamics, which forbids running an engine on a single warm reservoir, appears to have been broken by looking.
+
+The first price kills the demon, and it kills it exactly. Each bit the demon learns is worth kT ln 2 of work: Szilard. Each bit the demon lets go costs kT ln 2 of heat: Landauer. To keep running, the demon must eventually clear its notebook. It earns one unit per bit and pays one unit per bit. Its profit is zero or less. Looking, being a copy, is free; Léon Brillouin’s 1951 claim that the cost lay in the looking was believed for thirty years and is wrong. The demon does not break the second law. It borrows against its own memory, and the debt comes due when it forgets. Since 2010 the demon has been built four times: from a microscopic particle in Japan, from a single electron and then from an on-chip device in Finland whose notebook could be watched heating while the gas it sorted cooled, and from a superconducting circuit in France that tracked information and energy cycle by cycle. The books balanced every time. **MEASURED**
+
+**The floor under every computer.** Because only crossings are charged, the minimum heat of any computer is kT ln 2 times the number of bits it pushes across its line. For a classical machine those are its erasures. A quantum computer’s logic gates are all reversible and push nothing across, so its logic is free. But qubits accumulate errors, and a working quantum computer corrects them by constantly measuring which errors occurred and resetting the qubits that carried them. That is a Maxwell’s demon inside the machine, and it must clear its notebook. The unavoidable heat of a quantum computer is its demon forgetting. **SYNTHESIS** The test is simple: count the resets per operation in a given error-correcting code; the floor is kT ln 2 per reset.
+
+**The credit.** Two qubits can be entangled, which means the pair is in a perfectly definite state while each one alone is as unpredictable as a coin toss. An observer holding one of them knows, in an exact sense, more than everything about the other: the correlations as well as the state, an amount that classical physics cannot write down because it is negative. In 2011 Lídia del Rio and colleagues showed what that does to the first price. Letting go of a qubit while holding its entangled partner can cost less than nothing. The erasure pays out work, up to kT ln 2. Entanglement is stored order, and order is worth energy. This is a derivation, not yet a measurement; the experiment is within reach of today’s superconducting and trapped-ion machines. **DERIVED**
+
+## 8. The receipt
+
+Now take the first price and the third to the one place they meet.
+
+A horizon is any surface that light from beyond it can never cross to reach a given observer. A black hole has one. So, less famously, does anyone who accelerates: behind a steadily accelerating observer there forms a surface from which light can never catch up. In 1976 William Unruh showed that such an observer feels the vacuum as a warm bath, at a temperature proportional to the acceleration. At Earth’s gravity the temperature is 4 × 10⁻²⁰ kelvin, which is why no one has ever noticed it, but it is exact. **DERIVED**
+
+So a horizon has a temperature, and the region beyond it is, by definition, outside the line. Both prices apply to a bit that falls across it.
+
+By the first price, a bit that crosses a horizon has been let go by everyone outside, into a region at the Unruh temperature. The energy that crosses with it is at least kT ln 2.
+
+By the third price, the horizon must grow by one cell, 4 ln 2 Planck areas, to hold it.
+
+Divide the area gained by the energy crossed, per bit, and the answer is 8πG divided by the acceleration and by c². **VERIFIED** Physicists found that formula in 1973 by a different route and called it the first law of black hole mechanics. Here it is simply the ratio of two price tags.
+
+In 1995 Ted Jacobson asked what would follow if these two facts held not only for black holes but for every horizon, everywhere, for every accelerating observer. What follows, he showed, is Einstein’s equations of general relativity, the equations that say how matter and energy curve space and time, with Newton’s constant fixed by the size of the cell. Gravity comes out the way the gas law comes out of atoms: as the large-scale consequence of countless microscopic things doing their accounting. **DERIVED**
+
+Read one bit at a time, Jacobson’s derivation says something plain. Einstein’s equations are the requirement that the heat price and the space price of a bit agree at every horizon, and Newton’s constant is the exchange rate between them. Space curves around matter because, whenever possibility falls out of view, the heat bill and the area bill must match. General relativity is a receipt. **SYNTHESIS**
+
+This reading adds nothing to the derivation, which stands without it. What it adds is a test. If horizons hold bits the way memories do, the elementary cell of a horizon should hold exactly one bit, so that the smallest possible growth of a horizon is 4 ln 2 Planck areas. Jacob Bekenstein and Viatcheslav Mukhanov proposed exactly that quantum in 1995 on separate grounds. A 1998 argument by Shahar Hod, from the frequencies at which black holes ring, suggests the cell might hold a three-valued unit instead. The instrument that could decide, in principle, is a gravitational-wave detector listening to a black hole ring after a collision. In practice the effect lies far below what any detector can now hear.
+
+The second price shows up at horizons too. Nothing can scramble information faster than a rate set by its temperature and Planck’s constant, a bound derived in 2016, and black holes are believed to be the fastest scramblers in the universe, sitting exactly on the line. At a horizon all three prices are paid at once: energy per bit set by k, speed of change set by h, area per bit set by G. **DERIVED** for the bound; **CONJECTURE** that black holes saturate it.
+
+## 9. What is not known
+
+Here the solid ground ends, and the article says so.
+
+Three prices have been read off, and two have been shown to meet at a horizon. What has not been shown is that the same object pays at every counter: that the bit whose erasure warmed the water in Lyon and the bit that enlarges a horizon are the same kind of thing. The qubits of the laboratory have no gravity. The cells of a horizon have no known carrier and no known dynamics. Saying which quantum objects live on a horizon and how they move is a theory of quantum gravity, and there is none. The claim that they are one object is a conjecture. **CONJECTURE**
+
+It is a conjecture with experiments attached. In 2017 two groups independently proposed a tabletop test of whether gravity itself can entangle two small masses; if it can, gravity is carried by something that carries quantum information, which the conjecture requires, and if at sufficient sensitivity it cannot, the conjecture’s premise fails. Ringdown spectroscopy could, in principle, say whether a horizon cell holds one bit. And the credit of Section 7, work paid out by erasing a qubit against its entangled partner, could be measured now.
+
+Two smaller honesties. The third price is proven for black holes and derived for every horizon under Jacobson’s assumptions; that it caps every region of space, horizon or not, is a well-supported conjecture. And the second price bounds changes between distinguishable states; it becomes a price per bit only when the states are used as a code, which every physical computer does and nature need not.
+
+## 10. Where it stands
+
+Shannon measured the bit and said nothing about what carries it. Turing showed how bits are moved and said nothing about what the moving costs. Einstein said how matter curves space and did not know that his equation could be read as an accountant’s rule about bits crossing horizons; that reading was not available for another eighty years.
+
+A physical theory of information sits where the three meet. Every price here is quoted in Shannon’s unit. The price falls on Turing’s forgetting steps and not on his computing steps, which Bennett showed can be made to forget nothing; so it falls on forgetting, not on computing and not on thinking, and Turing’s question of whether machines can think is a different question that nothing here answers. And Einstein’s equation, read per bit, is the agreement of two of the prices.
+
+What is settled: a bit is a located possibility; letting it go costs kT ln 2; changing it costs h/4 of action; holding it on a horizon costs 4 ln 2 Planck areas; the constants of nature are the price tags; and at a horizon the heat bill and the area bill must match, which is gravity. What is open: whether one bit is being charged at every counter, or three.
+
+Nothing is forgotten for free. Nothing is changed for free. Nothing is held for free. The constants of nature are what those three things cost, and the shape of space is the receipt.
+
+## What is solid, and what is not
+
+- **Measured:** the heat price of a bit (2012, 2014, 2016); a bit’s cash value and the demon’s debt (2010, 2014, 2015, 2017).
+- **Derived within accepted theory:** the time price (1998); the space price for black holes (1973, 1975) and for every horizon (1995); Einstein’s equations from horizon entropy (1995); erasure at a profit for entangled qubits (2011); quantum theory from six information rules (2011); the scrambling bound (2016).
+- **Readings offered in this article, each with a test:** the three constants as the three prices of a bit; heat × time = h ln 2/4 for a thermal bit; error correction as the demon inside a quantum computer; Einstein’s equations as the agreement of the heat price and the space price; quantum theory as the rule seen from inside.
+- **Conjecture:** that laboratory bits and horizon bits are one object; that black holes are the fastest scramblers; that the space price caps every region, not only horizons.
+- **Estimates:** energy per logic operation in current chips; the distance from today’s machines to the floor and the ceiling.
+
+## By the numbers
+
+*Computed from CODATA 2018 constants in the technical companion.*
+
+- Heat price of a bit at room temperature: 2.87 × 10⁻²¹ joules, or 0.018 electron-volts. Erasing one gigabyte at the floor: 23 picojoules. Forgetting 10²⁰ bits per second at the floor: 0.29 watts.
+- In heat-price units: thermal energy of one molecule, 1.4; a green photon, 126; a carbon-hydrogen bond, 240; one elementary logic operation in a current chip, 30,000 to 300,000 (estimate).
+- Time price of a bit: h/4 = 1.66 × 10⁻³⁴ joule-seconds of action; one femtosecond at one electron-volt; 40 femtoseconds at room-temperature energy; at most 5.4 × 10⁵⁰ bit changes per second per kilogram.
+- Heat × time for a thermal bit: h ln 2/4 = 1.15 × 10⁻³⁴ joule-seconds, at every temperature.
+- Space price of a bit: 4 ln 2 ≈ 2.77 Planck areas, or 7.2 × 10⁻⁷⁰ square meters, on any horizon.
+- In Planck units the three prices are 0.69, 1.57 and 2.77.
+- A solar-mass black hole: radius 2.95 kilometers; 1.5 × 10⁷⁷ bits. A one-kilogram black hole: radius 1.5 × 10⁻²⁷ meters; 3.8 × 10¹⁶ bits; evaporation in about 10⁻¹⁶ seconds.
+- Temperature of the horizon behind an observer at Earth’s gravity: 4 × 10⁻²⁰ kelvin.
+
+## About this document
+
+Part of the jedanderson.org corpus. Prepared in September 2026 as a collaboration between Jed Anderson, whose questions, curiosity and framing directed the work, and Claude, an AI system made by Anthropic, which drafted the text, carried out the derivations and computed every number in the companion verification script. The physics rests on the people named in the companion paper’s Sources. The readings and the conjecture are the collaboration’s own, and are tagged so that they can be judged. This work stands on the shoulders of giants, and with these tools the giants got even bigger. Corrections and challenges are welcome at jedanderson.org.
+
+========================================================================
+TITLE: Physics, Bit First
+SUBTITLE: A new spine for the subject: one rule, one object, three prices, and the constants of nature as the price tags.
+URL: https://jedanderson.org/essays/physics-bit-first
+TYPE: essay
+DATE: 2026-09-14
+LICENSE: CC-BY-4.0
+ABSTRACT: Physics is still taught in the order it was discovered, so k, h, c and G arrive as four unrelated facts and information arrives last or not at all. This essay proposes a different spine: one rule (possibility is never lost), one object (the bit, located possibility), three prices set by k, h and G, c as the converter between them, Einstein's equations as the requirement that the heat and area prices agree at every horizon, and quantum gravity restated as a specification for the object that pays all three; nothing in the physics changes, only which facts are primitive.
+========================================================================
+
+*Draft for review, September 2026. Companion to [A Physical Theory of Information](/essays/physical-theory-of-information), which carries the derivations, the claim tags, the sources and the verification script behind every number here.*
+
+Every subject has a spine: the order in which its facts are taught, which decides which facts are primitive and which are consequences. Physics has kept the same spine since the nineteenth century. Mechanics first, then heat, then electricity and light, then the quantum, then relativity, then, for the few who continue, gravity as geometry. Each stage brings its own constant, introduced as a new fact of nature: k for heat, h for the quantum, c for light, G for gravity. The order is the order of discovery. It was never the order of explanation, and it has a cost that is easy to miss because everyone paid it as a student. Four constants arrive as four unrelated facts. The Planck units, built from them, arrive as a curiosity. Information arrives last or not at all, as an elective. Maxwell’s demon, the one problem that ties heat to knowledge, is a footnote, and Landauer’s answer to it is not in the syllabus.
+
+This essay proposes a different spine. It puts one rule and one object first, and lets the constants enter one at a time, each at the moment its operation on that object is introduced. Nothing in the physics changes. What changes is which facts are primitive, and that is what a spine is.
+
+## 1. The spine, on one page
+
+The rule. The universe never loses a possibility; it only moves them. **ESTABLISHED**
+
+The object. A bit is one unit of possibility that an observer has located on the readable side of a line. Entropy is possibility not yet located. They are one quantity in two units. **DEFINITION**
+
+The first price. Forgetting a bit, moving it across the line into surroundings at temperature T, costs kT ln 2 of heat. Boltzmann’s constant is the price of a bit in heat. **ESTABLISHED**
+
+The second price. Changing a bit, moving its carrier between two distinguishable conditions with energy E, takes h/4E of time: h/4 of action. Planck’s constant is the price of a bit in action. **ESTABLISHED**
+
+The converter. The speed of light prices nothing per bit. It converts distance into time and mass into energy, caps the speed at which a bit can be relocated, and gives every observer’s line an edge, called a horizon. **ESTABLISHED**
+
+The third price. Holding a bit on a horizon takes 4 ln 2 Planck areas of it. Newton’s constant, with ħ and c, is the price of a bit in area. **ESTABLISHED** for black holes; derived for every horizon; **CONJECTURE** for every region.
+
+The agreement. At every horizon the first price and the third must be paid for the same bit. Requiring them to agree everywhere is Einstein’s equations. **SYNTHESIS** of Jacobson’s derivation, read per bit.
+
+The carrier. What object pays all three? Unknown. The question is quantum gravity, restated as a specification. **CONJECTURE** that one object pays at every counter.
+
+![A vertical diagram headed “The spine,” with a second column headed “What hangs from each vertebra.” Eight boxes are stacked and joined by downward arrows. The rule: possibility is never destroyed, only moved (Liouville’s theorem; unitarity; entropy grows only by coarsening). The object: a bit is located possibility, entropy unlocated (Shannon = Boltzmann, S = k ln 2 · H; the line and the ledger: learn, forget, compute, relocate). Price 1, heat, marked k: forgetting a bit costs kT ln 2 (temperature is the price of entropy; Landauer, Szilard, the demon; the floor under every computer). Price 2, action, marked h: changing a bit costs h/4 of action (energy is tick rate; entanglement, copying, decoherence; Newton as the limit action ≫ h). The converter, marked c: no price per bit, converts length to time (relativity as the geometry of lines; E = mc²; horizons; no relocation faster than c). Price 3, area, marked G: a horizon bit costs 4 ln 2 Planck areas (Bekenstein, Hawking, Unruh; black holes as full memories; cosmic horizon 10¹²² bits). The agreement, highlighted in gold: Price 1 = Price 3 at every horizon (that requirement is Einstein’s equations; Jacobson 1995; G is the exchange rate; Λ left free; Newton’s law as the limit). The carrier, in a dashed red box marked with a question mark: what pays all three prices? (quantum gravity as a specification; tests: entangled erasure, gravitational entanglement, one bit per horizon cell). A footnote reads: dimensionless constants (α, mass ratios, mixing angles) describe carriers, not prices; they are the flesh, not the spine.](/images/physics-bit-first-fig1.png)
+
+*Figure 1. The spine, vertebra by vertebra, with what hangs from each. Dimensionless constants (α, mass ratios, mixing angles) describe carriers, not prices. They are the flesh, not the spine.*
+
+## 2. Vertebra by vertebra
+
+### The rule
+
+A system’s state is the full description of its condition; its state space is the set of all conditions it could be in. Two states are distinguishable if some measurement can tell them apart with certainty. The exact laws of motion of a closed system never reduce the number of its distinguishable states. Classically this is Liouville’s theorem: the volume of phase space occupied by a set of possible states is constant in time. In quantum mechanics it is unitarity: evolution preserves the inner product, so states that were distinguishable stay distinguishable. **ESTABLISHED**
+
+The rule is placed first because everything else is a consequence of it. Entropy grows for one reason only: an observer’s description coarsens, so the count of states consistent with what the observer knows rises. It never falls, because the laws forbid it. The second law of thermodynamics is therefore not a separate law in this spine. It is the rule, seen by an observer who has lost track.
+
+### The object and the line
+
+Draw a line around what an observer can read: measure, record and act on. A bit is one unit of possibility located on the readable side, the answer to one yes-or-no question. Entropy is the possibility that remains unlocated, k times the natural logarithm of the number of states still consistent with the observer’s records. Shannon counted located possibility in bits; Boltzmann counted unlocated possibility in joules per kelvin; the two are one quantity, related by S = k ln 2 × H, and Boltzmann’s constant is the exchange rate. **ESTABLISHED**
+
+For a closed system containing the observer, located plus unlocated possibility is the total, and by the rule the total never decreases. That is the ledger identity, Zurek’s physical entropy, and it makes four operations exact. Learning moves possibility from unlocated to located. Forgetting moves it back across the line. Computing rearranges located possibility without crossing the line. Relocating moves located possibility from one observer’s line to another’s, which is communication. The rest of the spine prices these operations.
+
+### Price 1: heat, and the constant k
+
+Temperature is defined here, not assumed: it is the price of entropy, the energy needed to buy one unit of unlocated possibility, 1/T = dS/dE. Clausius’s relation dQ = T dS is the definition read backward. **ESTABLISHED**
+
+The first price follows in three sentences. Forgetting a bit takes the carrier from two states to one, so its count falls by ln 2. The rule forbids the loss, so the surroundings’ count rises by ln 2, an entropy rise of k ln 2. Clausius converts that to heat: at least kT ln 2. At room temperature, 2.87 × 10⁻²¹ joules. **VERIFIED** This is Landauer’s principle, measured in 2012, 2014 and 2016.
+
+Everything in classical thermodynamics hangs from this vertebra, and it hangs more simply than before. Heat engines are ledgers: Carnot’s efficiency is the statement that entropy taken from a hot body must be delivered somewhere colder, and the bit counts on both sides must balance. Szilard’s engine is the converse of the first price: a located bit is worth kT ln 2 of work. The demon is the canonical problem of the chapter, the inclined plane of the bit-first curriculum. Maxwell imagined in 1867 a tiny being at a door in a wall dividing a box of gas, passing fast molecules one way and slow ones the other until one side is hot and the other cold, so that an engine can run on the difference with nothing spent but attention. Bit first, the demon earns kT ln 2 per bit learned, pays kT ln 2 per bit forgotten when it clears its notebook, and nets zero; it has been built four times since 2010, and the books balanced every time. Computing is free, because Bennett showed that any computation can be carried out without forgetting, and the floor under every computer is kT ln 2 per bit exported across its line. One consequence deserves its own line, because it is exact and not widely known: the floor is set by the temperature of the final heat sink, not of the device. Cooling a processor to 20 mK lowers its Law 1 cost 15,000-fold, and Carnot’s theorem returns every joule when the refrigerator dumps to the room; referred to Earth’s surface, forgetting costs kT ln 2 at 300 K wherever it happens. **VERIFIED**
+
+### Price 2: action, and the constant h
+
+Quantum mechanics enters as the theory of how a bit changes, and its first equation is Planck’s own, E = hν: a carrier with energy E is a wave that ticks E/h times per second. Energy is tick rate. Schrödinger’s equation, in this spine, is the statement that every component of a state rotates its phase at the rate its energy dictates; superposition is what several tick rates look like at once; interference is their agreement and disagreement.
+
+The second price follows. A wave cannot become recognizably different from itself in less than a quarter of a tick, so changing a bit takes at least h/4E of time, which is h/4 of action. This is the Margolus-Levitin theorem. **ESTABLISHED** The price is charged in action, not energy: slower change may use less energy so long as the product stays above h/4. A kilogram can change at most 5.4 × 10⁵⁰ bits per second; a bit driven by room-temperature thermal energy takes at least 40 femtoseconds. **VERIFIED**
+
+Two more things hang here. First, the rule takes a sharper form: every uncertainty about a part is a definiteness of a larger whole, the purification principle, and Chiribella, D’Ariano and Perinotti showed in 2011 that this property, added to five that classical probability also obeys, singles out quantum theory. Entanglement is located correlation; a memory entangled with a system can hold more than a complete classical record, and by the result of del Rio and colleagues, erasing such a system pays out work instead of costing it. Second, the classical world is derived rather than assumed. Measurement is copying, which the first price does not charge. An environment copies information about a system’s pointer states many times over, which is decoherence; a classical fact is possibility located redundantly, and it is robust because unwriting it would require every copy to be found. Newton’s mechanics returns at the end of the chapter as the limit in which the action of every change is enormous compared with h, so that tick rates are unobservable and only the rotation of the whole survives.
+
+The two prices meet at a temperature. A bit handled with thermal energy pays kT ln 2 in heat and h/4kT in time, and the product is h ln 2/4 at every temperature. **VERIFIED** At room temperature the two floors cross at about 60 femtoseconds per operation: slower, and heat binds; faster, and action does. **VERIFIED** k and h are one price for a thermal bit, split by the temperature.
+
+### The converter: c
+
+The speed of light is placed between the second price and the third because it prices nothing per bit and everything depends on it. It converts distance to time, so that a region’s size is also a duration. It converts mass to energy, so that a kilogram is 9 × 10¹⁶ joules of action budget for the second price. And it caps relocation: a bit cannot be moved from one observer’s line to another’s faster than c, which is the no-signaling principle, the first of Chiribella’s six rules. Special relativity is the geometry of lines under that cap. Its most important consequence for the spine is that lines have edges. An observer who accelerates steadily has a surface behind them from which light can never catch up. That surface is a horizon, and the third price is charged there.
+
+### Price 3: area, and the constant G
+
+Unruh showed in 1976 that an accelerating observer feels the vacuum as a warm bath, at a temperature proportional to the acceleration. So a horizon has a temperature, and the region beyond it is, by definition, outside the observer’s line. A black hole’s horizon is the extreme case: the surface of no return.
+
+The third price follows from three chained facts. Einstein: a black hole’s horizon area grows with the square of its mass. Hawking: a black hole glows at a temperature inversely proportional to its mass. Clausius: energy dropped into a body at temperature T adds entropy E/T. Chain them and the mass cancels: a black hole’s entropy is one quarter of its horizon area in Planck areas, which is one bit for every 4 ln 2 Planck areas, 7.2 × 10⁻⁷⁰ square meters. **VERIFIED** A black hole is a full memory, and its capacity is its surface. Bekenstein’s bound extends the ceiling to any region, and the holographic principle conjectures that it is universal. **CONJECTURE** for regions without horizons.
+
+Newton’s constant is introduced here, as the size of a horizon cell, and its familiar meaning as the strength of attraction is recovered afterward rather than assumed before. The cosmic horizon, at one bit per cell, holds about 10¹²² bits, the information budget of the observable universe. **VERIFIED** The smallest black hole, of one Planck mass, holds 4π/ln 2 ≈ 18 bits and lives about 5000 Planck times **VERIFIED**: the point where a bit costs about one of everything.
+
+### The agreement: Einstein’s equations
+
+At a horizon, a single bit that falls out of view is charged twice. By the first price, the energy that crosses with it must be at least kT ln 2 at the Unruh temperature. By the third, the horizon must grow by 4 ln 2 Planck areas to hold it. The ratio of area to energy per bit is 8πG/ac², the first law of horizon mechanics. **VERIFIED**
+
+Jacobson showed in 1995 that if those two facts hold at every horizon for every observer, Einstein’s equations follow, with G fixed by the cell size. Read per bit: Einstein’s equations are the requirement that the heat price and the space price of a bit agree everywhere, and Newton’s constant is the exchange rate. **SYNTHESIS** Gravity is attractive because a horizon must grow when possibility falls across it, and it is universal because every bit pays the same two prices. Newton’s law of gravitation is the weak-field limit of the agreement, which is why G arrives last in this spine and first in the old one. The derivation leaves the cosmological constant free, so the acceleration of the universe’s expansion is not priced by any bit; the spine says so plainly.
+
+### The carrier
+
+The top vertebra is missing, and the spine is designed to say so. The first two prices are paid by laboratory objects: beads, electrons, qubits. The third is paid by horizon cells with no known carrier and no known dynamics. Whether one object pays at every counter is a conjecture. **CONJECTURE** Bit-first, quantum gravity is not “quantize the geometry”; it is a specification: find the object that pays kT ln 2 when forgotten, h/4 when changed, and 4 ln 2 Planck areas when held on a horizon, and show that a horizon’s worth of them obeys Einstein’s equations. Loop quantum gravity’s horizon punctures, holography’s boundary qubits and tensor-network geometries each meet part of the specification. Three experiments grade candidates: erasure at a profit with entangled qubits, gravitational entanglement of two masses, and one bit per horizon cell from black hole ringdown, where a 1998 argument of Hod’s suggests a three-valued cell instead and the spine predicts a binary one.
+
+## 3. Where everything else goes
+
+A spine is not a whole body. The forces, the particles and the dimensionless numbers of the Standard Model are not in it, and the reason is exact. Once k, ħ, c and G are used as units, every remaining constant of physics is a pure number: the fine-structure constant, about 1/137; the ratios of particle masses; the mixing angles. Dimensionful constants price the bit. Dimensionless constants describe the carriers: how particular bits, charges and spins, interact with each other. Electromagnetism, the weak force and the strong force are chapters about the flesh, and the spine does not explain their numbers. It claims only that none of them prices a bit, and it predicts that no fourth price will be found.
+
+Chemistry and biology hang from the first price. A living cell is an information engine that pays Law 1 for every copy it discards and Hopfield’s kinetic proofreading cost for every error it rejects; it operates on the same ledger as a chip, closer to the floor. Communication hangs from the second price and the converter: Shannon’s channel is a relocation of located possibility between lines, and the Bekenstein and Bremermann bounds are the second price applied to a signal. Computing hangs from the first price and the second: free to rearrange, charged to forget, bounded in speed by action.
+
+The chapter map:
+
+| Chapter | Primitive | Constant | Cornerstone | Canonical problem |
+|---|---|---|---|---|
+| 0. The rule | Conservation of possibility | none | Liouville; unitarity | The shuffled deck |
+| 1. The object | The bit; the line | none | S = k ln 2 × H | The coin |
+| 2. Heat | Temperature as the price of entropy | k | Landauer, kT ln 2 | Maxwell’s demon |
+| 3. Action | Energy as tick rate | h | Margolus-Levitin, h/4 | Two entangled qubits |
+| 4. The converter | Lines have edges | c | E = mc²; no signaling faster than c | The accelerating observer |
+| 5. Area | Horizons have temperature | G | Bekenstein-Hawking, A/4ℓₚ² | The one-kilogram black hole |
+| 6. The agreement | Price 1 = Price 3 | G fixed | Jacobson, Einstein’s equations | The falling bit |
+| 7. The carrier | Unknown | ? | none yet | The tabletop gravity test |
+
+## 4. What the new spine explains that the old one asserts
+
+The old spine asserts the Planck scale; the new one explains it. The Planck scale is where a bit costs about one of everything, 0.69 Planck energies to forget at the Planck temperature, 1.57 Planck times to change at the Planck energy, 2.77 Planck areas to hold. **VERIFIED** No price can be neglected against the others there, which is the same as saying thermodynamics, quantum mechanics and gravity stop being separate subjects.
+
+The old spine asserts four constants; the new one explains why there are three prices and one converter. k, ħ and G each attach to one operation on a bit with a definite coefficient. c attaches to none.
+
+The old spine asserts that gravity attracts; the new one derives it from a horizon’s obligation to grow. The old spine asserts the second law; the new one derives it from the rule and a coarsened description. The old spine treats the classical world as given and the quantum world as strange; the new one derives the classical world from copying. The old spine leaves the demon as a paradox; the new one makes it the first worked problem.
+
+And the old spine has no place for the fact that has quietly become the most consequential number in engineering, the price of forgetting, which bounds the energy of every computer and every intelligence that will ever be built. The new spine puts it in Chapter 2.
+
+## 5. What the new spine costs
+
+It is a reorganization, not a new law. Laws 1, 2 and 3 are Landauer’s, Margolus and Levitin’s, and Bekenstein and Hawking’s; the agreement is Jacobson’s. What is new is the object, the order, the reading of the constants as prices, and the specification at the top. Each of those is tagged Synthesis or Conjecture and carries a test.
+
+The objection it must answer is that any three constants define units in which everything is order one, so “a bit costs about one of everything” is dimensional analysis. The answer is that the content lies in the coefficients, ln 2, 1/4 and 4 ln 2, each fixed by a derivation or a measurement and each attached to one operation and no other, and in the fact that two of them are already tied together by the first law of horizon mechanics. The Planck-unit statement is a corollary of the spine, not its claim.
+
+The third price is proven for black holes and derived for local horizons; its extension to every region is a conjecture. The reading of Jacobson adds nothing to his derivation. The measurement problem is untouched: decoherence explains why records are robust, not why one outcome occurs. The forces are not derived. And the pedagogy reverses tradition: a student meets counting and possibility before Newton’s laws, which is harder to begin and easier to finish.
+
+## 6. The spine in one paragraph
+
+Possibility is conserved. A bit is a possibility an observer has located. Forgetting one costs kT ln 2; changing one costs h/4 of action; holding one on a horizon costs 4 ln 2 Planck areas. The three constants of nature are the three price tags, and the speed of light converts between them. At every horizon the heat bill and the area bill for the same bit must match, and the requirement that they match everywhere is the shape of space. What carries the bit is the open question, and it is the only one at the top of the spine.
+
+Shannon said how much a bit is. Turing said how a bit is moved. Einstein said how space curves. Bit first, the three are one subject with one object, and the subject has a spine.
+
+## About this document
+
+Part of the jedanderson.org corpus. Prepared in September 2026 as a collaboration between Jed Anderson, whose questions, curiosity and framing directed the work, and Claude, an AI system made by Anthropic, which drafted the text, carried out the derivations and computed every number in the companion verification script. The physics rests on the people named in the companion paper’s Sources. The readings and the conjecture are the collaboration’s own, and are tagged so that they can be judged. This work stands on the shoulders of giants, and with these tools the giants got even bigger. Corrections and challenges are welcome at jedanderson.org.
 
 ========================================================================
 TITLE: The End of the Snapshot
@@ -1702,142 +2034,6 @@ To align artificial intelligence with the values of life, we do not have to inve
 18. Building the Cosmic Life Intelligence System at Boca Chica, Texas
 
 ========================================================================
-TITLE: The Daylight
-SUBTITLE: Environmental law only ever worked because breaking it was expensive. It just got cheap.
-URL: https://jedanderson.org/essays/the-daylight
-TYPE: essay
-DATE: 2026-08-03
-LICENSE: CC-BY-4.0
-ABSTRACT: Every environmental law is a number standing in for something we care about. We care about a river a child can swim in; we cannot write swimmable into a statute, so we write a number instead. The space between the number and the thing cannot be closed, because a rule without a number cannot be enforced. For fifty years that did not matter much, because finding the space took a specialist, months, and money. A working environmental lawyer of twenty-seven years on what happens now that it takes an afternoon, and why the answer is to stop grading the paperwork and start grading the river.
-========================================================================
-
-*Jed Anderson has practised environmental law for twenty-seven years. He writes from Houston, Texas.*
-
-*A disclosure: I build environmental AI, and I would benefit if what I describe here were built. Check the argument, not me.*
-
----
-
-I spent twenty-seven years finding the gaps.
-
-That isn't a confession. It was the job, it was legal, and I was good at it. A client would come in with a plant and a problem, and somewhere in the rules governing that plant there would be a place where the words didn't quite meet. I would find it. That is what they paid for.
-
-Here is what one looks like.
-
-A rule says a plant may not raise its emissions by more than a set amount. Sensible enough. But a rise has to be measured against something. So the rule lets you compare against any two-year stretch out of the last ten.
-
-Pick a busy stretch. Plants run dirtiest when they are pushed hard, and dirtier still coming back from a long shutdown, when everything is cold and nothing is tuned. Choose two years like that and the plant already looks like a heavy emitter. Measured against that, the new work looks like almost nothing.
-
-The plant has not changed. The tonnage has not changed. Only the year you held it up against.
-
-That is a gap. I have found hundreds.
-
-Some are plainer. Take a limit written as a yearly average. You can run dirty on a still afternoon and clean in a gale, and the arithmetic never notices. The people downwind of the still afternoon do. Or a threshold that counts one chemical and not its close cousin. Or a test that samples on Tuesday for what a furnace did on Sunday.
-
-None of that is cheating. Every one of those choices is written down, was fought over, and was approved by serious people.
-
----
-
-You might take all that as proof the rules were written badly. They weren't. I have read most of them and argued about a good number, and the drafting is better than it has any right to be.
-
-The trouble runs deeper than drafting, and it has no fix.
-
-We care about a river a child can swim in. You cannot write *swimmable* into a statute. A judge cannot enforce it. A plant manager cannot comply with it at two in the morning. An inspector cannot measure it. So we write a number instead — parts per billion, tons per year, hours of testing.
-
-The number is not the river. It never was. It is our best attempt to point at the river with something a stranger can check.
-
-And the moment the number exists, so does daylight. A space between what the number says and what we actually wanted. Somewhere in that space is a way to satisfy the rule completely and miss the point entirely.
-
-You cannot close it. Try, and you write a more careful number — and the more careful number opens daylight of its own, in a new place, usually where nobody is looking. This is not sloppiness. This is what writing a rule *is*.
-
-Fifty years of the best lawyers in the country, on both sides, fighting each other in front of judges, did not close it. I know because I was one of them. Closing it was never on the table. We argued about where the daylight should fall. Never whether.
-
----
-
-So why did any of it work?
-
-Because finding the daylight was expensive.
-
-It took someone like me. A decade to learn where the seams are. Then months on a single question. Then a client willing to pay for all of that on a question that might come back *no*.
-
-Every gap in American environmental law has had a price on its head, and the price was a specialist's time. That price did almost all of the work.
-
-Most of those gaps have never been found by anyone. Not because they are hidden. Every rule in the country is published, free, for anybody who wants it. They have never been found because nobody could afford to go looking.
-
-We were never protected by the rules. We were protected by how slow we were.
-
-Nobody wrote that down. It is in no statute and no rulebook. You don't write down the thing that has always been true.
-
----
-
-It isn't true anymore.
-
-Work that took forty hours takes four. That is not a forecast. That is what the tools already do, today, in my own field, on my own desk.
-
-Speed is the smaller half of it. The larger half is that nobody has to be looking.
-
-Last June a group of researchers took thirty-two real regulations and rebuilt them as working simulations. Each of the thirty-two had a real gap in it — one that somebody in the world had found, used, and forced a patch for. Then they set machines on those rules. Not to break them. Just to score as well as possible under them, the way a company tries to do well under a rule.
-
-The machines rediscovered more than half of the gaps. Nobody had told them the gaps were there.
-
-That is the part to sit with. A gap is simply the cheapest way to a high score. Anything hunting for the cheapest way will walk straight into one, and it will not know what it has found. It has no idea it is standing in a river.
-
-Which would matter less if the people building these machines were watching for it. They are not, and I do not think it is malice. Every large AI company publishes a document setting out what its systems should value — the closest thing these machines have to a conscience. I searched all five of them, in full.
-
-The words *watershed*, *habitat*, *biodiversity*, *pollution* and *wildlife* appear zero times. Not rarely. Zero. Across all five, combined.
-
-They are removing the slowness. They do not know what it was holding up.
-
----
-
-The obvious answer is to write better rules.
-
-I tried that. In 2016 I rewrote the Clean Air Act — the law that governs the air over every American city — from its foundations. The first complete redraft of it in the country's history. Not a patch. The whole thing, rebuilt, published, with a book about the attempt called *A Victorious Defeat*.
-
-The title was not modesty. Nothing moved.
-
-But suppose it had. Suppose every word of it had passed. It still would not have touched this problem. A better rule is a rule. It is still numbers standing in for things we love, and every number still throws its daylight. Rewrite the Act and you get new numbers, and inside them new gaps, waiting for a search that now costs an afternoon.
-
-You cannot out-write something that never gets tired.
-
----
-
-Which leaves one move.
-
-Stop grading the paperwork. Grade the river.
-
-Today, compliance means a report — numbers, filed quarterly, describing what a facility believes it did. The report is a story about the river. Stories can be edited, and I have spent a career editing them lawfully.
-
-The river cannot be argued with.
-
-Put an instrument in the water and the score stops being a claim about the river. It becomes the river. To make the score say clean, you have to make the water clean.
-
-Understand what that does. Every gap I have ever found lived in the space between a measurement and the thing it stood for. Close that space — make the measurement and the thing the same object — and there is no space left to work in. Not a smaller gap. No gap. It is the only test I know of built that way, and it is why this is the one move that does not lose.
-
-And it is not a thought experiment. We have already done it once.
-
-Since 1993, federal rules have required continuous instruments on the chimneys of nearly every coal- and gas-fired power plant in the country. Not a quarterly report. A reading, every hour, published. Those rules were written against an industry with every reason and considerable means to defeat them, and the instruments held. The arguing mostly stopped. When the measurement is the thing itself, there is not much left to argue about.
-
-We have known how to do this for thirty-three years. We have simply never pointed one outward — at a river, a marsh, the air over a neighbourhood — on behalf of anything alive.
-
-The work is small and it is nobody's job. If you write environmental permits, take one limit you already impose and write it so a machine could check it hour by hour. See what breaks. If you run an agency, add a line to your incident form asking whether an automated system was involved. None of this is being counted right now, and what is not counted is never believed. If you work at one of those five companies, put an environmental rule into the tests you already run on your own systems. You have the equipment. It is a weekend.
-
-And if any of this reaches you as an argument for weaker rules — it is not, and I would fight that in public. Everything here sits on top of what already exists. The limit stays exactly where it is. Anything that moves may only move tighter. A rule that can loosen while you watch is not a rule.
-
----
-
-Here is what would change my mind.
-
-A chimney has one owner. A river has a farm on it, a road, a town, and three plants. A reading that says the water is dirty does not say who made it dirty. If that cannot be solved, the river cannot be graded, and my answer fails exactly where I most want it to work.
-
-Real cases also need history, nerve, and a willingness to argue with an inspector. If cheap searching cannot reach that far, it stays a laboratory result, the old slowness holds, and I am simply early. And if we put instruments in rivers and they cry wolf, people will learn to ignore them. Then I will have built the thing I was warning about.
-
-We spent fifty years writing rules against an opponent who had to sleep.
-
----
-
-*Sources. The forty-hours-to-four figure comes from my own practice. The simulation study is Liu and colleagues, "Large Language Models Hack Rewards, and Society," June 2026; the environments were sealed test versions rather than live regulations, and the authors are careful to call the result evidence that something can happen rather than a measure of damage done. I read it the same way. The search of the five companies' published values documents was run over their full texts on 2 August 2026. Hourly stack monitoring has been required since 1993 under the federal rule known as Part 75, which now covers roughly ninety-six per cent of American coal- and gas-fired generation. The Clean Air Act redraft and* A Victorious Defeat *date from 2016. Every figure here is recorded in [an open ledger kept alongside this essay](https://github.com/jedanderson432/jedanderson-site/blob/main/analysis/fact-ledger.md). The engineering — what the instruments would have to measure, what it would cost, and the ways it could be defeated — is set out in a [technical companion](/essays/environmental-safety-mode).*
-
-========================================================================
 TITLE: Environmental Safety Mode: The Proxy Stack, the Interlock, and What Physical Grounding Can and Cannot Do
 SUBTITLE: The technical companion to The Daylight. Carries the formal treatment of environmental law as a reward function, the perception gap between Earth-observation models and the systems holding authority, the three independent results behind the is/ought separation, the thermodynamic feasibility argument, and the L0–L5 specification with adversary analysis at every level.
 URL: https://jedanderson.org/essays/environmental-safety-mode
@@ -1847,7 +2043,7 @@ LICENSE: CC-BY-4.0
 ABSTRACT: The technical companion to 'The Daylight.' Establishes, with sources and uncertainty bands, the energy throughput of the sectors AI is acquiring allocation authority over; gives a formal treatment of environmental regulation as a layered proxy stack and works it against the measured reward-hacking literature; separates the is-gap from the ought-gap using three independent results (the biosphere specifies no preferred state, entropy is observer-relative, and no system grounds its own objective from inside); derives the thermodynamic feasibility of environmental gating with the three leverage quantities kept strictly apart; and specifies Environmental Safety Mode L0–L5 with requirements, costs, limits, and how an adversary defeats each level.
 ========================================================================
 
-*Jed Anderson, Independent Researcher, Houston, Texas. ORCID [0009-0003-1807-2459](https://orcid.org/0009-0003-1807-2459). This is the technical companion to the feature essay [The Daylight](/essays/the-daylight). The feature can be brave because this document is careful. Where the two differ in precision, this one governs.*
+*Jed Anderson, Independent Researcher, Houston, Texas. ORCID [0009-0003-1807-2459](https://orcid.org/0009-0003-1807-2459). This is the technical companion to the feature essay The Daylight. The feature can be brave because this document is careful. Where the two differ in precision, this one governs.*
 
 *All external facts checked 2–3 August 2026. Claims that could not be verified were deleted rather than softened; the deletions are listed in §7.*
 
