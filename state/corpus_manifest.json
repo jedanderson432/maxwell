@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 925,
+  "pieces": 927,
   "quarantined": 1
  },
- "last_run": "2026-09-14",
+ "last_run": "2026-09-15",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -297,6 +297,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "68f06e5b7fa49a8d2dc8eae31c1d9109e6a108125d81ae4edbe5e63073a76e28",
+   "source": "site"
+  },
+  "essays/gravity-is-a-receipt": {
+   "block_hash": "cf1c302b17a1e4817327e523065a3618250be4e54160e17d51e6474b8b291712",
+   "first_seen": "2026-09-15",
+   "last_changed": "2026-09-15",
+   "md_sha256": "d1f58caa0898d3af0cb095af32adeba187f19b071319d19a4d0e445d402634c0",
    "source": "site"
   },
   "essays/great-externalization": {
@@ -640,6 +647,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "9892f1386d7bd961582ff027f0ccfb40ef78723f64cf7b24a6e1dfbf4f7f2762",
+   "source": "site"
+  },
+  "essays/two-pictures-of-the-universe": {
+   "block_hash": "2370df8930cccdc24a194ea3c0bbe85bff1d4fdd97ebad35617329292684ad86",
+   "first_seen": "2026-09-15",
+   "last_changed": "2026-09-15",
+   "md_sha256": "54dda1ae02a188f2203f1797ee988fe7c4975be8ddc5754a08eeb1a0d3adca25",
    "source": "site"
   },
   "essays/underpinnings-of-ai-quantum-physics": {
@@ -6484,7 +6498,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-09-14",
+   "last_held": "2026-09-15",
    "marker": "CASE PENDING"
   }
  },
