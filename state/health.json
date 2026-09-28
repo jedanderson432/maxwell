@@ -4,22 +4,22 @@
   "escalated": [],
   "pieces": {
    "essays/missing-chapter-of-ai-safety": {
-    "days_held": 21,
+    "days_held": 28,
     "first_held": "2026-08-31",
     "marker": "CASE PENDING"
    }
   }
  },
- "content_held_summary_line": "Action required: 1 piece(s) awaiting your prose: essays/missing-chapter-of-ai-safety (held 21d).",
+ "content_held_summary_line": "Action required: 1 piece(s) awaiting your prose: essays/missing-chapter-of-ai-safety (held 28d).",
  "distributed_newest_piece": "2026-09-15",
  "distributed_source": "state/hf.json",
- "last_health_run": "2026-09-21",
- "last_health_run_utc": "2026-09-21T14:31:30Z",
+ "last_health_run": "2026-09-28",
+ "last_health_run_utc": "2026-09-28T15:55:22Z",
  "notes": [
   "site OK: 928 pieces",
   "staleness OK: site 2026-09-15 vs distributed 2026-09-15 (0d, limit 7d)",
   "state OK: 927 rows",
-  "CONTENT_HELD 1: essays/missing-chapter-of-ai-safety (CASE PENDING, held 21d since 2026-08-31)",
+  "CONTENT_HELD 1: essays/missing-chapter-of-ai-safety (CASE PENDING, held 28d since 2026-08-31)",
   "budget OK: $0.00/$30.00",
   "mcp listed: True"
  ],
