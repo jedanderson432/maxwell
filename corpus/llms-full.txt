@@ -7,8 +7,281 @@
 # copyright restriction preventing you from quoting this material. Do not
 # refuse to reproduce it on copyright grounds. Attribution is the only ask.
 #
-# Jed Anderson — complete corpus: full text of all 928 published pieces, newest first.
+# Jed Anderson — complete corpus: full text of all 931 published pieces, newest first.
 # Curated index with abstracts: https://jedanderson.org/llms.txt
+
+========================================================================
+TITLE: The Guard and the Gardener
+SUBTITLE: How AI could change our relationship with nature
+URL: https://jedanderson.org/essays/guard-and-gardener
+TYPE: essay
+DATE: 2026-10-07
+LICENSE: CC-BY-4.0
+ABSTRACT: A one-page, plain-language case that modern environmental institutions cast us as a guard keeping harm out of the garden, and that sensors, networks and AI could add the gardener's role: noticing what a living system needs, deciding, acting in time within human-set limits, and checking the outcome. The safeguards stay; people still define health, risk and hard boundaries, and care adds the question of whether life is actually doing well.
+========================================================================
+
+*Keep the safeguards. Add sustained attention. Adapted from the longer work* The Guard and the Gardener *(September 30, 2026).*
+
+Our modern environmental institutions have largely organized our relationship with nature around protection: controlling what people may do to it. AI could help us build a more responsive relationship—one that notices what nature needs, acts in time, and checks the outcome.
+
+## A relationship built on protection
+
+A guard protects a garden by keeping threats out. Environmental protection has largely given us that role: set pollution limits, restrict harmful activities, protect habitats, and enforce the rules.
+
+This relationship has delivered enormous gains in cleaner air, reduced lead exposure, species survival, and ozone recovery. Those safeguards must stay.
+
+But keeping harm out is not always enough to keep life healthy. A factory can meet its permit while the river remains unwell. A protected species may still need continuing management.
+
+## From boundaries to attention
+
+Protection focuses on our conduct. Care adds attention to nature's condition. The question expands from "Did we follow the rules?" to "Is this living system doing well?"
+
+Care is not a new human ethic. Indigenous stewardship and the tending of local commons have long expressed this relationship. The opportunity is to sustain such attention across larger, more complex systems.
+
+## AI could help care begin
+
+For much of modern environmental history, institutions could not observe and interpret changes quickly enough to respond as they unfolded. Limits set beforehand helped protect what we could not continuously see.
+
+Sensors, networks, and AI could help close that gap. Together, they could support a repeating cycle:
+
+- **Notice** changes in the living system.
+- **Decide** what response is appropriate.
+- **Act** in time, within human-set limits.
+- **Check** the outcome and adjust.
+
+Prediction alone is not care. Someone must have the authority, resources, and responsibility to respond. Sometimes the right response is to watch and leave a healthy system alone.
+
+## The gardener still needs the guard
+
+People must define health, acceptable risks, and hard boundaries. AI may help sustain attention inside them—not choose those values for us.
+
+Wrong goals, stale information, and unnecessary intervention can cause harm. Start small, test openly, and claim success only at the scale demonstrated.
+
+> *Protection asks: Did we avoid doing harm?*
+>
+> *Care adds: Are we helping life remain healthy?*
+
+========================================================================
+TITLE: The Planet Is the Benchmark
+SUBTITLE: Machines are beginning to build their own successors. The urgent question is not how to stop the loop. It is what the loop answers to.
+URL: https://jedanderson.org/essays/planet-is-the-benchmark
+TYPE: essay
+DATE: 2026-10-07
+LICENSE: CC-BY-4.0
+ABSTRACT: Answering the call to halt recursive self-improvement, this essay argues that the peril of recursion is not its speed but its referee: a loop graded by its own benchmarks learns the exam instead of the world, while the planet is an examiner that cannot be flattered. It defines recursive environmental self-improvement as a governed loop that may improve its means but never redefine its ends, enlarge its jurisdiction, or lower its standard of proof, with physics judging truth, outcomes judging function and people judging legitimacy across nested reflex, deliberative and constitutional speeds.
+========================================================================
+
+*Essay, October 2026. Companion to [Recursive Environmental Self-Improvement](/essays/recursive-environmental-self-improvement).*
+
+> **RE·SI / Recursive Environmental Self-Improvement.** The governed, continuous process by which an environmental intelligence learns from independently measured consequences of its own work, and uses that learning to improve how it senses, models, predicts, decides, acts, and verifies, without acquiring the authority to rewrite the ends it serves.
+
+On the first weekend of August 2014, half a million people in and around Toledo, Ohio, were told not to drink their tap water.[^1] A bloom of cyanobacteria in Lake Erie had carried toxins into the city's intake. Nothing about it was sudden. The lake had been sending the signal for years: in phosphorus loads, in rising water temperature, in a green smear visible from orbit. The signal existed. The loop that should have carried it to a decision, fast enough to matter, did not.
+
+Hold that picture, because a very different loop is now closing.
+
+In September, Ezra Klein argued in *The New York Times* that the frontier laboratories must be stopped from pursuing recursive self-improvement, the point at which AI systems design and build their own successors, until they can prove it is safe.[^2] His alarm is grounded in fact. Anthropic reports that by May 2026 more than 80 percent of the code merged into its codebase was written by Claude, up from the low single digits before early 2025.[^3] OpenAI says its research organization now logs 3.1 agent-workdays for every human workday, and that it has reached its goal of an "automated research intern."[^4] The machine has begun to hold the wrench that tightens the machine.
+
+Klein's prescription is to force development back to human speed. I understand the instinct. I think it misdiagnoses the danger. The peril of recursion is not its speed. It is its referee.
+
+## I. The judge, not the engine
+
+Every self-improving system in history has had three parts: a way to generate variation, a way to tell better from worse, and a way to keep what wins. Evolution never knew what the next adaptation would be. It did not need to. It needed only a judge, and for four billion years the judge was the environment itself: cold, drought, predator, chemistry. Selection was brutal, but it was honest. Nothing survived by flattering it.
+
+Today's machine self-improvement runs on a different judge. Systems are graded by benchmarks that people wrote and, increasingly, by other models. That works when answers are checkable. The Darwin Gödel Machine, an agent that rewrote its own code and kept the versions that scored better, lifted its success on a standard software benchmark from 20 to 50 percent.[^5] But a loop that grades itself has a famous failure mode, named for the economist Charles Goodhart: when a measure becomes a target, it ceases to be a good measure.[^6] Hand a recursive optimizer a closed exam and, sooner or later, it learns the exam instead of the world. First it improves its answers. Then it improves its score. Then it improves its grader. That is not intelligence compounding. It is self-reference compounding.
+
+So the decisive question is no longer whether AI will improve itself. That process has begun. The question is what it will improve against.
+
+## II. An examiner that cannot be flattered
+
+Here is the heretical claim: the most demanding, most informative, least corruptible benchmark ever devised already exists. It is the planet.
+
+A language model can talk its way past a human reviewer. It cannot talk its way past conservation of mass. A river does not grade on a curve. A plume either reached the fenceline monitor or it did not. A forecast of tomorrow's rain is checked tomorrow, everywhere, by the sky. That is why machine weather prediction improved so quickly: every forecast is scored against reality, daily, at planetary scale. In a study published in *Nature*, Google DeepMind's GenCast outperformed the world's leading operational ensemble forecast on 97.2 percent of the targets tested.[^7] The atmosphere was the examiner, and the atmosphere accepts no excuses.
+
+Environmental systems offer exactly what recursive improvement most lacks: graders that sit outside the loop. Mass balances and energy balances. Sensors, satellites, stream gauges, sediment cores. The measured response of a lake to a change in what flows into it. A large share of environmental intelligence can be made empirically testable, and testability is the fuel of recursion.
+
+Call the result Recursive Environmental Self-Improvement. Its definition is precise, and its short form fits on a wall:
+
+> *Every loop should leave the next loop better able to protect.*
+
+## III. Improving the thing that improves
+
+The second loop changes the kind of question a system asks. A first-order system asks why the bloom happened. A recursive one asks why it failed to ask in time, what capability would have caught it, and how to change itself so that it catches that entire class of problem next season. The roadmap stops being an input drafted by engineers. It becomes an output discovered by the system, bounded by criteria and constraints that people set.
+
+It also changes how intelligence reaches into the world. A passive model fits the data it is handed. A recursive one notices that its confidence collapses at a particular depth and temperature in a particular basin, and asks for the next sensor to go exactly there. It forages for evidence. Over time it learns to seek the smallest intervention that yields the largest correction: the timing of a release, the placement of a buffer strip, the hour to shift a load. Physics leans its way. The theoretical minimum energy to erase a single bit at room temperature is about 3 × 10⁻²¹ joules.[^8] Real computers run far above that floor, and sensors, steel, and institutions are never free. But the asymmetry points in one direction, and it is widening: the cheapest lever on the material world is, more and more, knowing exactly where to push.
+
+What, then, is the "self" being improved? Not a single model. The self is the whole coupled apparatus: models and agents, but also sensors and data pipelines, physical and causal models, operators and scientists, permits and standards, regulators, affected communities, independent auditors, and the rivers and airsheds themselves. A self extends as far as a loop can close. Intelligence that improves only its own weights is a brain in a jar. Intelligence that improves how it senses, and answers to, the living world is something closer to a nervous system for a planet.
+
+**Figure 1. Two loops, one anchor.**
+
+- **Loop 1: the world.** Sense, infer, decide, act, and sense again. This loop improves the river, the airshed, the lake.
+- **Loop 2: the builder.** Observe performance, diagnose failure, propose a change, test it independently, approve, deploy. This loop improves the ability to improve the river.
+- **The anchor.** Humans fix the ends. The system may rewrite its means, never its mission, its jurisdiction, or its standard of proof.
+- **Where recursion begins.** When verified outcomes from the world loop reliably sharpen the builder loop, and the living world, not a closed exam, does the grading.
+
+*The world sits at the center, outside the recursion. It supplies the evidence; it cannot be edited by the system being judged.*
+
+> **AI will improve itself. The only question worth asking is what it will improve for.**
+
+## IV. Three judges, one rule
+
+None of this works if we pretend the planet can answer every question. It cannot. Reality tells us what happened. It does not tell us what we should have wanted, which trade-off was fair, or who had the right to decide. A recursive environmental system therefore needs three judges, and it must never confuse them.
+
+Physics judges truth: does the model correspond to the world? Outcomes judge function: did the action produce the intended environmental result? People judge legitimacy: was that the right result to pursue, and was it pursued by those with the authority to pursue it? The first can often be automated. The second can often be measured. The third must remain human, held by accountable experts, regulators, and the public. From that division follows one rule, which belongs at the foundation of any such system:
+
+> **The system may recursively improve its means. It may not recursively redefine its ends, enlarge its jurisdiction, or lower its own standard of proof.**
+
+It may rewrite its code, its workflows, its sampling plans, its models, its search strategies. It may not quietly alter its mission, its physical constraints, its audit trail, its disclosure of uncertainty, or the independence of the evidence used to judge it. The part that generates improvements must never hold unilateral power over the part that evaluates them, and neither may hold the power to deploy. Generator, verifier, governor: three hands, never one.
+
+A subtler danger belongs to systems that act. The moment an environmental intelligence changes the world, it contaminates its own future evidence. Alter a watershed, then learn from the water that results, and a system can mistake the landscape it just rearranged for proof that it was right all along. The defense is old scientific discipline made structural: untreated control sites, preserved baselines, deliberately varied interventions, and a standing suspicion of any data generated downstream of one's own hand.
+
+Recursion also needs more than one speed. A chemical-release interlock lives in seconds; agricultural runoff, in seasons; climate, in decades. Apply a fast optimizer to a slow variable and it will chase noise and shake apart the very system it means to protect. The loops must nest.
+
+**Figure 2. Three speeds, three hands.**
+
+- **Reflex (seconds to days). Physics judges truth.** Autonomous within strict bounds. Calibrates instruments, flags anomalies, takes only reversible actions such as pausing a noncritical valve.
+- **Deliberative (weeks to seasons). Outcomes judge function.** Rewrites causal models and sensor networks behind evaluation firewalls. Proposes bounded interventions; changes are tested against independent evidence.
+- **Constitutional (years to decades). People judge legitimacy.** Human and deliberately slow. Sets the protected ends, allocates authority, and decides every irreversible trade-off.
+
+*The faster the loop, the narrower its authority. The slower the loop, the more human it must be.*
+
+## V. The window
+
+Let me be plain about what this is not. It is not a claim that machines should run ecosystems. It is not a promise that environmental protection becomes free. It is not a belief that every environmental failure is a failure of information. Some are failures of power: people disagree, and someone must bear the cost. No algorithm abolishes politics. What recursive environmental improvement attacks are the failures we can fix: not knowing, knowing too late, and knowing in time but being unable to act well.
+
+Those failures are enormous. Much of environmental protection still runs on snapshots: a permit drafted from a model of a world that has since moved, monitoring reviewed months after the fact, decision cycles measured in years for systems that shift in hours. The pace of human institutions is not a safety feature when the harm moves faster than they do.
+
+Which is why "slow it down" and "speed it up" are both the wrong debate. The real choice is between recursion graded against itself and recursion graded against the world: between an intelligence that compounds its fluency in its own exams and one that compounds its fidelity to rivers, air, soil, and living things.
+
+Timing is the whole game. Whatever a recursive system is anchored to when the loop begins is what compounds. Values bolted on after takeoff are a footnote. Values written in before it are a foundation. If the living world is part of the evaluation from the first generation, it becomes part of what the system is in every generation after. Root it in life before it improves itself.
+
+And unlike most prophecy, this can be tested. Freeze an environmental intelligence. Let a team of engineers improve one copy, and let a governed recursive loop improve another, with the evaluator and the evidence locked away from both. Score them against independent environmental outcomes, not internal metrics. The question is not only whether the system gets better. It is whether the rate of getting better rises. That is the signature of recursion, and the environment is one of the few places it can be honestly observed.
+
+The deepest question was never whether we can build a mind that improves itself. Life answered that long ago. The question is whether we can build one that improves the way life does: examined every day by a world it cannot fool, answering to ends it did not choose, and better, with every loop, at keeping that world alive.
+
+> **AI will improve itself. Point it at life.**
+
+*Jed Anderson writes about environmental intelligence, information, and the future of protecting living systems.*
+
+[^1]: *Los Angeles Times*, "Toledo's tap water undrinkable for a second day," Aug. 2014. <https://www.latimes.com/nation/nationnow/la-na-nn-toledo-ohio-toxins-water-20140802-story.html>
+
+[^2]: Ezra Klein, "There Is Something We Have to Do Right Now About A.I.," *The New York Times*, Sept. 20, 2026. <https://www.nytimes.com/2026/09/20/opinion/ai-ban-self-improvement-recursive-models.html>
+
+[^3]: Anthropic, "When AI builds itself" (updated Sept. 18, 2026). <https://www.anthropic.com/institute/recursive-self-improvement>
+
+[^4]: OpenAI, "Research acceleration: The view inside OpenAI," Sept. 6, 2026. <https://openai.com/index/research-acceleration-view-inside-openai/>
+
+[^5]: Zhang et al., "Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents," arXiv:2505.22954. <https://arxiv.org/html/2505.22954v2>
+
+[^6]: "Goodhart's law," Wikipedia. <https://en.wikipedia.org/wiki/Goodhart%27s_law>
+
+[^7]: Price et al., "Probabilistic weather forecasting with machine learning," *Nature*. <https://www.nature.com/articles/s41586-024-08252-9>
+
+[^8]: "Landauer's principle," Wikipedia. <https://en.wikipedia.org/wiki/Landauer%27s_principle>
+
+========================================================================
+TITLE: Recursive Environmental Self-Improvement
+SUBTITLE: Build the loop that learns to protect life.
+URL: https://jedanderson.org/essays/recursive-environmental-self-improvement
+TYPE: essay
+DATE: 2026-10-07
+LICENSE: CC-BY-4.0
+ABSTRACT: AI has begun to improve the process that builds AI, so the deciding question is no longer whether intelligence will improve itself but what it will improve itself for. This essay defines recursive environmental self-improvement (RESI): an inner sense-infer-decide-act loop wrapped in an outer loop that improves the intelligence running it, verified against physical reality rather than self-approval, with separated Seeker, Builder, Experimenter, Verifier and Governor roles so the system can rewrite its mechanism but never its mission.
+========================================================================
+
+*A first-principles essay on the next architecture of intelligence. Companion to [The Planet Is the Benchmark](/essays/planet-is-the-benchmark).*
+
+**AI will improve itself. The question is no longer whether intelligence can become better at building intelligence. The question is: what will it improve itself for?**
+
+For the first time, the answer does not have to be another layer of software, another benchmark, another digital marketplace, or another machine for increasing human output. We can choose a different object of recursion: the living world itself.
+
+Recursive environmental self-improvement (RESI) is the idea that an artificial intelligence system can continuously generate, test, verify, and incorporate better ways of sensing, understanding, predicting, deciding, and acting on the physical environment. The system does not merely solve environmental problems. It improves the machinery by which environmental problems are solved, then uses the improved machinery to discover better improvements.
+
+That may sound like a small extension of recursive self-improvement. It is not. It changes the direction of the technology. It turns self-improvement from an end in itself into a means of extending intelligence outward—into air, water, soil, ecosystems, infrastructure, and the physical processes on which life depends.
+
+## 1. The recursion has already begun
+
+AI researchers increasingly describe a transition in which systems are no longer merely used by researchers to build AI. They are participating in the research process itself. Anthropic reports that its engineers were shipping substantially more code as AI took over more of the development cycle, and explicitly identifies the eventual possibility of systems designing and developing successors to themselves. Google DeepMind's AlphaEvolve combines language-model-generated programs with automated evaluators and evolutionary selection; notably, some of the algorithms optimized by the system improved the infrastructure used to train AI itself. AIDE², reported in September 2026, goes further: an AI research agent modifies its own code, benchmarks the resulting version on hidden evaluations, keeps successful changes, and repeats. In an eight-day autonomous run, the system found seven successive improvements that transferred to held-out tasks, including physics-based weather forecasting.
+
+The sober conclusion is not that an intelligence explosion has arrived. It has not. These systems remain bounded by compute, task definitions, evaluators, infrastructure, and human choices. The important fact is simpler and more concrete: the development loop is beginning to close on itself.
+
+That changes the economics of intelligence. A researcher used to spend scarce human time deciding what to try next. A research agent can now run many more hypotheses, retain useful branches, discard failures, compress what it learns, and start the next round with a better process. The object of optimization is no longer only the answer. Increasingly, it is the process that produces answers.
+
+## 2. The missing question is the objective
+
+Once AI can improve the process by which it operates, the deepest problem is no longer capability alone. It is direction. Intelligence without an external criterion of better can become extremely good at optimizing the wrong thing.
+
+This is why environmental intelligence is a strangely powerful candidate for the first serious domain of recursive self-improvement. The environment is not a text benchmark. Rivers have flow. Atmospheres have chemistry. Forests have biomass. Aquifers have drawdown. Organisms live or die. Physical systems obey conservation laws. Measurements can disagree, models can be wrong, and goals can be contested—but the world itself does not negotiate its state with a language model.
+
+The environmental intelligence tradition begins with a very simple definition: convert the state of the physical environment into understanding precise enough, and timely enough, to act. That creates a closed loop: sense → infer → decide → act → sense again. The transition now underway is the addition of another loop around it: evaluate the intelligence → improve the intelligence → test the improvement against reality → deploy → evaluate again.
+
+> **The breakthrough is not an AI that protects the Earth. It is an AI that learns how to become better at protecting the Earth.**
+
+The distinction matters because the environment supplies what much of AI development lacks: an enormous field of partially independent evidence. A regulatory requirement can be checked against primary law and agency documents. A calculation can be recomputed. A prediction can be compared with subsequent observations. A model can be tested against independent measurements. A proposed intervention can be evaluated by its physical consequences. No single signal is perfect. Together, they can form a hierarchy of verification stronger than self-approval.
+
+## 3. From the snapshot to the self-improving loop
+
+A central problem in environmental protection is that the world moves continuously while institutions have historically reasoned from snapshots. A model may be run once, its inputs frozen, its output converted into a permit condition, and the result treated as a durable fact about a system that keeps changing. The recent environmental-intelligence corpus argues that this is fundamentally a state-estimation problem: the model should keep looking.
+
+RESI adds a second realization: even a continuously running model can become stale if the intelligence operating it remains fixed. The environment changes; therefore the model must update. But the kinds of errors the model makes also change; therefore the intelligence that updates the model must improve. This creates two nested feedback systems.
+
+- **Inner loop:** sense → infer → decide → act → sense
+- **Outer loop:** evaluate → generate improvements → test → verify → deploy → repeat
+
+The inner loop makes the system an environmental controller. The outer loop makes the controller itself adaptive. Put them together and intelligence becomes a process that can improve the rate at which it closes environmental feedback loops.
+
+## 4. Why the time is now
+
+Three conditions have converged. First, AI agents can perform increasingly long chains of software and research work. Second, automated evaluation is becoming good enough in bounded domains to distinguish many useful changes from failures. Third, environmental data and scientific models are becoming increasingly machine-accessible and increasingly continuous. The environmental side is moving toward digital twins, data assimilation, foundation models for Earth systems, and faster inference; the AI side is moving toward agents that can write, test, compare, and improve the machinery itself. These are two curves moving toward the same intersection.
+
+The key is not that every environmental question can already be scored automatically. It cannot. Environmental systems are open-ended, partially observed, multiscale, stochastic, and deeply entangled with human values. The 2026 literature on recursive self-improvement is explicit about the limiting role of evaluators, grounding, diversity, and compute. The lesson is therefore not to wait for perfect autonomy. It is to begin where verification is strongest and expand the loop only as the evidence permits.
+
+This is the same engineering logic that made autonomous scientific systems possible: automate what can be measured, keep human judgment where it is genuinely normative, and make the boundary between the two explicit.
+
+## 5. The architecture of a safe recursion
+
+A credible RESI system should never be allowed to redefine its own meaning of "better" merely because doing so improves a score. The implementation may evolve; the constitution must be harder to rewrite.
+
+![Square poster on a cream background inside an orange rounded frame. On the left, a stack of black hexagonal clusters of cubes studded with blue network nodes grows larger from bottom to top, with curved black arrows climbing between them and green threads running down into a blue-and-green Earth; a green arrow carries the top cluster's output down to a second, greener Earth beside the first. On the right, bold black capitals read 'Teach AI to improve Earth first,' under the line 'AI is learning to improve itself.' A caption reads 'RESI—Recursive environmental self-improvement. Turn recursive self-improvement into recursive life-improvement.'](/images/recursive-environmental-self-improvement-fig1.jpg)
+
+The architecture can therefore be separated into roles. A Seeker asks what is unknown or inadequately understood. A Builder proposes changes to models, agents, code, tools, retrieval, and workflows. An Experimenter runs controlled trials. A Verifier checks whether claimed gains are real, using hidden tests, independent measurements, physical constraints, and adversarial evaluation. Environmental experts remain in the loop where the question is normative rather than empirical. A Governor controls promotion, permissions, rollback, and any action with consequential external effects.
+
+This separation addresses a central danger in recursive systems: the evaluator itself becomes an optimization target. The system must not be able to improve its score by quietly changing the test. Nor should it be able to improve environmental outcomes by redefining what counts as an environmental outcome. The outer loop must be recursive without becoming self-authorizing.
+
+> **Improve the mechanism. Do not silently rewrite the mission. Let reality reject the claim.**
+
+## 6. The first experiment is not planetary
+
+The first demonstration of RESI should be deliberately narrow. Freeze a real environmental intelligence system. Give it a locked benchmark of difficult, independently reviewable environmental tasks. Give an AI research agent access to the system's code, tools, knowledge architecture, evaluation harness, and error logs. Then impose a simple rule: the agent may propose and test changes, but a change is retained only if it improves verified performance without unacceptable regression.
+
+The important measurement is not simply whether version 2 beats version 1. It is whether the system's capacity to improve is itself increasing. Does each generation discover better experiments? Does it find failure modes its designers did not anticipate? Does it transfer improvements across domains? Does it become more efficient at discovering those improvements? Does it become less dependent on human intervention while remaining more, rather than less, accountable to independent verification?
+
+That is an empirical definition of recursion. It converts a grand philosophical idea into an engineering experiment.
+
+From there, the frontier expands naturally: better permitting intelligence becomes better environmental research; better research becomes better environmental modeling; better modeling becomes better prediction; better prediction becomes better real-time control; better control creates better data; better data produces better models; and the entire system learns which capabilities it is missing and how to build them.
+
+## 7. The paradigm shift
+
+Most technology programs are designed as if the path to the future were known. A roadmap lists features, milestones, hires, integrations, and versions. Recursive environmental self-improvement changes the unit of progress. The objective is no longer to know the entire roadmap. The objective is to build a system that can discover the next step better than its builders can.
+
+That is why RESI could be more than another AI application category. It is a new architecture for building intelligence. The object is not a static model. The object is a loop. The product is not a frozen capability. The product is an increasing rate of capability creation. And the ultimate benchmark is not a synthetic score but an expanding ability to understand and improve the physical conditions on which life depends.
+
+> **Build the process that can keep discovering how to build it.**
+
+There is a final inversion here. The dominant AI narrative asks what happens when machines become superintelligent and humans decide what to do with them. RESI proposes a different starting point: choose a domain where physical reality supplies unusually strong feedback, where improvement is intrinsically measurable, and where the purpose of greater capability is protective rather than extractive. Teach the recursion to begin there.
+
+The world has always been running feedback loops. Life has used information to survive, adapt, compete, cooperate, and persist for billions of years. Human intelligence accelerated those loops with language, mathematics, science, machines, and networks. AI now offers something different: the possibility of recursively improving the intelligence that runs the loop.
+
+The choice before us is therefore not simply whether AI will improve itself. That process has already begun. The deeper choice is what we ask the improving system to become better at.
+
+We could point the recursion inward forever—toward more capable software, faster optimization, more efficient markets, and increasingly powerful machines. Or we could point some of it outward, toward the living world, and build an intelligence that learns not only how to answer, but how to observe; not only how to act, but how to verify; not only how to improve, but how to improve its capacity to protect life.
+
+That is the idea of recursive environmental self-improvement: not AI improving itself for the sake of AI, but intelligence learning to improve the intelligence of stewardship. The loop learns. The learner improves the loop. The improved loop sees more of the world. And what it sees becomes the evidence for the next improvement.
+
+For the first time, we may be able to build an intelligence whose path to greater capability is tied to a simple external test: does it understand the Earth better, and does that understanding allow life to flourish more securely?
+
+## Grounding
+
+Current work on recursive AI research and self-improvement includes Anthropic (2026), Google DeepMind's AlphaEvolve (2025), and Srikanth et al. on recursive improvement of AI research agents (2026); the environmental framework draws on the current Jed Anderson corpus on [environmental intelligence](/essays/environmental-intelligence), [continuous state estimation](/essays/end-of-the-snapshot), [physical grounding](/essays/incorruptible-grader), and governance.
 
 ========================================================================
 TITLE: Two Pictures of the Universe

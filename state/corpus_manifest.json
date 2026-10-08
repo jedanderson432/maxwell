@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 927,
+  "pieces": 930,
   "quarantined": 1
  },
- "last_run": "2026-10-07",
+ "last_run": "2026-10-08",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -313,6 +313,13 @@
    "md_sha256": "0223618d375b50bd83f44749607a62edea018240b4eea8e1ae1ded401ab42c8f",
    "source": "site"
   },
+  "essays/guard-and-gardener": {
+   "block_hash": "7354355d7b8ebaed2f414436360ba7e046d0773c69935eda20a9967a699bcd13",
+   "first_seen": "2026-10-08",
+   "last_changed": "2026-10-08",
+   "md_sha256": "d58a39ada051dc41ad706190864fe7388efc712fd4afee7b98ba516ec735b4c2",
+   "source": "site"
+  },
   "essays/homo-spiritus-human-3-0": {
    "block_hash": "cc69e6575973a1e4b8c440ade6e6405c8c68de62579b4528301e4bd9bad66e52",
    "first_seen": "2026-07-26",
@@ -516,6 +523,13 @@
    "md_sha256": "c912d870b6ea2967a441b1465a1f785bba6cdee9257be1570dffea6374c475ea",
    "source": "site"
   },
+  "essays/planet-is-the-benchmark": {
+   "block_hash": "20164a4adc87ebf6e69a8787bdf092c1f86cd7e031874c2b87ac11b6ba89bd94",
+   "first_seen": "2026-10-08",
+   "last_changed": "2026-10-08",
+   "md_sha256": "c6265f57c9b6f15d6aedee40efe70dfd0dbe296b1dabc22c40a38012287b7a2a",
+   "source": "site"
+  },
   "essays/planetary-dead-time": {
    "block_hash": "d38e511d216de59a3d440083500078440de2f649ada2ef4e38a54edd5b9e3413",
    "first_seen": "2026-07-26",
@@ -556,6 +570,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "ba527e872bb78c3246e7238fcd28c6b91e22dfa628e4eaf1e707b1c6968eaee0",
+   "source": "site"
+  },
+  "essays/recursive-environmental-self-improvement": {
+   "block_hash": "355d17ba32d7c4b006ad71307cf8445aa5c179f3a2ce1d8bc8c9a1e4fb440b16",
+   "first_seen": "2026-10-08",
+   "last_changed": "2026-10-08",
+   "md_sha256": "9eb8a18676b0adb96515cb3b899f7e724fd9a946e2c90f56663c27eb96ca1863",
    "source": "site"
   },
   "essays/reward-hacking-disembedding": {
@@ -6498,7 +6519,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-10-07",
+   "last_held": "2026-10-08",
    "marker": "CASE PENDING"
   }
  },
