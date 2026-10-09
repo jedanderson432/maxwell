@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 930,
+  "pieces": 932,
   "quarantined": 1
  },
- "last_run": "2026-10-08",
+ "last_run": "2026-10-09",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -502,6 +502,13 @@
    "md_sha256": "a4a1a66d6efc5b3cae5f38b3276e993e9b2fa767a0f295d657099bdedef67815",
    "source": "site"
   },
+  "essays/paradigm-shift-in-ai-safety": {
+   "block_hash": "54e4df2fcb110815730fa7fb531ead34e839c1902488f1549c3855367da4f8e4",
+   "first_seen": "2026-10-09",
+   "last_changed": "2026-10-09",
+   "md_sha256": "83bab439a606a27a6ddb5d3c4b247e8aada8f7bcc90c0d53fb3b739398d3ff12",
+   "source": "site"
+  },
   "essays/physical-theory-of-information": {
    "block_hash": "aedf0b1370c5bbf6f5ea7324bf9f0f0327c0bd67aa4f78fb1e09d7a5d2eb0fad",
    "first_seen": "2026-09-14",
@@ -626,6 +633,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "a364cb00e570fc165c4cff2f7df31d91388bd058965fce6764596de67a3400ac",
+   "source": "site"
+  },
+  "essays/superintelligence-grounded-in-life": {
+   "block_hash": "5233182f49cb655159d014c26d06921355b346eb56e156ff0a1f391278d3da18",
+   "first_seen": "2026-10-09",
+   "last_changed": "2026-10-09",
+   "md_sha256": "4ccba9625d7ce598df67596b170212801c9c6a34c1578065e8cd1752fe3522dc",
    "source": "site"
   },
   "essays/the-arc": {
@@ -6519,7 +6533,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-10-08",
+   "last_held": "2026-10-09",
    "marker": "CASE PENDING"
   }
  },
