@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 932,
+  "pieces": 933,
   "quarantined": 1
  },
- "last_run": "2026-10-15",
+ "last_run": "2026-10-16",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -577,6 +577,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "ba527e872bb78c3246e7238fcd28c6b91e22dfa628e4eaf1e707b1c6968eaee0",
+   "source": "site"
+  },
+  "essays/record-becomes-the-thing": {
+   "block_hash": "f739f171b862678a3a1cf1fd434929689cc180df54c2b7e271965ebfe661813c",
+   "first_seen": "2026-10-16",
+   "last_changed": "2026-10-16",
+   "md_sha256": "b4477b1fb791e8ccc06582e58e64fe4ea5fa5cd12ece985726edf9dce692f0d0",
    "source": "site"
   },
   "essays/recursive-environmental-self-improvement": {
@@ -6533,7 +6540,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-10-15",
+   "last_held": "2026-10-16",
    "marker": "CASE PENDING"
   }
  },
