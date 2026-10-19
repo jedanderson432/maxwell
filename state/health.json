@@ -6,27 +6,27 @@
   ],
   "pieces": {
    "essays/missing-chapter-of-ai-safety": {
-    "days_held": 42,
+    "days_held": 49,
     "first_held": "2026-08-31",
     "marker": "CASE PENDING"
    }
   }
  },
- "content_held_summary_line": "Action required: 1 piece(s) awaiting your prose: essays/missing-chapter-of-ai-safety (held 42d). — ESCALATED",
- "distributed_newest_piece": "2026-10-09",
+ "content_held_summary_line": "Action required: 1 piece(s) awaiting your prose: essays/missing-chapter-of-ai-safety (held 49d). — ESCALATED",
+ "distributed_newest_piece": "2026-10-16",
  "distributed_source": "state/hf.json",
- "last_health_run": "2026-10-12",
- "last_health_run_utc": "2026-10-12T17:02:27Z",
+ "last_health_run": "2026-10-19",
+ "last_health_run_utc": "2026-10-19T14:57:56Z",
  "notes": [
-  "site OK: 933 pieces",
-  "staleness OK: site 2026-10-09 vs distributed 2026-10-09 (0d, limit 7d)",
-  "state OK: 932 rows",
-  "CONTENT_HELD 1: essays/missing-chapter-of-ai-safety (CASE PENDING, held 42d since 2026-08-31)",
+  "site OK: 934 pieces",
+  "staleness OK: site 2026-10-16 vs distributed 2026-10-16 (0d, limit 7d)",
+  "state OK: 933 rows",
+  "CONTENT_HELD 1: essays/missing-chapter-of-ai-safety (CASE PENDING, held 49d since 2026-08-31)",
   "budget OK: $0.00/$30.00",
   "mcp listed: True"
  ],
  "ok": false,
  "pipeline": "green",
  "pipeline_failures": [],
- "site_newest_piece": "2026-10-09"
+ "site_newest_piece": "2026-10-16"
 }
