@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 933,
+  "pieces": 934,
   "quarantined": 1
  },
- "last_run": "2026-10-21",
+ "last_run": "2026-10-22",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -381,6 +381,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "f0156375519ec59693b4a84d7cda76f87a011aa455f398d110ac1ba1a8e386bf",
+   "source": "site"
+  },
+  "essays/large-nature-model": {
+   "block_hash": "c8c1c83906e682fb24cead19bea72176a1df009d65d29e48a9eb9100508a2322",
+   "first_seen": "2026-10-22",
+   "last_changed": "2026-10-22",
+   "md_sha256": "3b20ce19f913671be0fb7c86be4821c30143066d0b540c6f67f45e8f01c73572",
    "source": "site"
   },
   "essays/last-cavalry-charge": {
@@ -6540,7 +6547,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-10-21",
+   "last_held": "2026-10-22",
    "marker": "CASE PENDING"
   }
  },
