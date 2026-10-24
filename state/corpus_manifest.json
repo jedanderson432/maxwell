@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 934,
+  "pieces": 935,
   "quarantined": 1
  },
- "last_run": "2026-10-23",
+ "last_run": "2026-10-24",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -654,6 +654,13 @@
    "first_seen": "2026-10-09",
    "last_changed": "2026-10-09",
    "md_sha256": "4ccba9625d7ce598df67596b170212801c9c6a34c1578065e8cd1752fe3522dc",
+   "source": "site"
+  },
+  "essays/texas-one-percent": {
+   "block_hash": "67dcf9f249a05f95c336fc5980177451a7a125f23bdc649fba13add1e857684d",
+   "first_seen": "2026-10-24",
+   "last_changed": "2026-10-24",
+   "md_sha256": "2cea1158e875dc2488d3945b5a711d0f8028b6d482a9400411a51bfe65b72827",
    "source": "site"
   },
   "essays/the-arc": {
@@ -6547,7 +6554,7 @@
  "quarantined": {
   "essays/missing-chapter-of-ai-safety": {
    "first_held": "2026-08-31",
-   "last_held": "2026-10-23",
+   "last_held": "2026-10-24",
    "marker": "CASE PENDING"
   }
  },
