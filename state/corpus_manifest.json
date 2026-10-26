@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 935,
-  "quarantined": 1
+  "pieces": 936,
+  "quarantined": 0
  },
- "last_run": "2026-10-25",
+ "last_run": "2026-10-26",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -90,10 +90,10 @@
    "source": "site"
   },
   "essays/bond-bit-ratio": {
-   "block_hash": "878a268e3a515249258aa835ecb0c24d38a83bc599664f401f415b43d8c31854",
+   "block_hash": "0d6e1a4bc303a2e4739ac072045749ebc305b56713e6f19d116ee991847a77c5",
    "first_seen": "2026-07-26",
-   "last_changed": "2026-07-26",
-   "md_sha256": "552a4373df8afe89987036d5e4a5ba91358a712fd378f491a4bce0064959c13d",
+   "last_changed": "2026-10-26",
+   "md_sha256": "1a13e2f619aab103bf94a68970b42df50d1932a599f7a1cd023d36b2fef0bcf1",
    "source": "site"
   },
   "essays/categorical-unity-of-singularities": {
@@ -160,10 +160,10 @@
    "source": "site"
   },
   "essays/environmental-angel-maxwells-demon-evolved": {
-   "block_hash": "f2dd91fb8305091c9e19d0db4e6403d6b68af6ab283332d26394dab7bfe2284c",
+   "block_hash": "ae99bd1105ef83d216672bed7f5c066a0afb7cac7f40ac2f8a1666e5f4b9922e",
    "first_seen": "2026-07-26",
-   "last_changed": "2026-07-26",
-   "md_sha256": "a75257e9ab28b90c055808e243207e3f9cfe302abb439d7359a67d9682957db8",
+   "last_changed": "2026-10-26",
+   "md_sha256": "ae69786bb3b46d5f493a7c7103c857b84e94b26ad890bc371fa67948d28c1cf2",
    "source": "site"
   },
   "essays/environmental-angel-thermodynamic-cost": {
@@ -432,6 +432,13 @@
    "md_sha256": "dd7f17f8e25d476377e86d9dcb6e54ce15d305b61e229352754249afcd56bc4b",
    "source": "site"
   },
+  "essays/missing-chapter-of-ai-safety": {
+   "block_hash": "47c905a67d4c3bdf87ee0a63c380155a672ca79b1b014c49934f6f99aaf40662",
+   "first_seen": "2026-10-26",
+   "last_changed": "2026-10-26",
+   "md_sha256": "a55f7d6c01d18a986ee7f203db41eb27e591d708e249209db3004f0e3bb1607b",
+   "source": "site"
+  },
   "essays/missing-quadrillion": {
    "block_hash": "3d3321044bb3f3ec1e42017ab54125729d62c91d643dafcfe73cc3522e59f93e",
    "first_seen": "2026-07-26",
@@ -440,10 +447,10 @@
    "source": "site"
   },
   "essays/nature-aligned-ai": {
-   "block_hash": "1c9ef3c362297d1b64ceceec19ed1a15edbce3a2f38b0bd795c3bc454bddf94b",
+   "block_hash": "6b0fc75ecbe094c4d8403dee501a8f69df5789c4d70d400440a099660966900f",
    "first_seen": "2026-08-31",
-   "last_changed": "2026-08-31",
-   "md_sha256": "64dcbf106edc67c8a8d2ee0684d9ce34ef8d8727f7597d5225ac1e51785b1b85",
+   "last_changed": "2026-10-26",
+   "md_sha256": "b46981d7f56435d80dafe0bfea2be3ba5a83901a7650163e7f29e5facbb4fd89",
    "source": "site"
   },
   "essays/nature-and-simplicity": {
@@ -776,10 +783,10 @@
    "source": "site"
   },
   "essays/when-ai-speaks-natures-language": {
-   "block_hash": "debfb88c7ffabf94f27d94126dd5f78e2a49eeeddce446d1dfeb9af688b30cd7",
+   "block_hash": "ea03d7cb76886864d265836321fda64f3205fde229248f84f8416015245df54e",
    "first_seen": "2026-07-26",
-   "last_changed": "2026-07-26",
-   "md_sha256": "999342cc3b3c6e6465b7f9c4c489370790c3f8fe1e283f4422b535c383d1201f",
+   "last_changed": "2026-10-26",
+   "md_sha256": "186d37e05a9a7b4f8c93fc9602d53cd0f4a9af45a1433643cbfd559c5a6e0d87",
    "source": "site"
   },
   "essays/who-closes-the-environmental-protection-loop": {
@@ -6551,13 +6558,7 @@
    "source": "site"
   }
  },
- "quarantined": {
-  "essays/missing-chapter-of-ai-safety": {
-   "first_held": "2026-08-31",
-   "last_held": "2026-10-25",
-   "marker": "CASE PENDING"
-  }
- },
+ "quarantined": {},
  "removed": {
   "essays/the-daylight": {
    "block_hash": "b8b04724814befdd9386e8a1e3e37a88d898815e5fe2be38affb3d696fbca487",
