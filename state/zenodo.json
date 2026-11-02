@@ -1,22 +1,22 @@
 {
  "production": {
-  "archive_sha256": "31062a2c4063de0ae03860f9c53264bc3e6cbd3cdfa92745f508fd2b7d27dacd",
+  "archive_sha256": "1dd50e25fd40a6bbe8570fec5c8ac26d67443636d7876f64e6805e05b361e4c1",
   "concept_doi": "10.5281/zenodo.21609424",
   "concept_recid": "21609424",
-  "doi": "10.5281/zenodo.23670538",
-  "latest_id": 23670538,
-  "latest_recid": 23670538,
+  "doi": "10.5281/zenodo.23895361",
+  "latest_id": 23895361,
+  "latest_recid": 23895361,
   "verified_roundtrip": true,
-  "version": "2026.10.26"
+  "version": "2026.11.02"
  },
  "sandbox": {
-  "archive_sha256": "31062a2c4063de0ae03860f9c53264bc3e6cbd3cdfa92745f508fd2b7d27dacd",
+  "archive_sha256": "1dd50e25fd40a6bbe8570fec5c8ac26d67443636d7876f64e6805e05b361e4c1",
   "concept_doi": "10.5072/zenodo.573101",
   "concept_recid": "573101",
-  "doi": "10.5072/zenodo.626315",
-  "latest_id": 626315,
-  "latest_recid": 626315,
+  "doi": "10.5072/zenodo.632215",
+  "latest_id": 632215,
+  "latest_recid": 632215,
   "verified_roundtrip": true,
-  "version": "2026.10.26"
+  "version": "2026.11.02"
  }
 }

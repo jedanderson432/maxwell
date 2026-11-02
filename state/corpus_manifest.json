@@ -3,7 +3,7 @@
   "pieces": 936,
   "quarantined": 0
  },
- "last_run": "2026-11-01",
+ "last_run": "2026-11-02",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -383,11 +383,11 @@
    "md_sha256": "f0156375519ec59693b4a84d7cda76f87a011aa455f398d110ac1ba1a8e386bf",
    "source": "site"
   },
-  "essays/large-nature-model": {
-   "block_hash": "c8c1c83906e682fb24cead19bea72176a1df009d65d29e48a9eb9100508a2322",
-   "first_seen": "2026-10-22",
-   "last_changed": "2026-10-22",
-   "md_sha256": "3b20ce19f913671be0fb7c86be4821c30143066d0b540c6f67f45e8f01c73572",
+  "essays/large-environmental-model": {
+   "block_hash": "1011e0ba7bb8b4470ff289c160bc07b00229405b42f1f1c6a64b33ea4398a454",
+   "first_seen": "2026-11-02",
+   "last_changed": "2026-11-02",
+   "md_sha256": "626e85a26fe30c260872c5ca173e5b5cdf9b9589913bda6a201b86b9ebc6e386",
    "source": "site"
   },
   "essays/last-cavalry-charge": {
@@ -447,10 +447,10 @@
    "source": "site"
   },
   "essays/nature-aligned-ai": {
-   "block_hash": "6b0fc75ecbe094c4d8403dee501a8f69df5789c4d70d400440a099660966900f",
+   "block_hash": "67b7f24cad900cdb3977373d3f9be6ab3a284e55210f846424c62f569268f2fc",
    "first_seen": "2026-08-31",
-   "last_changed": "2026-10-26",
-   "md_sha256": "b46981d7f56435d80dafe0bfea2be3ba5a83901a7650163e7f29e5facbb4fd89",
+   "last_changed": "2026-11-02",
+   "md_sha256": "fc45314e471a764588e67f93d6047877b0a2ddea0e831019e27dd996e89cc5b9",
    "source": "site"
   },
   "essays/nature-and-simplicity": {
@@ -664,10 +664,10 @@
    "source": "site"
   },
   "essays/texas-one-percent": {
-   "block_hash": "67dcf9f249a05f95c336fc5980177451a7a125f23bdc649fba13add1e857684d",
+   "block_hash": "cb70d5c5ba5b1881248b803efe01d8fe33cd1ba78123dccb83c12fe3c307fecc",
    "first_seen": "2026-10-24",
-   "last_changed": "2026-10-24",
-   "md_sha256": "2cea1158e875dc2488d3945b5a711d0f8028b6d482a9400411a51bfe65b72827",
+   "last_changed": "2026-11-02",
+   "md_sha256": "adf78f44012f5c864f3589ded42ee4a3bbbcb20fe6dca6405cb0155533deab76",
    "source": "site"
   },
   "essays/the-arc": {
@@ -6560,6 +6560,14 @@
  },
  "quarantined": {},
  "removed": {
+  "essays/large-nature-model": {
+   "block_hash": "c8c1c83906e682fb24cead19bea72176a1df009d65d29e48a9eb9100508a2322",
+   "first_seen": "2026-10-22",
+   "last_changed": "2026-10-22",
+   "md_sha256": "3b20ce19f913671be0fb7c86be4821c30143066d0b540c6f67f45e8f01c73572",
+   "removed_on": "2026-11-02",
+   "source": "site"
+  },
   "essays/the-daylight": {
    "block_hash": "b8b04724814befdd9386e8a1e3e37a88d898815e5fe2be38affb3d696fbca487",
    "first_seen": "2026-09-06",
