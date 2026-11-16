@@ -5,20 +5,21 @@
   "pieces": {}
  },
  "content_held_summary_line": "Action required: none.",
- "distributed_newest_piece": "2026-10-24",
+ "distributed_newest_piece": "2026-11-12",
  "distributed_source": "state/hf.json",
- "last_health_run": "2026-11-09",
- "last_health_run_utc": "2026-11-09T17:47:08Z",
+ "last_health_run": "2026-11-16",
+ "last_health_run_utc": "2026-11-16T17:24:28Z",
  "notes": [
-  "site OK: 936 pieces",
-  "staleness OK: site 2026-10-24 vs distributed 2026-10-24 (0d, limit 7d)",
-  "state OK: 936 rows",
+  "staleness: skipped (site not readable this run)",
+  "state OK: 937 rows",
   "CONTENT_HELD 0: nothing withheld",
   "budget OK: $0.00/$30.00",
   "mcp listed: True"
  ],
- "ok": true,
- "pipeline": "green",
- "pipeline_failures": [],
- "site_newest_piece": "2026-10-24"
+ "ok": false,
+ "pipeline": "red",
+ "pipeline_failures": [
+  "corpus fetch/parse failed: GET https://jedanderson.org/llms-full.txt failed after 4 attempts: 503 for https://jedanderson.org/llms-full.txt"
+ ],
+ "site_newest_piece": ""
 }
