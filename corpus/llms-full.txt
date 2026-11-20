@@ -10,7 +10,7 @@ URL: https://jedanderson.org/essays/seeing-the-it-bit
 TYPE: essay
 DATE: 2026-11-19
 LICENSE: CC-BY-4.0
-ABSTRACT: Twenty-three 60-second daily practices that train the reader to see every object as an it-bit: physical stuff and its exact arrangement at the same time. Each exercise pairs one concrete action with the physics underneath—Shannon's bit, Boltzmann's entropy, the 10-bit-per-second keyhole of conscious thought, the one-reflex-wide Earth—labels every claim as measured, established, calculated, or synthesis, and ends on the closed sense-decide-act loop that can now be built for the living world.
+ABSTRACT: Twenty-three 60-second daily practices that train the reader to see every object as an it-bit: physical stuff and its exact arrangement at the same time. Each exercise pairs one concrete action with the physics underneath—Shannon's bit, Boltzmann's entropy, the 10-bit-per-second straw of conscious thought, the one-reflex-wide Earth, the heat cost of forgetting, extinction as lost pattern—labels every claim as measured, established, calculated, or synthesis, and ends on the closed sense-decide-act loop that can now be built for the living world.
 ========================================================================
 
 **The universe is full of matter. Information is what makes it matter.**
@@ -83,11 +83,11 @@ That is what information is: the thing that stays the same when all the matter a
 
 *Eight possibilities. Three yes-or-no answers. Three halvings. One number left.*
 
-**Do this.** Pick one object in the room. Imagine a friend finding it by asking only yes-or-no questions.
+**Do this.** Find a number with three breaths. Ask someone to think of a whole number from one to eight.
 
-Find a number with three breaths. Ask someone to think of a whole number from one to eight. On your first breath, ask, “Is it in the upper half?” On the next breath, halve the remaining possibilities. Do it once more. You know the number. Three yes-or-no answers can distinguish eight possibilities; if the choices are equally likely, that is three bits. Now reverse the roles and feel what just happened: something known only inside another person’s head became known inside yours. Nothing mysterious had to cross the room. Three well-chosen distinctions were enough.
+On your first breath, ask, “Is it in the upper half?” On the next breath, halve the remaining possibilities. Do it once more. You know the number. Three yes-or-no answers can distinguish eight possibilities; if the choices are equally likely, that is three bits. Now reverse the roles and feel what just happened: something known only inside another person’s head became known inside yours. Nothing mysterious had to cross the room. Three well-chosen distinctions were enough.
 
-Each answer is one bit. If every question cuts the remaining possibilities in half, 20 answers single out one thing in a million. 33 answers single out one person among all 8.3 billion people alive. 266 answers single out one atom among all the atoms in the observable universe (about 10⁸⁰).
+Now pick one object in the room. Imagine a friend finding it by asking only yes-or-no questions. Each answer is one bit. If every question cuts the remaining possibilities in half, 20 answers single out one thing in a million. 33 answers single out one person among all 8.3 billion people alive. 266 answers single out one atom among all the atoms in the observable universe (about 10⁸⁰).
 
 A string of 266 yes-or-no answers fits in 34 bytes. That is shorter than this sentence.
 
@@ -99,39 +99,25 @@ This is the first secret of information: every bit you add doubles what you can 
 
 ## II. Scale and Leverage
 
-*Exercises 5 to 10. Your mind is a narrow channel. The planet is one reflex wide. Life is one long message. And a single well-aimed bit can steer a ton.*
+*Exercises 5 to 9. Your mind sips through a straw. The planet is one reflex wide. Life is one long message. And a single well-aimed bit can steer a ton.*
 
-### 5. The Keyhole
+### 5. Feel Your 10-Bit-Per-Second Straw
 
-*10,000 dots. It would take 10,000 pages like this one to show the hundred million bits that arrive. The circled dot is the one you act on.*
+*10,000 dots. It would take 10,000 pages like this one to show the hundred million bits that arrive. The circled dot is the one that fits through your straw.*
 
-**Do this.** Look around for ten seconds and try to take in everything. Then close your eyes and list what you can actually report.
+**Do this.** Pause and take in the room for ten seconds.
 
-Your senses gather about a billion bits every second. Your conscious thinking and acting, measured across typing, speaking, reading, games, and memory feats, runs at about 10 bits per second.
+According to Caltech neuroscientists Jieyu Zheng and Markus Meister, your senses are pulling in roughly one billion (10⁹) bits per second right now, yet your conscious thought and behavior run at about 10 bits per second. That is a 100-million-to-1 bottleneck. You are standing under a waterfall of reality, sipping through a cocktail straw.
 
-For every bit you act on, about a hundred million arrive and are let go. Your brain is not failing. It is choosing: boiling a flood down to the few bits that matter for what you are trying to do.
+Over eighty years, ten bits a second adds up to about two gigabytes. Everything you will ever consciously notice, decide, say, and do would fit on a thumb drive. Attention is the rarest thing you own.
 
-So your scarcest resource was never time or energy. It is those ten bits a second. Everything you have ever learned, built, or loved came in through that keyhole.
+> **Carry this.** Feel the humility of that, and then feel the exhilaration: information technology doesn’t replace your humanity, it widens the reach of your straw, letting a 10-bit-per-second mind finally see and steer a billion-bit-per-second world.
 
-> **Carry this.** Attention is the rarest thing you own. Where you point it is your life.
+*Status: measured estimate (Zheng and Meister, 2024). Older estimates put the sensory figure nearer ten million bits per second. The two gigabytes is a calculation: 16 waking hours a day for 80 years. The straw itself stays ten bits wide: the limit is inside the brain, and the authors expect even a direct brain link to run at about the same rate. What technology widens is what the straw can reach. That last point is synthesis.*
 
-*Status: measured estimate (Zheng and Meister, 2024). Older estimates put the sensory figure nearer ten million bits per second. Either way the gap is enormous.*
-
-### 6. Snap Your Fingers: You Just Measured the Width of the Earth
+### 6. Earth Is One Reflex Wide
 
 *0.2 seconds: one lap of the planet, in glass. One human reflex.*
-
-**Do this.** Tap your desk the instant you spot a movement or blink.
-
-A typical human visual reaction takes about 200 milliseconds. Light travels through optical fiber at roughly 200,000 kilometers per second, meaning in the exact time of your single reflex, a signal can circle the entire 40,000-kilometer circumference of the Earth. As [*The Law of Larger Selves*](/essays/law-of-larger-selves) puts it, Earth in optical fiber is one reflex wide. For four billion years, the planet had no nervous system.
-
-> **Carry this.** Today, the entire biosphere fits inside a single sense-infer-decide-act loop, and you are alive at the exact moment humanity is wiring it up.
-
-*Status: reaction time and fiber speed are measured. The travel time is a calculation. The last sentence is synthesis.*
-
-### 7. Earth Is One Reflex Wide
-
-*Your tap, after you see something move: about 200 thousandths of a second. Light in glass fiber, once around the Earth: 196 thousandths of a second. The two bars are almost the same length. That is the point.*
 
 **Do this.** Watch for the next thing that moves, and tap the table the instant you see it.
 
@@ -141,11 +127,13 @@ In that same fifth of a second, light in a glass fiber travels 40,000 kilometers
 
 For nearly all of history, news crossed the planet at the speed of wind, water, and feet. Now, for information, the whole Earth sits inside one human reflex. A sensor anywhere can inform a decision anywhere before you can blink. What is missing is no longer speed. It is the loop: something set up to sense, decide, and act.
 
+For four billion years, the planet had no nervous system. Today, the entire biosphere fits inside a single sense-infer-decide-act loop, and you are alive at the exact moment humanity is wiring it up.
+
 > **Carry this.** For information there is no far away on Earth anymore. Only connected and not yet connected.
 
-*Status: the travel time is a calculation (light in fiber moves at about 204,000 km per second). The phrase “one reflex wide” comes from “The Law of Larger Selves.” The last two sentences of the body are synthesis.*
+*Status: the travel time is a calculation (light in fiber moves at about 204,000 km per second). The phrase “one reflex wide” comes from [“The Law of Larger Selves.”](/essays/law-of-larger-selves) The lines about the loop and the planet’s nervous system are synthesis.*
 
-### 8. You Are a Four-Billion-Year-Old Message
+### 7. You Are a Four-Billion-Year-Old Message
 
 *2,000 letters of A, C, G, and T. Your text is 6.2 billion: three million blocks like this one, in almost every cell. (The letters shown are for illustration.)*
 
@@ -161,7 +149,7 @@ It is still being copied. Your body makes about 3.8 million new cells every seco
 
 *Status: established biology. The copying rate is a calculation from measured cell turnover (Sender and Milo, 2021), good to an order of magnitude. Fossils put life at 3.5 billion years or more; genetic dating puts it nearer 4.*
 
-### 9. A Word Stops a Ton
+### 8. A Word Stops a Ton
 
 *The word: “stop.” The car: 1.5 tons, a hundred billion times the energy of the word.*
 
@@ -171,23 +159,23 @@ That word left your mouth as about five millionths of a joule of sound. Said to 
 
 The word did not supply the stopping energy. The brakes did, by turning motion into heat. The word did something else. It chose which of two futures happened. One bit.
 
-This is how information acts on the world. It does not push. It steers energy that is already there, like a switch, a rudder, a nerve, a gene, a thermostat. Two honest conditions apply: the energy must be available, and something must be built to listen (an ear, a brain, a brake). Where both hold, the cost of a bit has a floor and what it decides has no ceiling.
+This is how information acts on the world. It does not push. It steers energy that is already there, like a switch, a rudder, a nerve, a gene, a thermostat. Two honest conditions apply: the energy must be available, and something must be built to listen (an ear, a brain, a brake). Where both hold, the cost of a bit has a floor (exercise 11) and what it decides has no ceiling.
 
 > **Carry this.** A bit is worth the difference between the two futures it chooses between.
 
 *Status: speech power is measured (about 10 millionths of a watt). The ratio is a calculation. The principle is established (feedback control; Sagawa and Ueda, 2008 to 2012).*
 
-### 10. All of Humanity in One Glass Thread
+### 9. All of Humanity in One Glass Thread
 
 *Bits per second, where each step is 1,000 times more: your conscious thought, 10. Your speech, 39. Your senses, 1 billion. Every human talking at once, 325 billion. One glass fiber, 2026 record, 450 trillion. Every bar is measured or calculated. Sources are at the end.*
 
 **Do this.** Say one sentence aloud at normal speed. Feel its pace.
 
-Whatever language you speak, that pace carries about 39 bits per second. It was measured in 17 languages. Fast languages pack less into each syllable, so they all land near the same rate.
+Whatever language you speak, that pace carries about 39 bits per second. It was measured in 17 languages. Fast languages pack less into each syllable, so they all land near the same rate. Every poem, constitution, treaty, and scientific breakthrough in human history was squeezed through that tiny 39-bit channel.
 
-Every human alive, talking at once, would come to about 325 billion bits per second. In 2026 a single ordinary optical fiber, a strand of glass about as thin as a hair, carried 450 trillion bits per second. All of humanity talking at once would fit in that one thread about 1,400 times over.
+Every human alive, talking at once, would come to about 325 billion bits per second. In 2026 a single ordinary optical fiber, a strand of glass about as thin as a hair, carried 450 trillion bits per second. All of humanity talking at once would fit in that one thread about 1,400 times over. Pause and marvel at what our species built at 39 bits per second, and then realize what becomes possible now that human intention can couple to machines exchanging billions of bits per second.
 
-Machines now carry, copy, and combine patterns at rates no body ever will. You will not out-carry them, and you do not need to. Exercise 9 says where a bit’s worth comes from: the futures it chooses between. When you type one clear sentence to an AI, a hundred or so of your bits steer trillions of machine operations.
+Machines now carry, copy, and combine patterns at rates no body ever will. You will not out-carry them, and you do not need to. Exercise 8 says where a bit’s worth comes from: the futures it chooses between. When you type one clear sentence to an AI, a hundred or so of your bits steer trillions of machine operations.
 
 > **Carry this.** The machines carry. You choose. Choose well.
 
@@ -195,9 +183,9 @@ Machines now carry, copy, and combine patterns at rates no body ever will. You w
 
 ## III. Information Is Physical
 
-*Exercises 11 to 13. Bits sit on the same ledger as heat. Knowing can lift a weight. And all the order on Earth is paid for by sunlight.*
+*Exercises 10 to 14. Bits sit on the same ledger as heat. Forgetting warms your hand. Knowing can lift a weight. And all the order on Earth, every tree, is paid for by sunlight.*
 
-### 11. A Glass of Water Is a Finite Number
+### 10. A Glass of Water Is a Finite Number
 
 *100,000,000,000,000,000,000,000,000. The bits of hidden detail in one glass of water, written out. Enormous. Finite.*
 
@@ -214,6 +202,22 @@ The water in your hand is an it you can drink and a finite list of bits that say
 > **Carry this.** Everything you can hold is the thing itself and a finite list of yes-or-no answers. Simple underneath. Endless on the surface.
 
 *Status: entropy as a count of bits is established (Boltzmann, 1877; Shannon, 1948; Jaynes, 1957). The 10²⁶ is a calculation from water’s measured entropy. The ceiling (Bekenstein, 1981) is accepted theory that has not been tested directly. “It from bit” is an open conjecture.*
+
+### 11. Forgetting Makes Heat
+
+*The one white square: the least heat one bit can cost. All 240 squares: the energy to break one carbon-hydrogen bond.*
+
+**Do this.** Rest your hand on your phone or laptop. Feel the warmth.
+
+In 1961 Rolf Landauer showed that information obeys the laws of heat. Erasing one bit must release at least a fixed, tiny amount of heat: about 3 zeptojoules at room temperature (a zeptojoule is a billionth of a trillionth of a joule). The reason is simple. Erasing squeezes two possible states into one, and physics does not let possibilities vanish. They get pushed out into the surroundings as heat.
+
+A lab measured this floor in 2012. So bits and joules sit on the same ledger. The warmth in your hand is the price of computing, and today’s chips still pay at least thousands of times more than the floor. The floor is physics. The gap is engineering.
+
+Now compare changing matter. Breaking a single carbon-hydrogen bond, the kind found in fuels, plastics, and living tissue, takes about 240 times that floor. At the floor, knowing is far cheaper than breaking.
+
+> **Carry this.** Information is not a ghost. It has a price in heat, and that is exactly why it can push on the world.
+
+*Status: measured (Landauer, 1961; Bérut and colleagues, 2012). The chip comparison is an order-of-magnitude estimate. The 240 is a calculation for one carbon-hydrogen bond at room temperature (the bond-bit ratio); other bonds give other numbers. The last sentence of the body is synthesis.*
 
 ### 12. Watch Information Do Physical Work
 
@@ -245,35 +249,27 @@ Concentrated in, spread out. Physicists call that spread entropy, and it is a co
 
 *Status: established (Schrödinger, 1944; Earth’s energy budget is measured). The ratio is a calculation: the Sun’s surface at 5,772 kelvin over Earth’s emission temperature of 255 kelvin, about 22.*
 
+### 14. A Tree Is Made of Air
+
+*The willow, at planting: 5 pounds. Five years later: 169 pounds. The soil, at planting: 200 pounds. Five years later: 200 pounds, less two ounces. The tree gained 164 pounds. The soil lost two ounces.*
+
+**Do this.** Put your hand on a tree, or on anything made of wood.
+
+In the early 1600s Jan van Helmont planted a five-pound willow in 200 pounds of dried soil and gave it nothing but water. Five years later the tree weighed 169 pounds. The soil had lost about two ounces.
+
+The tree did not come out of the ground. About half the dry weight of wood is carbon, and every atom of that carbon was pulled out of the air. Nearly all the rest is oxygen, also from the air, and hydrogen from water. Only a percent or two came from the soil. Van Helmont thought it was all water. He had not counted the air.
+
+The seed supplied almost none of the matter. It supplied the instructions: about 750 million letters for an oak, under 200 megabytes. Sunlight supplied the order (exercise 13). Air and water supplied the atoms.
+
+> **Carry this.** The matter was everywhere, free. The seed brought the pattern.
+
+*Status: measured (van Helmont, published 1648; the carbon content of wood; the oak genome, Plomion and colleagues, 2018). The megabyte figure is a calculation at two bits per letter.*
+
 ## IV. How Information Behaves
 
-*Exercises 14 to 19. It squeezes through a narrow channel. It is never erased. It lives in surprise. It is a difference. And the one speed limit in the universe is a limit on news.*
+*Exercises 15 to 18. It lives in surprise. It is a difference. It can stay true through noise. And it is never erased, only spread beyond reading.*
 
-### 14. Listen to the 39-Bit Human Modem
-
-*One second of human speech. All of it. 39 yes-or-no answers.*
-
-**Do this.** Listen to someone speak a single sentence, or say one aloud yourself.
-
-Whether it is rapid-fire Japanese or slower, denser Mandarin or English, a 2019 study of 17 languages found that human languages transmit information at virtually the same rate: ~39 bits per second. Every poem, constitution, treaty, and scientific breakthrough in human history was squeezed through that tiny 39-bit channel.
-
-> **Carry this.** Pause and marvel at what our species built at 39 bits per second, and then realize what becomes possible now that human intention can couple to machines exchanging billions of bits per second.
-
-*Status: measured in 17 languages (Coupé and colleagues, 2019). The last sentence is synthesis.*
-
-### 15. Watch Something Vanish, and Know It Wasn’t Erased
-
-*“It wasn’t erased”: the same letters, three times, each more scattered than the last. Nothing was removed.*
-
-**Do this.** Watch a ripple flatten in a glass of water, or exhale a breath into the air.
-
-Your eyes tell you the pattern is gone. Quantum mechanics says otherwise: under the principle of unitarity, quantum information is never truly destroyed, only scrambled and dispersed into the surrounding particles and photons. Reality keeps its ledger down to the last quantum state.
-
-> **Carry this.** You are not acting inside a forgetful void; every choice, every molecule shifted, every word spoken writes permanently into the state of the cosmos.
-
-*Status: established principle (in quantum theory, unitarity), with two open edges: black holes and quantum measurement.*
-
-### 16. Read the Gaps
+### 15. Read the Gaps
 
 *Y_U C_N R__D TH_S S_NT_NC_ W_TH N_ TR__BL_. You read it anyway. Roughly three quarters of every sentence is predictable.*
 
@@ -289,7 +285,7 @@ Predicting and understanding are the same muscle. To understand a pattern is to 
 
 *Status: measured (Shannon, 1951). “Understanding is compression” is a standard result of information theory, stated loosely.*
 
-### 17. Feel Your Clothes
+### 16. Feel Your Clothes
 
 *A signal that stays the same fades from the report. A change brings it back.*
 
@@ -305,6 +301,22 @@ This is the root definition. Information is a difference. A signal that never ch
 
 *Status: measured (sensory adaptation; stabilized-image experiments of the 1950s). “Zero bits” is Shannon’s definition.*
 
+### 17. Write a Sloppy A
+
+*Tilted. Shaky. Half finished. Still an A.*
+
+**Do this.** Write the letter A badly. Tilted, shaky, half finished. Look at it. It is still an A.
+
+A reader snaps your wobbly mark back to the nearest letter, and the wobble is thrown away. That is the whole secret of digital. When a pattern is built from a small set of clearly separated symbols, noise can be wiped off at every step, before it piles up. A photocopy of a photocopy fades. The thousandth copy of a text is identical to the first.
+
+In 1948 Shannon proved the general law. Over any noisy channel, below a certain rate, a well-coded message can arrive with as few errors as you choose. Life found this first: heredity is written in four distinct letters, and proofread.
+
+On November 18, 2026, Voyager 1 passed one light-day from Earth, 25.9 billion kilometers out. Its radio is about as strong as a refrigerator bulb. What reaches our dishes is less than a billionth of a billionth of a watt. Its messages still arrive readable.
+
+> **Carry this.** You do not need a noise-free world to build reliable, life-protecting systems. With the right encoding and feedback, clarity wins inside the storm.
+
+*Status: established (Shannon, 1948; von Neumann, 1956). Voyager’s distance is NASA’s figure. Its radio power (about 20 watts) is approximate, and the received signal is a calculation from it.*
+
 ### 18. Stir the Cream
 
 *The swirl. Stirred. Spread beyond reading.*
@@ -315,29 +327,17 @@ Your eyes say the pattern is gone. Physics says no. At the level of molecules, t
 
 The swirl was not destroyed. It was spread into the exact positions and motions of about 10²⁵ molecules, far beyond any reading. That is what disorder is: information that has moved out of our reach. It is also why time seems to run one way. Patterns spread into fine detail easily and almost never gather back.
 
+Reality keeps its ledger down to the last quantum state. You are not acting inside a forgetful void; every choice, every molecule shifted, every word spoken writes permanently into the state of the cosmos.
+
 > **Carry this.** Nothing you do is ever erased from the universe. It is only spread beyond reading. So read things early, while the pattern is still a few bits.
 
 *Status: established principle (reversible laws of motion; in quantum theory this is called unitarity), confirmed in every experiment so far. Two open edges remain: black holes, where most physicists now expect information survives, and what happens during a quantum measurement. “Read things early” is synthesis.*
 
-### 19. Outrun Light with a Flashlight
-
-*Your wrist: 45 degrees in one second. The spot: faster than light.*
-
-**Do this.** In a dim room, sweep a flashlight or your phone’s light across the far wall with a flick of the wrist. Notice the spot moves far faster than your hand.
-
-Now picture a laser pointer aimed at the Moon. A lazy turn of the wrist, 45 degrees in one second, drags the spot across the Moon’s surface faster than light. No law is broken. Nothing travels from one place on the Moon to another. Each bit of light came from your hand. Nobody on the Moon can use your spot to send a message to anybody else on the Moon.
-
-The speed limit of the universe is not a limit on motion as such. It is a limit on news: on any cause reaching any effect. Even quantum entanglement, the strangest link in physics, cannot carry a message faster than light.
-
-> **Carry this.** The deepest speed limit in nature is not on things. It is on news.
-
-*Status: established (special relativity; the no-signaling theorem of quantum theory). The 45 degrees per second is a calculation.*
-
 ## V. What We Can Build Now
 
-*Exercises 20 to 23. One machine can become any machine. Records already move matter. We inherit, and we add. And the loop that protects every living body can now be built for the living world.*
+*Exercises 19 to 23. One machine can become any machine. Records already move matter. We inherit, and we add. What extinction takes is pattern. And the loop that protects every living body can now be built for the living world.*
 
-### 20. Your Phone Is Every Machine
+### 19. Your Phone Is Every Machine
 
 *Camera, map, calculator, clock, flashlight, tape recorder: one phone.*
 
@@ -347,13 +347,13 @@ Camera. Map. Calculator. Clock. Flashlight. Tape recorder. For most of history, 
 
 So the difference between a camera, a piano, and a map is not in the hardware. It is in the bits. And the hardware itself is mostly silicon, the main ingredient of beach sand, arranged into about twenty billion switches. The difference between the sand and the chip is information too.
 
-This is why abilities now arrive so fast. A new ability no longer needs new matter. It needs new bits, and bits copy perfectly and travel at the speed of light. AI is the same universal machine running a newly found pattern. And now you can ask for the bits in plain words.
+This is why abilities now arrive so fast. A new ability no longer needs new matter. It needs new bits, and bits copy perfectly (exercise 17) and travel at the speed of light (exercise 6). AI is the same universal machine running a newly found pattern. And now you can ask for the bits in plain words.
 
 > **Carry this.** You own a machine that can become any machine. What it becomes depends on the bits you ask for.
 
 *Status: established mathematics (Turing, 1936). The switch count is approximate. “A new ability needs only new bits” is synthesis.*
 
-### 21. Hold a Twenty
+### 20. Hold a Twenty
 
 *$1: 4.1 cents of paper and ink. $20: 7.3 cents of paper and ink. Same paper, same ink, three cents apart. The other nineteen dollars are not in the bill.*
 
@@ -371,7 +371,7 @@ Now look further. The line between your yard and your neighbor’s is not in the
 
 *Status: printing costs and money totals are Federal Reserve figures (2025 and 2026). The rest is plain fact about records, arranged as synthesis.*
 
-### 22. Speak Six Thousand Years
+### 21. Speak Six Thousand Years
 
 *An ox’s head, turned: the letter A.*
 
@@ -379,13 +379,29 @@ Now look further. The line between your yard and your neighbor’s is not in the
 
 The words mother, me, and name have been passed from mouth to ear, parent to child, for about 6,000 years. That is some 240 generations, starting in a language nobody ever wrote down. The letter A began as a drawing of an ox’s head about 3,800 years ago. Zero, as a number, is about 1,400 years old.
 
-Almost nothing you think with was made by you. This is your second inheritance. The first is the 1.5 gigabytes from your parents (exercise 8). The second is everything people before you worked out and managed to pass on: words, numbers, tools, laws, songs. It is why each generation starts where the last one stopped.
+Almost nothing you think with was made by you. This is your second inheritance. The first is the 1.5 gigabytes from your parents (exercise 7). The second is everything people before you worked out and managed to pass on: words, numbers, tools, laws, songs. It is why each generation starts where the last one stopped.
 
 AI language models are trained on a large share of what humans have written, thousands of lifetimes of reading. When you ask one a question, you are consulting a compressed, imperfect copy of that inheritance.
 
 > **Carry this.** You think with borrowed bits, hundreds of generations deep. Add something worth borrowing.
 
 *Status: established historical linguistics and history of writing; dates are approximate. The reading comparison is an order-of-magnitude estimate.*
+
+### 22. Nothing Was Lost but the Pattern
+
+*A living pattern. The same dots, every one still here. 9,861 white dots on the left. The same 9,861 on the right. Nothing is missing but the arrangement.*
+
+**Do this.** Look at the nearest living thing that is not human: a bird, a tree, a weed in a crack.
+
+When it dies, every atom in it stays on Earth and is used again. When the last of its kind dies, the atoms still stay. Not one goes missing.
+
+What goes is a text: millions to billions of letters, copied and corrected without a break for close to four billion years (exercise 7) and, for most species, written down nowhere else. Like the swirl in the cream (exercise 18), it is not erased from the universe. It is spread beyond any reading, and no one can gather it back.
+
+So what we protect when we protect nature is not the atoms. It is the arrangement: the patterns that took the longest to write.
+
+> **Carry this.** Extinction loses no atoms. It loses information. To protect nature is to protect patterns.
+
+*Status: that matter is conserved is established. Genome sizes are measured. “Extinction is a loss of information” is synthesis: the old comparison to a burning library, stated in bits.*
 
 ### 23. Hold Your Breath
 
@@ -407,7 +423,7 @@ Every living thing protects its inner environment this way: with information, in
 
 Most of these exercises rest on measured or textbook physics. Where a line is an argument, its status says synthesis. The phrase “it is all ones and zeros” is true with three qualifiers.
 
-1. **Finite: yes.** The exact state of any object can be written as a finite list of yes-or-no answers. This is established (exercise 11).
+1. **Finite: yes.** The exact state of any object can be written as a finite list of yes-or-no answers. This is established (exercise 10).
 2. **Ones and zeros: almost.** At the smallest scale the unit is the quantum bit, which can hold a blend of yes and no until it is asked. Every answer nature gives back is a plain yes or no. This is established.
 3. **Bottom layer: unknown.** That matter comes from information (John Wheeler’s “it from bit”) is a conjecture. No experiment has decided it. The it-bit view, that every thing is both at once, holds either way.
 
@@ -418,7 +434,9 @@ Most of these exercises rest on measured or textbook physics. Where a line is an
 - C. Coupé and colleagues, 2019, 39 bits per second across 17 languages: [CNRS summary](https://www.cnrs.fr/en/press/similar-information-rates-across-languages-despite-divergent-speech-rates).
 - NICT, 450 trillion bits per second over installed fiber, [June 1, 2026](https://origin-www.nict.go.jp/en/press/2026/06/01-1.html).
 - R. Sender and R. Milo, 2021, cell turnover: [Weizmann Institute summary](https://wis-wander.weizmann.ac.il/node/11205).
-- S. Toyabe and colleagues, 2010, information turned into energy: [Physics World](https://physicsworld.com/?p=18525).
+- R. Landauer, 1961; A. Bérut and colleagues, 2012, the heat cost of erasing one bit, [measured](https://www.nature.com/doifinder/10.1038/nature.2012.10186). S. Toyabe and colleagues, 2010, information turned into energy: [Physics World](https://physicsworld.com/?p=18525).
+- J. B. van Helmont, *Ortus Medicinae*, 1648 (the willow). C. Plomion and colleagues, 2018, [the oak genome](https://pmc.ncbi.nlm.nih.gov/articles/PMC6086335).
+- Voyager 1 at one light-day, November 18, 2026: [EarthSky, citing NASA](https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/).
 - Federal Reserve: [cost of printing currency](https://federalreserve.gov/faqs/currency_12771.htm) (2025); [currency in circulation](https://fred.stlouisfed.org/graph/?g=B4gn) (2026).
 - Speech power: R. Freitas, [*Nanomedicine*, section 4.9.1.5](https://www.nanomedicine.com/NMI/4.9.1.5.htm).
 
@@ -426,7 +444,12 @@ Most of these exercises rest on measured or textbook physics. Where a line is an
 
 Onward. Upward.
 
-*From www.jedanderson.org. Prepared with AI tools.*
+*From www.jedanderson.org. Second edition, November 2026. Prepared with AI tools.*
+
+## Revision history
+
+- **2026-11-20, second edition.** Replaced with the revised PDF. Exercise 5 rewritten as “Feel Your 10-Bit-Per-Second Straw”; the two reflex exercises merged into “Earth Is One Reflex Wide”; the standalone 39-bit and unerased-pattern exercises folded into exercises 9 and 18; “Outrun Light with a Flashlight” removed; four new exercises added: “Forgetting Makes Heat,” “A Tree Is Made of Air,” “Write a Sloppy A,” and “Nothing Was Lost but the Pattern.” Exercises renumbered and sources expanded.
+- **2026-11-19.** First published.
 
 ========================================================================
 TITLE: Stop Serving as the Wiring Between Machines
