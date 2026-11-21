@@ -3,7 +3,7 @@
   "pieces": 938,
   "quarantined": 0
  },
- "last_run": "2026-11-20",
+ "last_run": "2026-11-21",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -629,10 +629,10 @@
    "source": "site"
   },
   "essays/seeing-the-it-bit": {
-   "block_hash": "83b958a29878ce4c3426b51691de2f907cfe66d26223b555b54ad1301ec4214a",
+   "block_hash": "04d2a585d1567bec4b8cd2a13403a971039198b94fca327a08cc5d8507b98590",
    "first_seen": "2026-11-19",
-   "last_changed": "2026-11-20",
-   "md_sha256": "1b94c340a56441df7bc1a3bac61b1b4b88a7f0d2fa2c27fd9675cf4993d5ccab",
+   "last_changed": "2026-11-21",
+   "md_sha256": "c7dfb5577ce4d5ae6b737104bdf281063667acb322070a702fa65e3bd272671f",
    "source": "site"
   },
   "essays/self-writing-universe": {

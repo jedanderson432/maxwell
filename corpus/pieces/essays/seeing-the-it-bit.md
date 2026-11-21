@@ -21,6 +21,14 @@ pdf_pages: 31
 date_modified: 2026-11-20
 ---
 
+<figure class="essay-video" style="margin: 0 auto 2.5rem; max-width: 28rem;">
+  <video controls playsinline preload="none" poster="/images/your-reach-is-widening-video-hero.jpg" width="1080" height="1350" aria-label="Your Reach Is Widening" style="display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; background: #0a0a0a; border-radius: 4px; margin: 0;">
+    <source src="/videos/your-reach-is-widening.mp4" type="video/mp4" />
+    <img src="/images/your-reach-is-widening-video-hero.jpg" alt="A black-and-white Earth rendered in white dots inside a thin circle, over a dark field of pixels. Below, large white type reads: Every tool widens its reach. Then: Writing. The telescope. The computer. Now AI." />
+  </video>
+  <figcaption>A short film on three of these exercises: one hello (3), your 10-bit straw (5), and the text in your cells (7).</figcaption>
+</figure>
+
 **The universe is full of matter. Information is what makes it matter.**
 
 Most of us look at a thing and see only matter. These exercises train you to see both matter and information at the same time: an it-bit.
