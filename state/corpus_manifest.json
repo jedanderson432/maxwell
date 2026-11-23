@@ -1,9 +1,9 @@
 {
  "counts": {
-  "pieces": 938,
+  "pieces": 940,
   "quarantined": 0
  },
- "last_run": "2026-11-22",
+ "last_run": "2026-11-23",
  "pieces": {
   "books/a-victorious-defeat": {
    "block_hash": "79bc1f359aebecdc2ffe6cf6e74110998226c1320d59e454437978ec288eb4be",
@@ -262,6 +262,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "86f4532441d3bbcd51552f446b36d186b78013a277e88b2959aa88cdfa698178",
+   "source": "site"
+  },
+  "essays/first-reflex": {
+   "block_hash": "631db01430acbae2044e9ed8a23246f333ef27dfd49a42575627c07b9613d51f",
+   "first_seen": "2026-11-23",
+   "last_changed": "2026-11-23",
+   "md_sha256": "a26cfbb88669239a073a7422e7caa05ab4ffe8f9393897f40b703d2044b6cf23",
    "source": "site"
   },
   "essays/from-fear-to-flourishing": {
@@ -556,6 +563,13 @@
    "first_seen": "2026-07-26",
    "last_changed": "2026-07-26",
    "md_sha256": "95ca8a9af5827304a7db34cbf4255a7a7b3c819ee4b4c73cda09477a3f304ca2",
+   "source": "site"
+  },
+  "essays/planetary-self": {
+   "block_hash": "a7efa98279da3a060c4e0a878a1c5c9974ddc277f0b91b8fbb0c1df67f233125",
+   "first_seen": "2026-11-23",
+   "last_changed": "2026-11-23",
+   "md_sha256": "61274483de32692e18cf1ab8d718163aefae66221966055c4ac07236bcb5765e",
    "source": "site"
   },
   "essays/possibility-exponentiality-training": {
